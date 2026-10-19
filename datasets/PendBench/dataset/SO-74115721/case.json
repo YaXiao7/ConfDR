@@ -1,0 +1,116 @@
+{
+  "WaitingDeployPods": {
+    "ingress-nginx/Deployment/ingress-nginx-controller/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "ingress-nginx",
+      "labels": {
+        "app": "ingress-nginx-controller"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": {
+        "ingress-ready": "true",
+        "kubernetes.io/os": "linux"
+      },
+      "tolerations": null,
+      "affinity": null,
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "ingress-nginx-controller"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Deployment",
+        "ingress-nginx",
+        "ingress-nginx-controller"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "devops-control-plane"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "devops-control-plane": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "devops-control-plane",
+          "kubernetes.io/os": "linux",
+          "node-role.kubernetes.io/control-plane": ""
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "ingress-nginx": {
+        "kubernetes.io/metadata.name": "ingress-nginx"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:04.145322+00:00",
+    "candidate_hash": "c4112eea61dcebde0e170003baa37e103ca522c5f04d25d7566a3a252cb7359a",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

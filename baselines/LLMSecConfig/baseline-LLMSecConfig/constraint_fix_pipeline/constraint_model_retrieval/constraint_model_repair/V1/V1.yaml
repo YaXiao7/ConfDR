@@ -1,0 +1,53 @@
+# Before fix: the Pod requests to mount a PersistentVolumeClaim with a specified name,
+# but no PVC with that name exists in the cluster, causing the Pod to fail to start.
+# The cluster does not contain a PVC named "mysql-pvc", but instead has a PVC named "app1-pvc".
+
+# spec:
+#   containers:
+#   - name: app1-container
+#     image: registry.k8s.io/pause:2.0
+#     volumeMounts:
+#     - name: data-volume
+#       mountPath: /data
+#   volumes:
+#   - name: data-volume
+#     persistentVolumeClaim:
+#       claimName: mysql-pvc
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: app1-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 1Gi
+#   volumeMode: Filesystem
+
+# After fix: update the PVC name from "mysql-pvc" to "app1-pvc" to match
+# the existing PersistentVolumeClaim referenced by the Pod.
+spec:
+  containers:
+  - name: app1-container
+    image: registry.k8s.io/pause:2.0
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    persistentVolumeClaim:
+      claimName: app1-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app1-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem

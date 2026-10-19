@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: match
+  namespace: default
+spec:
+  serviceName: match
+  replicas: 1
+  selector:
+    matchLabels:
+      app: match
+  template:
+    metadata:
+      labels:
+        app: match
+    spec:
+      containers:
+      - name: match
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data-claim
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: match

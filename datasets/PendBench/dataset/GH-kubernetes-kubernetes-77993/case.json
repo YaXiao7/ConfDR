@@ -1,0 +1,293 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/cdi-upload-flex-vnf-volume-claim/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "containerized-data-importer",
+        "cdi.kubevirt.io": "cdi-upload-server",
+        "service": "cdi-upload-flex-vnf-volume-claim"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "cdi-data-vol",
+          "persistentVolumeClaim": {
+            "claimName": "flex-vnf-volume-claim"
+          }
+        },
+        {
+          "name": "cdi-scratch-vol",
+          "persistentVolumeClaim": {
+            "claimName": "flex-vnf-volume-claim-scratch"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "cdi-upload-flex-vnf-volume-claim"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "cdi-upload-flex-vnf-volume-claim"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "flex-vnf-volume-claim-scratch"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "flex-vnf-volume-claim"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "flex-vnf-volume"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "flex-vnf-volume-scratch"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "flex-vnf-volume-claim": {
+          "accessModes": [
+            "ReadWriteMany"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "100Gi"
+            }
+          },
+          "storageClassName": "manual",
+          "volumeMode": "Filesystem",
+          "volumeName": "flex-vnf-volume",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"name\":\"flex-vnf-volume-claim\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"resources\":{\"requests\":{\"storage\":\"100Gi\"}},\"storageClassName\":\"manual\",\"volumeName\":\"flex-vnf-volume\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes"
+            },
+            "creationTimestamp": "2026-10-02T09:29:18Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "name": "flex-vnf-volume-claim",
+            "namespace": "default",
+            "resourceVersion": "231",
+            "uid": "78878258-c82f-4a3a-ac38-a1dfde574ea7"
+          },
+          "uid": "78878258-c82f-4a3a-ac38-a1dfde574ea7",
+          "requestsGi": "100Gi",
+          "STATUS": "Bound"
+        },
+        "flex-vnf-volume-claim-scratch": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "100Gi"
+            }
+          },
+          "storageClassName": "manual",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"containerized-data-importer\",\"cdi-controller\":\"cdi-upload-flex-vnf-volume-claim\",\"cdi.kubevirt.io/storage.import.importPvcName\":\"flex-vnf-volume-claim\",\"confdr.io/validation-run\":\"3e96a84326b4\"},\"name\":\"flex-vnf-volume-claim-scratch\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"100Gi\"}},\"storageClassName\":\"manual\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T09:29:20Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "app": "containerized-data-importer",
+              "cdi-controller": "cdi-upload-flex-vnf-volume-claim",
+              "cdi.kubevirt.io/storage.import.importPvcName": "flex-vnf-volume-claim",
+              "confdr.io/validation-run": "3e96a84326b4"
+            },
+            "name": "flex-vnf-volume-claim-scratch",
+            "namespace": "default",
+            "resourceVersion": "235",
+            "uid": "0433fe12-3401-4323-b4cb-753e479e2e4a"
+          },
+          "uid": "0433fe12-3401-4323-b4cb-753e479e2e4a",
+          "requestsGi": "100Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "flex-vnf-volume": {
+        "accessModes": [
+          "ReadWriteMany"
+        ],
+        "capacity": {
+          "storage": "100Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "flex-vnf-volume-claim",
+          "namespace": "default",
+          "resourceVersion": "204",
+          "uid": "78878258-c82f-4a3a-ac38-a1dfde574ea7"
+        },
+        "hostPath": {
+          "path": "/mnt/flex-vnf-volume",
+          "type": ""
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "manual",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"flex-vnf-volume\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"capacity\":{\"storage\":\"100Gi\"},\"hostPath\":{\"path\":\"/mnt/flex-vnf-volume\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"manual\"}}\n",
+            "pv.kubernetes.io/bound-by-controller": "yes"
+          },
+          "creationTimestamp": "2026-10-02T09:29:18Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "flex-vnf-volume",
+          "resourceVersion": "228",
+          "uid": "2530ec13-d4c0-4615-8297-acfb1bf23f79"
+        },
+        "labels": {},
+        "capacityGi": "100Gi",
+        "phase": "Bound"
+      },
+      "flex-vnf-volume-scratch": {
+        "accessModes": [
+          "ReadWriteMany"
+        ],
+        "capacity": {
+          "storage": "100Gi"
+        },
+        "hostPath": {
+          "path": "/mnt/flex-vnf-volume-scratch",
+          "type": ""
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "manual",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"flex-vnf-volume-scratch\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"capacity\":{\"storage\":\"100Gi\"},\"hostPath\":{\"path\":\"/mnt/flex-vnf-volume-scratch\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"manual\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T09:29:18Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "flex-vnf-volume-scratch",
+          "resourceVersion": "229",
+          "uid": "aa5b8ba6-978d-455e-9499-8ffff9e27fdf"
+        },
+        "labels": {},
+        "capacityGi": "100Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:29:20.843607+00:00",
+    "candidate_hash": "56a614013e8d96e77ab3fcfd28944e64d09c0dad0fa844e9836f2c4b381bcf5e",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

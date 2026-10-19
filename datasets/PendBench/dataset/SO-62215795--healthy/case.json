@@ -1,0 +1,228 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/elasticsearch/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "elasticsearch"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "data",
+          "persistentVolumeClaim": {
+            "claimName": "elasticsearch-data-persistent-storage-elasticsearch-data-0"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "elasticsearch"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "elasticsearch"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "elasticsearch-data-persistent-storage-elasticsearch-data-0"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "elasticsearch-data-pv"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "gp2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "elasticsearch-data-persistent-storage-elasticsearch-data-0": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "2Gi"
+            }
+          },
+          "storageClassName": "gp2",
+          "volumeMode": "Filesystem",
+          "volumeName": "elasticsearch-data-pv",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"name\":\"elasticsearch-data-persistent-storage-elasticsearch-data-0\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"2Gi\"}},\"storageClassName\":\"gp2\",\"volumeName\":\"elasticsearch-data-pv\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes"
+            },
+            "creationTimestamp": "2026-09-25T06:53:23Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "name": "elasticsearch-data-persistent-storage-elasticsearch-data-0",
+            "namespace": "default",
+            "resourceVersion": "247",
+            "uid": "8caec1f2-48ba-4d4e-bf12-054716a98b18"
+          },
+          "uid": "8caec1f2-48ba-4d4e-bf12-054716a98b18",
+          "requestsGi": "2Gi",
+          "STATUS": "Bound"
+        }
+      }
+    },
+    "PVs": {
+      "elasticsearch-data-pv": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "2Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "elasticsearch-data-persistent-storage-elasticsearch-data-0",
+          "namespace": "default",
+          "resourceVersion": "204",
+          "uid": "8caec1f2-48ba-4d4e-bf12-054716a98b18"
+        },
+        "hostPath": {
+          "path": "/mnt/elasticsearch-data",
+          "type": ""
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "gp2",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"elasticsearch-data-pv\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"2Gi\"},\"claimRef\":{\"name\":\"elasticsearch-data-persistent-storage-elasticsearch-data-0\",\"namespace\":\"default\"},\"hostPath\":{\"path\":\"/mnt/elasticsearch-data\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"gp2\"}}\n"
+          },
+          "creationTimestamp": "2026-09-25T06:53:23Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "elasticsearch-data-pv",
+          "resourceVersion": "224",
+          "uid": "65b83d64-28f5-4eb1-ad6c-e6d8550bf19e"
+        },
+        "labels": {},
+        "capacityGi": "2Gi",
+        "phase": "Bound"
+      }
+    },
+    "StorageClasses": {
+      "gp2": {
+        "provisioner": "kubernetes.io/no-provisioner",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{},\"name\":\"gp2\"},\"provisioner\":\"kubernetes.io/no-provisioner\",\"volumeBindingMode\":\"Immediate\"}\n"
+          },
+          "creationTimestamp": "2026-09-25T06:53:23Z",
+          "name": "gp2",
+          "resourceVersion": "201",
+          "uid": "f52b3a21-9c66-4967-b1cc-2fe49d198ae3"
+        },
+        "parameters": {},
+        "volumeBindingMode": "Immediate",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:53:40.575769+00:00",
+    "candidate_hash": "eca0671b13bde7153793f232cdb10b086b5fcacc90a767b809c8982509ac4650",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

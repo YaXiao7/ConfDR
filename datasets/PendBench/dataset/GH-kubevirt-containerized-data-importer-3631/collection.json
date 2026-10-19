@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/3 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-10b12afd8e03",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:21:29.034685+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "7eca4bc191cf1a37b380ce14ce3a3e0fc4cb7c4ba865addc5de3df69b529c92a"
+}

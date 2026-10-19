@@ -1,0 +1,223 @@
+{
+  "pod_status": {
+    "default/DaemonSet/maximum/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "maximum",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:29:01Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.3",
+      "podIPs": [
+        {
+          "ip": "10.0.0.3"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:29:01Z",
+      "namespace": "default",
+      "actual_name": "maximum-c2nbf",
+      "uid": "fe926aba-961e-48d9-858b-59444318dfb6",
+      "nodeName": "node-3"
+    },
+    "default/DaemonSet/maximum/node-2": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "maximum",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:29:01Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:29:01Z",
+      "namespace": "default",
+      "actual_name": "maximum-qgwrx",
+      "uid": "754cbc20-1875-4aba-8f39-c2869007e513",
+      "nodeName": "node-2"
+    },
+    "default/DaemonSet/maximum/node-3": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "maximum",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:29:01Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.4",
+      "podIPs": [
+        {
+          "ip": "10.0.0.4"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:29:01Z",
+      "namespace": "default",
+      "actual_name": "maximum-s2cff",
+      "uid": "ee933ca6-0b5d-44f5-81ac-9031ccfa56ff",
+      "nodeName": "node-4"
+    },
+    "default/DaemonSet/maximum/node-4": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:01Z",
+          "message": "0/4 nodes are available: 1 Too many pods. preemption: 0/4 nodes are available: 1 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "maximum-ssjpp",
+      "uid": "1183c406-3841-4254-beec-781a77d1f253",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/DaemonSet/maximum/node-1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/maximum-c2nbf to node-3",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:29:01.577364Z"
+      }
+    ],
+    "default/DaemonSet/maximum/node-2": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/maximum-qgwrx to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:29:01.577316Z"
+      }
+    ],
+    "default/DaemonSet/maximum/node-3": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/maximum-s2cff to node-4",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:29:01.581307Z"
+      }
+    ],
+    "default/DaemonSet/maximum/node-4": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/4 nodes are available: 1 Too many pods. preemption: 0/4 nodes are available: 1 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:29:01.558237Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:29:01.832258+00:00",
+  "candidate_hash": "150f707ed5f0d818e830c1726b82c5934bb35aa8c92332f433357e9c9567fc6b",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:29:01.832258+00:00",
+    "candidate_hash": "150f707ed5f0d818e830c1726b82c5934bb35aa8c92332f433357e9c9567fc6b",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

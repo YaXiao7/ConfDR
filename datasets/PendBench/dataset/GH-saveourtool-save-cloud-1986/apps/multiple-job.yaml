@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: multiple
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: multiple
+    spec:
+      containers:
+      - name: multiple
+        image: registry.k8s.io/pause:3.9
+        ports:
+        - containerPort: 8080
+          hostPort: 8080
+      restartPolicy: Never
+  backoffLimit: 0

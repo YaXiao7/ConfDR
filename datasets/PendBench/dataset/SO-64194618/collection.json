@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/10 nodes are available: 10 node(s) didn't match Pod's node affinity/selector. preemption: 0/10 nodes are available: 10 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-08b448b4a64d",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:28:50.263945+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "820125f24663d7d222442455997bbed2e1eefaf3c11236b985620eb60d84a4aa"
+}

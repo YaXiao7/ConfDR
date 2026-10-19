@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: datadir-pzoo-0
+  namespace: kafka
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+    limits: {}
+  storageClassName: kafka-zookeeper

@@ -1,0 +1,240 @@
+{
+  "WaitingDeployPods": {
+    "default/StatefulSet/zoo/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "zk"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-zoo-0"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "zoo"
+      },
+      "resource_source": "observed_admitted_pod"
+    },
+    "default/StatefulSet/zoo/1": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "zk"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-zoo-1"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "zoo"
+      }
+    },
+    "default/StatefulSet/zoo/2": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "zk"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-zoo-2"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "zoo"
+      }
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "StatefulSet",
+        "default",
+        "zoo"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "datadir-zoo-0": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "20Gi"
+            }
+          },
+          "storageClassName": "anything",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "creationTimestamp": "2026-10-02T09:15:17Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "app": "zk"
+            },
+            "name": "datadir-zoo-0",
+            "namespace": "default",
+            "resourceVersion": "228",
+            "uid": "b7b0caf4-c139-4133-8a17-f3b898634fe7"
+          },
+          "uid": "b7b0caf4-c139-4133-8a17-f3b898634fe7",
+          "requestsGi": "20Gi",
+          "STATUS": "Pending",
+          "_template_source": "default/zoo"
+        },
+        "datadir-zoo-1": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "anything",
+          "resources": {
+            "requests": {
+              "storage": "20Gi"
+            }
+          },
+          "metadata": {
+            "name": "datadir-zoo-1",
+            "namespace": "default"
+          },
+          "requestsGi": "20Gi",
+          "_template_source": "default/zoo",
+          "STATUS": "NotObserved"
+        },
+        "datadir-zoo-2": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "anything",
+          "resources": {
+            "requests": {
+              "storage": "20Gi"
+            }
+          },
+          "metadata": {
+            "name": "datadir-zoo-2",
+            "namespace": "default"
+          },
+          "requestsGi": "20Gi",
+          "_template_source": "default/zoo",
+          "STATUS": "NotObserved"
+        }
+      }
+    },
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:15:18.266083+00:00",
+    "candidate_hash": "5c4a5f078f8f73c8fd758e02e10bb562690200aaaf918e22fcc98355b659c572",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

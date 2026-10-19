@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: xyz
+  namespace: default
+data:
+  resolver: resolver 10.96.0.10;
+  nginxConf: server { listen 80; }

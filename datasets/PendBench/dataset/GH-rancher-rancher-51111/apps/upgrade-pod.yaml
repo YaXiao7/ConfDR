@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: upgrade
+  namespace: default
+  labels:
+    app: upgrade
+spec:
+  containers:
+  - name: upgrade
+    image: registry.k8s.io/pause:3.9
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchLabels:
+            app: conflicting-peer
+        topologyKey: kubernetes.io/hostname

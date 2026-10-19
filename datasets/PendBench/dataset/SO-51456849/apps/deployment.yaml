@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-aspnetcore-deployment
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  selector:
+    matchLabels:
+      app: k8s-aspnetcore
+  template:
+    metadata:
+      labels:
+        app: k8s-aspnetcore
+    spec:
+      containers:
+      - name: k8s-aspnetcore
+        image: mycontainerregistryb007.azurecr.io/k8saspnetcore:2033
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: k8ssecret
+      nodeSelector:
+        beta.kubernetes.io/os: windows

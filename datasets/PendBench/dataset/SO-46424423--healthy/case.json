@@ -1,0 +1,705 @@
+{
+  "WaitingDeployPods": {
+    "default/Deployment/test/0": {
+      "cpu": 500,
+      "mem": "1966080000",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "test"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "cloudsql-instance-credentials",
+          "secret": {
+            "secretName": "cloudsql-instance-credentials"
+          }
+        },
+        {
+          "name": "ssl-certs",
+          "hostPath": {
+            "path": "/etc/ssl/certs"
+          }
+        },
+        {
+          "name": "cloudsql",
+          "emptyDir": {}
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "test"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Deployment",
+        "default",
+        "test"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "fluentd-gcp-v2.0-k565g"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "gke-test-default-pool-abdf83f7-p4zw"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "gke-test-pool-extra"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "heapster-v1.3.0-3440173064-1ztvw"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kube-dns-1829567597-gdz52"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kube-dns-autoscaler-2501648610-7q9dd"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kube-proxy-gke-test-default-pool-abdf83f7-p4zw"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kubernetes-dashboard-490794276-25hmn"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "l7-default-backend-3574702981-flqck"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "gke-test-default-pool-abdf83f7-p4zw": {
+        "cpu": 272,
+        "mem": "1067163648",
+        "remain_pods": 103,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/fluentd-ds-ready": "true",
+          "beta.kubernetes.io/instance-type": "g1-small",
+          "beta.kubernetes.io/os": "linux",
+          "cloud.google.com/gke-nodepool": "default-pool",
+          "failure-domain.beta.kubernetes.io/region": "europe-west2",
+          "failure-domain.beta.kubernetes.io/zone": "europe-west2-c",
+          "kubernetes.io/hostname": "gke-test-default-pool-abdf83f7-p4zw"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "1",
+          "memory": "1742968Ki",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "gke-test-pool-extra": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/fluentd-ds-ready": "true",
+          "beta.kubernetes.io/instance-type": "g1-small",
+          "beta.kubernetes.io/os": "linux",
+          "cloud.google.com/gke-nodepool": "default-pool",
+          "failure-domain.beta.kubernetes.io/region": "europe-west2",
+          "failure-domain.beta.kubernetes.io/zone": "europe-west2-c",
+          "kubernetes.io/hostname": "gke-test-pool-extra"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {
+      "kube-system/fluentd-gcp-v2.0-k565g": {
+        "cpu": 100,
+        "mem": "209715200",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-test-default-pool-abdf83f7-p4zw",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-szrcz",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "d806162a-f1af-439a-885c-f24e4f5aab6e"
+      },
+      "kube-system/heapster-v1.3.0-3440173064-1ztvw": {
+        "cpu": 138,
+        "mem": "308690944",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-test-default-pool-abdf83f7-p4zw",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-ps4vg",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "1deeb365-2170-4c32-9ef1-e9197a4d44c9"
+      },
+      "kube-system/kube-dns-1829567597-gdz52": {
+        "cpu": 260,
+        "mem": "115343360",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-test-default-pool-abdf83f7-p4zw",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-bcfs4",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "279fb14d-e906-446d-865b-6ca4a6f0cce4"
+      },
+      "kube-system/kube-dns-autoscaler-2501648610-7q9dd": {
+        "cpu": 20,
+        "mem": "10485760",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-test-default-pool-abdf83f7-p4zw",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-s4g28",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "7a747049-d5c3-45bf-961a-4fca972b4151"
+      },
+      "kube-system/kube-proxy-gke-test-default-pool-abdf83f7-p4zw": {
+        "cpu": 100,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-test-default-pool-abdf83f7-p4zw",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-kt74t",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "87c69dc4-3349-4ae0-a4f3-07c1cbe8b607"
+      },
+      "kube-system/kubernetes-dashboard-490794276-25hmn": {
+        "cpu": 100,
+        "mem": "52428800",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-test-default-pool-abdf83f7-p4zw",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-pzxtq",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "8f767695-3081-42ba-9da6-30ec9621aa16"
+      },
+      "kube-system/l7-default-backend-3574702981-flqck": {
+        "cpu": 10,
+        "mem": "20971520",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-test-default-pool-abdf83f7-p4zw",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-fjc87",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "5ce6b384-370d-4362-9018-7205f4260119"
+      }
+    },
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:46.902286+00:00",
+    "candidate_hash": "62923400687f93ee5f50f78cc7fbc859199a5eaee81531c5558bc0922098b5ca",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

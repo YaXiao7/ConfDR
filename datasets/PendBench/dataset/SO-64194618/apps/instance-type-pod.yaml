@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: instance-type
+  namespace: default
+  labels:
+    app: instance-type
+spec:
+  containers:
+  - name: instance-type
+    image: registry.k8s.io/pause:3.9
+  nodeSelector:
+    workload: required

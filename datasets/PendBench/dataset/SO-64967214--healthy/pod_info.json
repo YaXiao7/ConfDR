@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/elasticsearch/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:14Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:14Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:14Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "elasticsearch",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:14Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "Burstable",
+      "startTime": "2026-09-25T06:54:14Z",
+      "namespace": "default",
+      "actual_name": "elasticsearch",
+      "uid": "3b37d97f-717d-45fa-a187-b4f5a1af3d83",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Pod/elasticsearch/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/elasticsearch to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:14.162602Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:54:14.471280+00:00",
+  "candidate_hash": "da34dd1da1c4391be2c6577e6b014e3f55efc7960345680632a4790d3ce1ab12",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:54:14.471280+00:00",
+    "candidate_hash": "da34dd1da1c4391be2c6577e6b014e3f55efc7960345680632a4790d3ce1ab12",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

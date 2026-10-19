@@ -1,0 +1,28 @@
+# Before fix: the Pod affinity rule references labels that do not exist in the cluster,
+# causing the Pod to be unschedulable.
+# spec:
+#   affinity:
+#     podAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#       - labelSelector:
+#           matchExpressions:
+#           - key: app
+#             operator: In
+#             values: ["backend"]  # does not exist in the cluster
+#         topologyKey: "kubernetes.io/hostname"
+
+# After fix: ensure that the labels referenced by the Pod affinity rule actually exist in the cluster.
+# For example, if multiple applications are deployed across different namespaces or nodes,
+# the key and values used in the affinity rule must match real Pod labels.
+# Since values: ["backend"] does not correspond to any existing Pod label, the affinity condition
+# can never be satisfied. It is therefore updated to use label values that exist in the cluster.
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values: ["app1", "api", "core"]   # updated to labels that actually exist in the cluster
+        topologyKey: "kubernetes.io/hostname"

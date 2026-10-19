@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: found
+  namespace: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: found
+  template:
+    metadata:
+      labels:
+        app: found
+    spec:
+      containers:
+      - name: found
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: manifest

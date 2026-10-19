@@ -1,0 +1,131 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/xinference-worker/0": {
+      "cpu": 2000,
+      "mem": "8589934592",
+      "extended_requests": {
+        "nvidia.com/gpu": 4,
+        "nvidia.com/gpucores": 10,
+        "nvidia.com/gpumem-percentage": 5
+      },
+      "namespace": "default",
+      "labels": {},
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": {
+        "kubernetes.io/arch": "amd64"
+      },
+      "tolerations": [
+        {
+          "key": "node-role.kubernetes.io/control-plane",
+          "operator": "Exists",
+          "effect": "NoSchedule"
+        },
+        {
+          "key": "nvidia.com/gpu",
+          "operator": "Exists",
+          "effect": "NoSchedule"
+        }
+      ],
+      "affinity": null,
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "xinference-worker"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "xinference-worker"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "gpu-node"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "gpu-node": {
+        "cpu": 16000,
+        "mem": "68719476736",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "gpu-node",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "16",
+          "memory": "64Gi",
+          "nvidia.com/gpu": "2",
+          "nvidia.com/gpucores": "100",
+          "nvidia.com/gpumem-percentage": "100",
+          "pods": "110"
+        },
+        "extended_free": {
+          "nvidia.com/gpu": 2,
+          "nvidia.com/gpucores": 100,
+          "nvidia.com/gpumem-percentage": 100
+        }
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:27.729296+00:00",
+    "candidate_hash": "d6ece020f813f2b60b8d1ff61691ac67e18e6b7dc9f9c09ab4d5878d84a55058",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

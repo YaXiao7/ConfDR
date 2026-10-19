@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/pending-workload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:31:27Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"references\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "pending-workload",
+      "uid": "d423ffe5-d528-42a9-958d-5a62ab3098f8",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/pending-workload/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"references\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:31:27.529903Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/references": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:31:27.809338+00:00",
+  "candidate_hash": "626fcf9bed2262ae1d3f9848db82d5b60cef62a49e671335883a89893cdc5ff1",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:27.809338+00:00",
+    "candidate_hash": "626fcf9bed2262ae1d3f9848db82d5b60cef62a49e671335883a89893cdc5ff1",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: existing-port-9100-owner
+  namespace: default
+  labels:
+    app: existing-port-9100-owner
+spec:
+  containers:
+  - name: main
+    image: registry.k8s.io/pause:3.9
+    ports:
+    - containerPort: 9100
+      hostPort: 9100
+  nodeName: node-1

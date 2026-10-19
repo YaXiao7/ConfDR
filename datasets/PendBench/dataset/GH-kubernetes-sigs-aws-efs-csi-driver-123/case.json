@@ -1,0 +1,223 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/dev-app1/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "dev-app1"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "persistent-storage",
+          "persistentVolumeClaim": {
+            "claimName": "dev-csi-data-volume-claim"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "dev-app1"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "dev-app1"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "dev-csi-data-volume-claim"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "dev-csi-data-volume"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "efs-sc"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "dev-csi-data-volume-claim": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          },
+          "storageClassName": "efs-sc",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"1e4f527adf51\"},\"name\":\"dev-csi-data-volume-claim\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"5Gi\"}},\"storageClassName\":\"efs-sc\"}}\n",
+              "volume.beta.kubernetes.io/storage-provisioner": "efs.csi.aws.com",
+              "volume.kubernetes.io/storage-provisioner": "efs.csi.aws.com"
+            },
+            "creationTimestamp": "2026-10-02T09:29:28Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "1e4f527adf51"
+            },
+            "name": "dev-csi-data-volume-claim",
+            "namespace": "default",
+            "resourceVersion": "234",
+            "uid": "1c18144e-6bc3-478e-b8bb-aba102fe5214"
+          },
+          "uid": "1c18144e-6bc3-478e-b8bb-aba102fe5214",
+          "requestsGi": "5Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "dev-csi-data-volume": {
+        "accessModes": [
+          "ReadWriteMany"
+        ],
+        "capacity": {
+          "storage": "100Gi"
+        },
+        "csi": {
+          "driver": "efs.csi.aws.com",
+          "volumeHandle": "fs-38f413bx"
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "efs-sc",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"dev-csi-data-volume\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"capacity\":{\"storage\":\"100Gi\"},\"csi\":{\"driver\":\"efs.csi.aws.com\",\"volumeHandle\":\"fs-38f413bx\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"efs-sc\",\"volumeMode\":\"Filesystem\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T09:29:24Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "dev-csi-data-volume",
+          "resourceVersion": "227",
+          "uid": "53e4cf78-7ffc-4e45-b2b1-a483d94bd877"
+        },
+        "labels": {},
+        "capacityGi": "100Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {
+      "efs-sc": {
+        "provisioner": "efs.csi.aws.com",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{},\"name\":\"efs-sc\"},\"provisioner\":\"efs.csi.aws.com\"}\n"
+          },
+          "creationTimestamp": "2026-10-02T09:29:24Z",
+          "name": "efs-sc",
+          "resourceVersion": "201",
+          "uid": "e731d4f6-386b-4068-bd9a-eda0c045cf23"
+        },
+        "parameters": {},
+        "volumeBindingMode": "Immediate",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:29:28.989933+00:00",
+    "candidate_hash": "833d12d514f5de9bd6983ffc5168cf5e1d683fabf7ab435bd00eff09944ff6a4",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

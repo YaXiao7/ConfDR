@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+  "failure_settled_seconds": 10.573731958051212,
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-1e843e4197f6",
+  "phase": "original",
+  "observed_at": "2026-10-06T12:36:44.762382+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "8c73371c5c2e6e3f9d60222b8b99889108459df201e3a02122cbce546ea2cf3b"
+}

@@ -1,0 +1,181 @@
+{
+  "pod_status": {
+    "default/Deployment/app1/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:09Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app1-66969c89f7-kdlrn",
+      "uid": "85978e55-7731-46bd-a71b-9bea5b4a2b87",
+      "nodeName": null
+    },
+    "default/Deployment/app1/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:09Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app1-66969c89f7-t25t2",
+      "uid": "061a0f6c-7a4e-47e8-bdf7-45f4a036d141",
+      "nodeName": null
+    },
+    "default/Deployment/app2/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:09Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app2-77cd7dbc69-w6h9l",
+      "uid": "07ff1735-c057-4da8-84b2-759ef67190b7",
+      "nodeName": null
+    },
+    "default/Deployment/app2/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:09Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app2-77cd7dbc69-zxh6m",
+      "uid": "dae7903a-de80-436c-8835-95bd9d5ea894",
+      "nodeName": null
+    },
+    "default/Deployment/app3/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:09Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app3-775cffb556-5kz5h",
+      "uid": "04dbdff4-4fdc-4ed8-83f2-daef820a1b84",
+      "nodeName": null
+    },
+    "default/Deployment/app3/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:09Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app3-775cffb556-8bg4j",
+      "uid": "d95f8ec1-f910-45e5-abaa-5df581b176fb",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/app1/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:09.217771Z"
+      }
+    ],
+    "default/Deployment/app1/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:09.233222Z"
+      }
+    ],
+    "default/Deployment/app2/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:09.205108Z"
+      }
+    ],
+    "default/Deployment/app2/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:09.225734Z"
+      }
+    ],
+    "default/Deployment/app3/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:09.256916Z"
+      }
+    ],
+    "default/Deployment/app3/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:09.239740Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-06T12:36:20.041325+00:00",
+  "candidate_hash": "cfda88d46c14013c090c89a02bccd8a0b4973c8a01578c2f79fbb56ca4ed63da",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-06T12:36:20.041325+00:00",
+    "candidate_hash": "cfda88d46c14013c090c89a02bccd8a0b4973c8a01578c2f79fbb56ca4ed63da",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

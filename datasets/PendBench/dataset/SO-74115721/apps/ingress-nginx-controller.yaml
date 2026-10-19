@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-nginx-controller
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingress-nginx-controller
+  template:
+    metadata:
+      labels:
+        app: ingress-nginx-controller
+    spec:
+      containers:
+      - name: controller
+        image: registry.k8s.io/pause:3.9
+      nodeSelector:
+        ingress-ready: 'true'
+        kubernetes.io/os: linux

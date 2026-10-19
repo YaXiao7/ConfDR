@@ -1,0 +1,492 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/match/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "match"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": {
+        "podAntiAffinity": {
+          "requiredDuringSchedulingIgnoredDuringExecution": [
+            {
+              "labelSelector": {
+                "matchLabels": {
+                  "app": "conflicting-peer"
+                }
+              },
+              "topologyKey": "kubernetes.io/hostname"
+            }
+          ]
+        }
+      },
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "match"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "match"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "conflicting-peer-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "conflicting-peer-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "conflicting-peer-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-4"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "node-role.kubernetes.io/master"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-2": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-2",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "node-role.kubernetes.io/master"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-3": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-3",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "node-role.kubernetes.io/master"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-4": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-4",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {
+      "default/conflicting-peer-1": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {
+          "app": "conflicting-peer"
+        },
+        "host_ports": [],
+        "nodeName": "node-1",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-z65x9",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "1ca20b4d-3c7c-4b2f-bc86-8c2301d42040"
+      },
+      "default/conflicting-peer-2": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {
+          "app": "conflicting-peer"
+        },
+        "host_ports": [],
+        "nodeName": "node-2",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-ntxkv",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "c7d7ac9f-e200-419a-85a7-21d305fa6557"
+      },
+      "default/conflicting-peer-3": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {
+          "app": "conflicting-peer"
+        },
+        "host_ports": [],
+        "nodeName": "node-3",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-59j26",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "c7e1ceed-a5fa-4524-929e-a2192f6bc7ed"
+      }
+    },
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:53:16.588785+00:00",
+    "candidate_hash": "f8e737839190d67253fb4330c9a9b4e21b44ead5e389098141c2bb35103f4923",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

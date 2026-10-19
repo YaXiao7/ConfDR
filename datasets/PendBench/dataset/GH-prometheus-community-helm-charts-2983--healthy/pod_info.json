@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/DaemonSet/prometheus-stack-prometheus-node-exporter/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:28Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:28Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:28Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "quay.io/prometheus/node-exporter:v1.5.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "node-exporter",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:28Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:28Z",
+      "namespace": "default",
+      "actual_name": "prometheus-stack-prometheus-node-exporter-wsfrq",
+      "uid": "e5b24a18-31dc-4d72-b6fb-043c293acfb6",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/DaemonSet/prometheus-stack-prometheus-node-exporter/node-1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/prometheus-stack-prometheus-node-exporter-wsfrq to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:28.239187Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:28.568887+00:00",
+  "candidate_hash": "188d42b7595c3e5e1bc50881d593c4329f006d36e4874186f160a0f82fdade79",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:28.568887+00:00",
+    "candidate_hash": "188d42b7595c3e5e1bc50881d593c4329f006d36e4874186f160a0f82fdade79",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

@@ -1,0 +1,181 @@
+{
+  "pod_status": {
+    "dgraph/StatefulSet/dgraph-alpha/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:11Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "dgraph",
+      "actual_name": "dgraph-alpha-0",
+      "uid": "1cf0d4ba-b256-4f9c-862a-8459a2c2defd",
+      "nodeName": null
+    },
+    "dgraph/StatefulSet/dgraph-alpha/1": {
+      "namespace": "dgraph",
+      "phase": "NotObserved",
+      "actual_name": null
+    },
+    "dgraph/StatefulSet/dgraph-alpha/2": {
+      "namespace": "dgraph",
+      "phase": "NotObserved",
+      "actual_name": null
+    },
+    "dgraph/Deployment/dgraph-ratel/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:11Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:11Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:11Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "ratel",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:27:11Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:27:11Z",
+      "namespace": "dgraph",
+      "actual_name": "dgraph-ratel-6c9b4bff69-9hbhv",
+      "uid": "d2a45a99-00c8-4931-8ca7-ce3e376049e2",
+      "nodeName": "node-1"
+    },
+    "dgraph/StatefulSet/dgraph-zero/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:12Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "dgraph",
+      "actual_name": "dgraph-zero-0",
+      "uid": "34886236-bac1-4212-ae7a-c8cb9717d5fd",
+      "nodeName": null
+    },
+    "dgraph/StatefulSet/dgraph-zero/1": {
+      "namespace": "dgraph",
+      "phase": "NotObserved",
+      "actual_name": null
+    },
+    "dgraph/StatefulSet/dgraph-zero/2": {
+      "namespace": "dgraph",
+      "phase": "NotObserved",
+      "actual_name": null
+    }
+  },
+  "pod_events": {
+    "dgraph/StatefulSet/dgraph-alpha/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:11.992905Z"
+      }
+    ],
+    "dgraph/StatefulSet/dgraph-alpha/1": [],
+    "dgraph/StatefulSet/dgraph-alpha/2": [],
+    "dgraph/Deployment/dgraph-ratel/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned dgraph/dgraph-ratel-6c9b4bff69-9hbhv to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:11.997184Z"
+      }
+    ],
+    "dgraph/StatefulSet/dgraph-zero/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:12.012926Z"
+      }
+    ],
+    "dgraph/StatefulSet/dgraph-zero/1": [],
+    "dgraph/StatefulSet/dgraph-zero/2": []
+  },
+  "pvc_status": {
+    "dgraph/datadir-dgraph-alpha-0": {
+      "phase": "Pending",
+      "volumeName": null
+    },
+    "dgraph/datadir-dgraph-alpha-1": {
+      "phase": "NotObserved",
+      "volumeName": null
+    },
+    "dgraph/datadir-dgraph-alpha-2": {
+      "phase": "NotObserved",
+      "volumeName": null
+    },
+    "dgraph/datadir-dgraph-zero-0": {
+      "phase": "Pending",
+      "volumeName": null
+    },
+    "dgraph/datadir-dgraph-zero-1": {
+      "phase": "NotObserved",
+      "volumeName": null
+    },
+    "dgraph/datadir-dgraph-zero-2": {
+      "phase": "NotObserved",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:27:12.293805+00:00",
+  "candidate_hash": "69a9d138350aa429eeac71f18b26f764114fc193cb551489f5c7761e0f54b39d",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:12.293805+00:00",
+    "candidate_hash": "69a9d138350aa429eeac71f18b26f764114fc193cb551489f5c7761e0f54b39d",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

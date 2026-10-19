@@ -1,0 +1,57 @@
+# Driver capability contracts for dynamic provisioning, keyed by StorageClass provisioner.
+# Each entry must cite an independent, versioned source. Contracts are never derived from
+# pod_info.json, truth labels, or deployment results.
+#
+# access_modes lists, per PVC volumeMode, the access modes that the source documents as
+# supported or rejected. A requested mode in neither list remains unknown. A volumeMode
+# without an entry remains unknown (for example Block, where several drivers support
+# multi-writer volumes under extra conditions).
+#
+# Optional parameter contracts use allowed_parameters, required_parameters, and
+# parameter_values (see shared/storage.py). An entry without these fields leaves
+# provisioner_parameters_valid unknown, as before.
+#
+# A case may override an entry through case.json -> ProvisionerContracts.
+version: 1
+kubernetes_version: '1.30'
+contracts:
+  kubernetes.io/aws-ebs:
+    source: >-
+      Kubernetes v1.26 documentation, Persistent Volumes, access modes per volume plugin
+      (AWSElasticBlockStore: ReadWriteOnce only). The in-tree plugin is served through CSI
+      migration in Kubernetes 1.30.
+    url: https://github.com/kubernetes/website/blob/release-1.26/content/en/docs/concepts/storage/persistent-volumes.md#access-modes
+    access_modes:
+      Filesystem:
+        supported: [ReadWriteOnce]
+        unsupported: [ReadOnlyMany, ReadWriteMany]
+  kubernetes.io/azure-disk:
+    source: >-
+      Kubernetes v1.26 documentation, Persistent Volumes, access modes per volume plugin
+      (AzureDisk: ReadWriteOnce only). The in-tree plugin is served through CSI migration
+      in Kubernetes 1.30.
+    url: https://github.com/kubernetes/website/blob/release-1.26/content/en/docs/concepts/storage/persistent-volumes.md#access-modes
+    access_modes:
+      Filesystem:
+        supported: [ReadWriteOnce]
+        unsupported: [ReadOnlyMany, ReadWriteMany]
+  kubernetes.io/gce-pd:
+    source: >-
+      Kubernetes v1.26 documentation, Persistent Volumes, access modes per volume plugin
+      (GCEPersistentDisk: ReadWriteOnce and ReadOnlyMany, not ReadWriteMany). The in-tree
+      plugin is served through CSI migration in Kubernetes 1.30.
+    url: https://github.com/kubernetes/website/blob/release-1.26/content/en/docs/concepts/storage/persistent-volumes.md#access-modes
+    access_modes:
+      Filesystem:
+        supported: [ReadWriteOnce, ReadOnlyMany]
+        unsupported: [ReadWriteMany]
+  pd.csi.storage.gke.io:
+    source: >-
+      Compute Engine persistent disk CSI driver, volume capability validation: a
+      MULTI_NODE_MULTI_WRITER (ReadWriteMany) capability with the mount access type is
+      rejected ("specified multi writer with mount access type").
+    url: https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/blob/master/pkg/gce-pd-csi-driver/utils.go
+    access_modes:
+      Filesystem:
+        supported: [ReadWriteOnce]
+        unsupported: [ReadWriteMany]

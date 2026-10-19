@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/role/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:09Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:09Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:09Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "role",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:53:09Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:53:09Z",
+      "namespace": "default",
+      "actual_name": "role",
+      "uid": "a78ff411-ab50-4c13-9ed8-939ad3cc8174",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Pod/role/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/role to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:53:09.946298Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:53:10.263099+00:00",
+  "candidate_hash": "f40329a1ebe68579a3abd05e8d4d81748de20777a2e0da0ad92f63bf4b466626",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:53:10.263099+00:00",
+    "candidate_hash": "f40329a1ebe68579a3abd05e8d4d81748de20777a2e0da0ad92f63bf4b466626",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

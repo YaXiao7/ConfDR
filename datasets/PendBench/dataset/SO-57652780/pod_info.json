@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/istio-pilot/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:06Z",
+          "message": "0/1 nodes are available: 1 Insufficient cpu, 1 Insufficient memory. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "istio-pilot",
+      "uid": "5d755e70-2da1-4420-bfd4-54c386215121",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/istio-pilot/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 Insufficient cpu, 1 Insufficient memory. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:06.176723Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:06.452062+00:00",
+  "candidate_hash": "69580db08a3b275332517668e7958581aec74ccbd28acb1cdc24cd962a5f7171",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:06.452062+00:00",
+    "candidate_hash": "69580db08a3b275332517668e7958581aec74ccbd28acb1cdc24cd962a5f7171",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

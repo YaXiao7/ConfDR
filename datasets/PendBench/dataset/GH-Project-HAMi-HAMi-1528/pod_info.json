@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/xinference-worker/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:15:27Z",
+          "message": "0/1 nodes are available: 1 Insufficient nvidia.com/gpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "xinference-worker",
+      "uid": "3120142a-89d2-4655-b46b-6c9c5b9ff6e8",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/xinference-worker/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 Insufficient nvidia.com/gpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:15:27.450345Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:15:27.729296+00:00",
+  "candidate_hash": "d6ece020f813f2b60b8d1ff61691ac67e18e6b7dc9f9c09ab4d5878d84a55058",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:27.729296+00:00",
+    "candidate_hash": "d6ece020f813f2b60b8d1ff61691ac67e18e6b7dc9f9c09ab4d5878d84a55058",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/cores/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:28:13Z",
+          "message": "0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "cores",
+      "uid": "ffe2d339-57c9-4e51-a036-ca5ccc08a529",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/cores/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:28:13.375485Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:28:13.656538+00:00",
+  "candidate_hash": "6b718aa5f68c2e62a073c9db6c7ee9c119a7e7ba3ddec3bce47bc5c164ca4b08",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:28:13.656538+00:00",
+    "candidate_hash": "6b718aa5f68c2e62a073c9db6c7ee9c119a7e7ba3ddec3bce47bc5c164ca4b08",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

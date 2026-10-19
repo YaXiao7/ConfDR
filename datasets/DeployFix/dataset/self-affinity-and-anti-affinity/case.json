@@ -1,0 +1,405 @@
+{
+  "WaitingDeployPods": {
+    "default/Deployment/app1/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "app1"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": [
+        {
+          "effect": "NoSchedule",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists"
+        }
+      ],
+      "affinity": {
+        "podAffinity": {
+          "requiredDuringSchedulingIgnoredDuringExecution": [
+            {
+              "labelSelector": {
+                "matchExpressions": [
+                  {
+                    "key": "app",
+                    "operator": "In",
+                    "values": [
+                      "app1"
+                    ]
+                  }
+                ]
+              },
+              "topologyKey": "kubernetes.io/hostname"
+            }
+          ]
+        },
+        "podAntiAffinity": {
+          "requiredDuringSchedulingIgnoredDuringExecution": [
+            {
+              "labelSelector": {
+                "matchExpressions": [
+                  {
+                    "key": "app",
+                    "operator": "In",
+                    "values": [
+                      "app1"
+                    ]
+                  }
+                ]
+              },
+              "topologyKey": "kubernetes.io/hostname"
+            }
+          ]
+        }
+      },
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "app1"
+      },
+      "resource_source": "observed_admitted_pod"
+    },
+    "default/Deployment/app1/1": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "app1"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": [
+        {
+          "effect": "NoSchedule",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists"
+        }
+      ],
+      "affinity": {
+        "podAffinity": {
+          "requiredDuringSchedulingIgnoredDuringExecution": [
+            {
+              "labelSelector": {
+                "matchExpressions": [
+                  {
+                    "key": "app",
+                    "operator": "In",
+                    "values": [
+                      "app1"
+                    ]
+                  }
+                ]
+              },
+              "topologyKey": "kubernetes.io/hostname"
+            }
+          ]
+        },
+        "podAntiAffinity": {
+          "requiredDuringSchedulingIgnoredDuringExecution": [
+            {
+              "labelSelector": {
+                "matchExpressions": [
+                  {
+                    "key": "app",
+                    "operator": "In",
+                    "values": [
+                      "app1"
+                    ]
+                  }
+                ]
+              },
+              "topologyKey": "kubernetes.io/hostname"
+            }
+          ]
+        }
+      },
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "app1"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Deployment",
+        "default",
+        "app1"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-000000"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-000001"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-000002"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-000000": {
+        "cpu": 32000,
+        "mem": "274877906944",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has sufficient memory available",
+            "reason": "KubeletHasSufficientMemory",
+            "status": "False",
+            "type": "MemoryPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has no disk pressure",
+            "reason": "KubeletHasNoDiskPressure",
+            "status": "False",
+            "type": "DiskPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has sufficient PID available",
+            "reason": "KubeletHasSufficientPID",
+            "status": "False",
+            "type": "PIDPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "RouteController created a route",
+            "reason": "RouteCreated",
+            "status": "False",
+            "type": "NetworkUnavailable"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-000000",
+          "kubernetes.io/os": "linux",
+          "kubernetes.io/role": "agent",
+          "kwok.x-k8s.io/kwokctl-scale": "node",
+          "node-role.kubernetes.io/agent": "",
+          "type": "kwok"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "32",
+          "memory": "256Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-000001": {
+        "cpu": 32000,
+        "mem": "274877906944",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has sufficient memory available",
+            "reason": "KubeletHasSufficientMemory",
+            "status": "False",
+            "type": "MemoryPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has no disk pressure",
+            "reason": "KubeletHasNoDiskPressure",
+            "status": "False",
+            "type": "DiskPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has sufficient PID available",
+            "reason": "KubeletHasSufficientPID",
+            "status": "False",
+            "type": "PIDPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "RouteController created a route",
+            "reason": "RouteCreated",
+            "status": "False",
+            "type": "NetworkUnavailable"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-000001",
+          "kubernetes.io/os": "linux",
+          "kubernetes.io/role": "agent",
+          "kwok.x-k8s.io/kwokctl-scale": "node",
+          "node-role.kubernetes.io/agent": "",
+          "type": "S1"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "32",
+          "memory": "256Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-000002": {
+        "cpu": 32000,
+        "mem": "274877906944",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has sufficient memory available",
+            "reason": "KubeletHasSufficientMemory",
+            "status": "False",
+            "type": "MemoryPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has no disk pressure",
+            "reason": "KubeletHasNoDiskPressure",
+            "status": "False",
+            "type": "DiskPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "kubelet has sufficient PID available",
+            "reason": "KubeletHasSufficientPID",
+            "status": "False",
+            "type": "PIDPressure"
+          },
+          {
+            "lastHeartbeatTime": "2026-10-06T12:40:24Z",
+            "lastTransitionTime": "2026-10-06T12:40:24Z",
+            "message": "RouteController created a route",
+            "reason": "RouteCreated",
+            "status": "False",
+            "type": "NetworkUnavailable"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-000002",
+          "kubernetes.io/os": "linux",
+          "kubernetes.io/role": "agent",
+          "kwok.x-k8s.io/kwokctl-scale": "node",
+          "node-role.kubernetes.io/agent": "",
+          "type": "kwok"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "32",
+          "memory": "256Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-06T12:40:39.549495+00:00",
+    "candidate_hash": "c391a4f1106f9018f41304e9f8e19041161540e0b6ec850459a0a5a0cfee05d2",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

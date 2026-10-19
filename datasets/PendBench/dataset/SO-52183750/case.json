@@ -1,0 +1,281 @@
+{
+  "WaitingDeployPods": {
+    "kafka/StatefulSet/pzoo/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "kafka",
+      "labels": {
+        "app": "pzoo"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-pzoo-0"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "pzoo"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "kafka",
+        "datadir-pzoo-0"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "StatefulSet",
+        "kafka",
+        "pzoo"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "example-local-pv-zookeeper"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "kafka-zookeeper"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-2"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-2": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-2",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "kafka": {
+        "datadir-pzoo-0": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "kafka-zookeeper",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"af4cc70dbfee\"},\"name\":\"datadir-pzoo-0\",\"namespace\":\"kafka\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"kafka-zookeeper\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:24:49Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "af4cc70dbfee"
+            },
+            "name": "datadir-pzoo-0",
+            "namespace": "kafka",
+            "resourceVersion": "236",
+            "uid": "853073ea-9005-4633-8afb-d58ab379d4ad"
+          },
+          "uid": "853073ea-9005-4633-8afb-d58ab379d4ad",
+          "requestsGi": "1Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "example-local-pv-zookeeper": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "hostPath": {
+          "path": "/mnt/example-local-pv-zookeeper",
+          "type": ""
+        },
+        "nodeAffinity": {
+          "required": {
+            "nodeSelectorTerms": [
+              {
+                "matchExpressions": [
+                  {
+                    "key": "kubernetes.io/hostname",
+                    "operator": "In",
+                    "values": [
+                      "my-node"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "kafka-zookeeper",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{},\"name\":\"example-local-pv-zookeeper\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"hostPath\":{\"path\":\"/mnt/example-local-pv-zookeeper\"},\"nodeAffinity\":{\"required\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"my-node\"]}]}]}},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"kafka-zookeeper\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:24:46Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "example-local-pv-zookeeper",
+          "resourceVersion": "229",
+          "uid": "3bc1b24b-d66f-431a-9d13-77c48937d6e4"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {
+      "kafka-zookeeper": {
+        "provisioner": "kubernetes.io/no-provisioner",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{},\"name\":\"kafka-zookeeper\"},\"provisioner\":\"kubernetes.io/no-provisioner\",\"volumeBindingMode\":\"WaitForFirstConsumer\"}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:24:46Z",
+          "name": "kafka-zookeeper",
+          "resourceVersion": "198",
+          "uid": "0fb22a42-97ac-453f-ac8b-e9294f1a45f9"
+        },
+        "parameters": {},
+        "volumeBindingMode": "WaitForFirstConsumer",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kafka": {
+        "kubernetes.io/metadata.name": "kafka"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:49.449465+00:00",
+    "candidate_hash": "638a933dcd9cede59ff7deca856b33443542903d503d7ce2eaeaa53ee4c3ef39",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

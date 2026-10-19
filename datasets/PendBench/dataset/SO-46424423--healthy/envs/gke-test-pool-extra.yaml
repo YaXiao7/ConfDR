@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: gke-test-pool-extra
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    kubernetes.io/hostname: gke-test-pool-extra
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/fluentd-ds-ready: 'true'
+    beta.kubernetes.io/instance-type: g1-small
+    beta.kubernetes.io/os: linux
+    cloud.google.com/gke-nodepool: default-pool
+    failure-domain.beta.kubernetes.io/region: europe-west2
+    failure-domain.beta.kubernetes.io/zone: europe-west2-c
+spec:
+  taints: []
+status:
+  allocatable:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  capacity:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    bootID: ''
+    containerRuntimeVersion: fake
+    kernelVersion: fake
+    kubeProxyVersion: fake
+    kubeletVersion: fake
+    machineID: ''
+    operatingSystem: linux
+    osImage: ''
+    systemUUID: ''
+  phase: Running

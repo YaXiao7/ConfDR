@@ -1,0 +1,9 @@
+# Before fix: no node in the cluster matches the specified nodeSelector labels, causing scheduling failure
+# spec:
+#   nodeSelector:
+#     kubernetes.io/hostname: node1   # node1 does not exist, does not match, or has insufficient resources
+
+# Repair strategy: allow scheduling to other eligible nodes in the cluster
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: node2    # migrated to a valid and schedulable node

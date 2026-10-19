@@ -1,0 +1,55 @@
+{
+  "pod_status": {
+    "default/StatefulSet/pending-workload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:00Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"datadir-kafka-0\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "pending-workload-0",
+      "uid": "fadfeb91-cbb3-4345-bca2-8b96afde886b",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/pending-workload/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"datadir-kafka-0\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:00.776620Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/datadir-kafka-0": {
+      "phase": "NotObserved",
+      "volumeName": null
+    },
+    "storage/datadir-kafka-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:01.057850+00:00",
+  "candidate_hash": "122e3c6dcf1dbcdd616e6515c15d118d756facce6d99f0d144ec6f03de288f5d",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:01.057850+00:00",
+    "candidate_hash": "122e3c6dcf1dbcdd616e6515c15d118d756facce6d99f0d144ec6f03de288f5d",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

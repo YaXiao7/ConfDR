@@ -1,0 +1,459 @@
+{
+  "WaitingDeployPods": {
+    "default/Job/multiple/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "multiple"
+      },
+      "host_ports": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080
+        }
+      ],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Job",
+        "name": "multiple"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Job",
+        "default",
+        "multiple"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "existing-hostport-8080-node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "existing-hostport-8080-node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "existing-hostport-8080-node-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-3"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "TCP"
+          }
+        ],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-2": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-2",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "TCP"
+          }
+        ],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-3": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-3",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "TCP"
+          }
+        ],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {
+      "default/existing-hostport-8080-node-1": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {},
+        "host_ports": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "TCP"
+          }
+        ],
+        "nodeName": "node-1",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-fp5b6",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "0d5b383d-caac-4764-85bd-2e58b35fe0a3"
+      },
+      "default/existing-hostport-8080-node-2": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {},
+        "host_ports": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "TCP"
+          }
+        ],
+        "nodeName": "node-2",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-nlrs4",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "666ee8d8-eb30-4efb-b23b-d0ff2198c633"
+      },
+      "default/existing-hostport-8080-node-3": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {},
+        "host_ports": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "TCP"
+          }
+        ],
+        "nodeName": "node-3",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-mzccj",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "8def76df-dbc3-4621-81f4-f1471e21af66"
+      }
+    },
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:23:10.525439+00:00",
+    "candidate_hash": "9e2653f31c38ab3fdd7d78f29ea576a3cb032fdff30e9147ca7b332b89194c06",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

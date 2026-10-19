@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: existing-node-exporter
+  namespace: default
+  labels:
+    app: prometheus
+    component: node-exporter
+spec:
+  containers:
+  - name: prometheus-node-exporter
+    image: prom/node-exporter:v0.18.1
+    ports:
+    - containerPort: 9100
+      hostPort: 9100
+  nodeName: node-1

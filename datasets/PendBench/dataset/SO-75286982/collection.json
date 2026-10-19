@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/1 nodes are available: persistentvolumeclaim \"grafana-configuration\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-5098153dd79c",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:31:33.199945+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "8a352d2be3cccc67a235fc97b7f7b73eef4bcbb764a350ca02fc64fc8cb6c6d5"
+}

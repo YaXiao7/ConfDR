@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "jhub/Pod/jupyterhub/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:51Z",
+          "message": "0/5 nodes are available: 5 node(s) didn't find available persistent volumes to bind. preemption: 0/5 nodes are available: 5 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "jhub",
+      "actual_name": "jupyterhub",
+      "uid": "58d88010-cdd5-470d-b7f6-440acb108ab5",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "jhub/Pod/jupyterhub/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/5 nodes are available: 5 node(s) didn't find available persistent volumes to bind. preemption: 0/5 nodes are available: 5 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:51.103652Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "jhub/hub-db-dir": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:27:51.395690+00:00",
+  "candidate_hash": "1e10d32c7497025beecce0054f91f3c3da5918a3cb254595cb4dec068cfbcaf5",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:51.395690+00:00",
+    "candidate_hash": "1e10d32c7497025beecce0054f91f3c3da5918a3cb254595cb4dec068cfbcaf5",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

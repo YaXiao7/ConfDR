@@ -1,0 +1,127 @@
+{
+  "pod_status": {
+    "default/Deployment/app1/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:31:38Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app1-5fdc8b576-8lf4v",
+      "uid": "83b32fbd-0eaa-4cc0-be22-10b402eab43e",
+      "nodeName": null
+    },
+    "default/Deployment/app1/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:31:38Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app1-5fdc8b576-jxfgb",
+      "uid": "64ab18ce-da92-42dc-a18e-53ce196b545a",
+      "nodeName": null
+    },
+    "default/Deployment/app2/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:31:38Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app2-7d5f5f9fcd-f4t44",
+      "uid": "7ce03b4b-a092-42e1-8ccd-81fc9f7d06aa",
+      "nodeName": null
+    },
+    "default/Deployment/app2/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:31:38Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app2-7d5f5f9fcd-qtssg",
+      "uid": "28f06395-a23e-415c-81c4-2749a7a0b1d2",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/app1/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:31:38.093550Z"
+      }
+    ],
+    "default/Deployment/app1/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:31:38.085608Z"
+      }
+    ],
+    "default/Deployment/app2/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:31:38.075128Z"
+      }
+    ],
+    "default/Deployment/app2/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:31:38.100762Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-06T12:31:48.885241+00:00",
+  "candidate_hash": "26879c5875287a02f106e28ce1c5390b02fa607858ce10b7a3a1416fd0c4f63d",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-06T12:31:48.885241+00:00",
+    "candidate_hash": "26879c5875287a02f106e28ce1c5390b02fa607858ce10b7a3a1416fd0c4f63d",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

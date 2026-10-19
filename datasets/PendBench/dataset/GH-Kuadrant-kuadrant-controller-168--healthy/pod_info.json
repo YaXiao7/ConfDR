@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "kuadrant-system/Deployment/kuadrant-gateway/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:51:24Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:51:24Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:51:24Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "istio-proxy",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:51:24Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:51:24Z",
+      "namespace": "kuadrant-system",
+      "actual_name": "kuadrant-gateway-696678c655-xpndn",
+      "uid": "23f04108-a8af-48c2-96ff-546397ce347c",
+      "nodeName": "kind-control-plane"
+    }
+  },
+  "pod_events": {
+    "kuadrant-system/Deployment/kuadrant-gateway/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned kuadrant-system/kuadrant-gateway-696678c655-xpndn to kind-control-plane",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:51:24.298825Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:51:26.754945+00:00",
+  "candidate_hash": "69f987810f57b584896e026ab41a70308adca2cba054015315826178803e0406",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:51:26.754945+00:00",
+    "candidate_hash": "69f987810f57b584896e026ab41a70308adca2cba054015315826178803e0406",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

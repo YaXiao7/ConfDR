@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Deployment/k8s-aspnetcore-deployment/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:24:36Z",
+          "message": "0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "k8s-aspnetcore-deployment-64644f57cc-pfw6j",
+      "uid": "b8c074e9-ca58-487d-9ad8-ce5e846097df",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/k8s-aspnetcore-deployment/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:24:36.905491Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:24:37.316628+00:00",
+  "candidate_hash": "c9cf55d9f4923de8751949ddb3b182f400c7139b7eb05d0792df3a1da20424d7",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:37.316628+00:00",
+    "candidate_hash": "c9cf55d9f4923de8751949ddb3b182f400c7139b7eb05d0792df3a1da20424d7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

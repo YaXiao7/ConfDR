@@ -1,0 +1,316 @@
+{
+  "pod_status": {
+    "default/Deployment/app1/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app1",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:36:33Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:36:33Z",
+      "namespace": "default",
+      "actual_name": "app1-5c699b9f9f-5kctj",
+      "uid": "9b865e2e-c023-4537-be8e-f6ab08723b7e",
+      "nodeName": "node-000000"
+    },
+    "default/Deployment/app1/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app1",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:36:33Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.1.1",
+      "podIPs": [
+        {
+          "ip": "10.0.1.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:36:33Z",
+      "namespace": "default",
+      "actual_name": "app1-5c699b9f9f-l2hvn",
+      "uid": "9fa50fa1-0bcf-4d37-b9b4-09eef61a0df9",
+      "nodeName": "node-000001"
+    },
+    "default/Deployment/app2/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app2",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:36:33Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.1.3",
+      "podIPs": [
+        {
+          "ip": "10.0.1.3"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:36:33Z",
+      "namespace": "default",
+      "actual_name": "app2-6fb77ff8d9-clqg2",
+      "uid": "3e3ab2d5-5fa0-4081-8338-c479f8c5417c",
+      "nodeName": "node-000002"
+    },
+    "default/Deployment/app2/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app2",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:36:33Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.1.2",
+      "podIPs": [
+        {
+          "ip": "10.0.1.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:36:33Z",
+      "namespace": "default",
+      "actual_name": "app2-6fb77ff8d9-xq76j",
+      "uid": "70680137-b3ce-4e21-ba1f-2b15b6c386b8",
+      "nodeName": "node-000002"
+    },
+    "default/Deployment/app3/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "message": "0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app3-54df4cf56d-2kq9z",
+      "uid": "8b838c4f-048c-47e4-91ea-14d7502e2e47",
+      "nodeName": null
+    },
+    "default/Deployment/app3/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:36:33Z",
+          "message": "0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app3-54df4cf56d-cm56z",
+      "uid": "95194a7c-ab73-47b3-b438-ee8d23b5eb0b",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/app1/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app1-5c699b9f9f-5kctj to node-000000",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:33.867954Z"
+      }
+    ],
+    "default/Deployment/app1/1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app1-5c699b9f9f-l2hvn to node-000001",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:33.860012Z"
+      }
+    ],
+    "default/Deployment/app2/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app2-6fb77ff8d9-clqg2 to node-000002",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:33.872034Z"
+      }
+    ],
+    "default/Deployment/app2/1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app2-6fb77ff8d9-xq76j to node-000002",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:33.863826Z"
+      }
+    ],
+    "default/Deployment/app3/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:33.872414Z"
+      },
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:35.636528Z"
+      }
+    ],
+    "default/Deployment/app3/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:36:33.882109Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-06T12:36:44.759994+00:00",
+  "candidate_hash": "8c73371c5c2e6e3f9d60222b8b99889108459df201e3a02122cbce546ea2cf3b",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-06T12:36:44.759994+00:00",
+    "candidate_hash": "8c73371c5c2e6e3f9d60222b8b99889108459df201e3a02122cbce546ea2cf3b",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

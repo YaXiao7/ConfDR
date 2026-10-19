@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/cockroachdb/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:17:54Z",
+          "message": "0/1 nodes are available: 1 Insufficient cpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "cockroachdb",
+      "uid": "ede587d4-4355-474e-ac19-34ed1a8acd4a",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/cockroachdb/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 Insufficient cpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:17:54.227613Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:17:54.489056+00:00",
+  "candidate_hash": "b3dd52d9d397df0715db3b13fa25f51a7211afafd65af90b3bf7dabb886e094f",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:17:54.489056+00:00",
+    "candidate_hash": "b3dd52d9d397df0715db3b13fa25f51a7211afafd65af90b3bf7dabb886e094f",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

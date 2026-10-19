@@ -1,0 +1,908 @@
+# Five fixed groups and fifteen categories; definitions, rules and comments use English.
+taxonomy_version: scheduling-15-v4
+language: en
+kubernetes_version: '1.30'
+semantics_profile: scheduling-v2
+# Find a feasible scheduling order without predicting the actual scheduling queue, preemption or controller timing.
+scope: >-
+  Scheduling feasibility against a fixed background snapshot, including PVC references,
+  static binding and dynamic provisioning prerequisites. Feasibility does not prove
+  deployment, backend recovery, or completeness beyond the declared feature profile.
+# Predicates beyond the built-in vocabulary. Their values are computed by the storage interpreter
+# from config/provisioner_contracts.yaml and case-level ProvisionerContracts.
+predicates:
+  - name: access_modes_supported
+    arguments: [Claim]
+    returns: Bool
+    meaning: >-
+      Every access mode requested by the PVC is documented as supported by the provisioner of
+      its effective StorageClass for the PVC volume mode, according to a matching driver
+      capability contract; false if a requested mode is documented as rejected; otherwise unknown
+groups:
+  - {id: R, name: Node resource capacity constraints}
+  - {id: A, name: Taint and toleration constraints}
+  - {id: P, name: Affinity and topology constraints}
+  - {id: S, name: Storage dependency constraints}
+  - {id: E, name: Host port allocation constraints}
+categories:
+  - id: R1
+    group: R
+    name: Insufficient schedulable CPU capacity
+    description: >-
+      For each node, the sum of effective cpu_request of target Pods assigned to that node
+      must not exceed free_cpu, in millicores. Use allocatable minus background requests,
+      not measured utilization. Include application containers, init-container peaks,
+      restartable init containers, applicable defaults and Pod overhead. Count targets once.
+      Missing observations remain unknown. Evaluate jointly with placement constraints.
+    requirements:
+    - id: R1.budget
+      when: For each node
+      guarded: false
+      must: Sum cpu_request of targets selected by assign must be <= free_cpu. Equality passes; requests use millicores.
+      required_atoms:
+      - assign
+      - cpu_request
+      - free_cpu
+    allowed_atoms:
+    - assign
+    - cpu_request
+    - free_cpu
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: R2
+    group: R
+    name: Insufficient schedulable memory capacity
+    description: >-
+      For each node, the sum of effective memory_request of target Pods assigned to that node
+      must not exceed free_memory, in bytes. Use allocatable minus background requests,
+      not measured usage or limits alone. Include init-container peaks, restartable init
+      containers and Pod overhead. Missing observations remain unknown; targets share budgets.
+    requirements:
+    - id: R2.budget
+      when: For each node
+      guarded: false
+      must: Sum memory_request of targets selected by assign must be <= free_memory. Equality passes; requests
+        use bytes.
+      required_atoms:
+      - assign
+      - memory_request
+      - free_memory
+    allowed_atoms:
+    - assign
+    - free_memory
+    - memory_request
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: R3
+    group: R
+    name: Insufficient schedulable GPU capacity
+    description: >-
+      For each node and each Resource identified by is_gpu_resource, sum resource_request
+      over target Pods assigned to that node and require it not to exceed resource_free.
+      Resource names, including vendor GPU and partition resources, are not interchangeable.
+      Use device-plugin extended resource requests and remaining allocatable units after
+      background reservations. Limits-only requests follow Kubernetes defaulting.
+      Missing observations remain unknown. DRA is outside this profile.
+    requirements:
+    - id: R3.budget
+      when: For each node and Resource where is_gpu_resource is true
+      guarded: true
+      must: Sum resource_request of assigned targets must be <= resource_free for that same resource name.
+      required_atoms:
+      - is_gpu_resource
+      - assign
+      - resource_request
+      - resource_free
+    allowed_atoms:
+    - assign
+    - is_gpu_resource
+    - resource_free
+    - resource_request
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: R4
+    group: R
+    name: Exhausted node Pod slots
+    description: >-
+      For each node, the number of target Pods assigned to it must not exceed pod_slots,
+      its remaining allocatable Pod count after non-terminal background Pods. Include all
+      target replicas and do not count targets again as background occupancy. Missing slot
+      counts remain unknown.
+    requirements:
+    - id: R4.slots
+      when: For each node
+      guarded: false
+      must: Number of assigned target Pods must be <= pod_slots. Equality passes.
+      required_atoms:
+      - assign
+      - pod_slots
+    allowed_atoms:
+    - assign
+    - pod_slots
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: R5
+    group: R
+    name: CSI node volume attachment count exceeded
+    description: >-
+      For each target Pod p, node n and Driver d, when uses_scheduler(p), assign(p,n),
+      volume_limit_applies(n,d), and volume_count_new(p,n,d) > 0, require
+      volume_count_before(p,n,d) + volume_count_new(p,n,d) <= volume_limit(n,d).
+      Count unique driver/volume identities, not volumeMount entries. Include background
+      reservations and earlier assigned targets, deduplicate shared volumes, and keep drivers
+      independent. Equality passes. Reusing only already reserved volumes adds no constraint.
+      The interpreter computes counts from observed bindings and selected static/dynamic paths;
+      do not sum per-Pod requests again. Missing observations remain unknown.
+    requirements:
+    - id: R5.driver-volume-budget
+      when: uses_scheduler(p) and assign(p,n) and volume_limit_applies(n,d) and volume_count_new(p,n,d) > 0
+      guarded: true
+      must: Require volume_count_before(p,n,d) + volume_count_new(p,n,d) <= volume_limit(n,d). Equality passes; zero new volumes imposes no budget check.
+      required_atoms: [uses_scheduler, assign, volume_limit_applies, volume_count_before, volume_count_new, volume_limit]
+    allowed_atoms: [uses_scheduler, assign, volume_limit_applies, volume_count_before, volume_count_new, volume_limit]
+    excluded_scope: >-
+      CSI persistent volume scheduling only. Volume bytes, PVC existence, binding feasibility,
+      backend health and actual mounting belong to other checks. Do not encode hardcoded limits.
+      Do not add storage path existence requirements or modify shared assignment semantics.
+      Unsupported CSI migration and generic ephemeral volume identity remain unknown.
+    test_policy: obligation-boundaries-v1
+  - id: A1
+    group: A
+    name: Taint and toleration mismatch
+    description: >-
+      A target Pod using the scheduler must satisfy scheduling_tolerates on its assigned
+      node: every NoSchedule and NoExecute taint must match its tolerations by key, operator,
+      value and effect. PreferNoSchedule is not a hard constraint. Explicit nodeName bypasses
+      scheduler filtering. Eviction and tolerationSeconds expiry are outside this category.
+      Missing taint inventories are unknown, not empty.
+    requirements:
+    - id: A1.tolerations
+      when: uses_scheduler(p) and assign(p,n)
+      guarded: true
+      must: Require scheduling_tolerates(p,n). A direct nodeName target does not activate this requirement.
+      required_atoms:
+      - uses_scheduler
+      - assign
+      - scheduling_tolerates
+    allowed_atoms:
+    - assign
+    - uses_scheduler
+    - scheduling_tolerates
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: P1
+    group: P
+    name: Unsatisfied node selection requirements
+    description: >-
+      A target Pod using the scheduler must satisfy both selector_ok and node_affinity_ok
+      on its assigned node. nodeSelector entries and expressions inside a required node
+      affinity term are conjunctive; nodeSelectorTerms are alternatives. Preferred terms
+      are not mandatory. Missing label observations remain unknown. Direct nodeName is
+      handled by shared assignment semantics, not by this category.
+    requirements:
+    - id: P1.selector
+      when: uses_scheduler(p) and assign(p,n)
+      guarded: true
+      must: Require selector_ok(p,n).
+      required_atoms:
+      - uses_scheduler
+      - assign
+      - selector_ok
+    - id: P1.affinity
+      when: uses_scheduler(p) and assign(p,n)
+      guarded: true
+      must: Require node_affinity_ok(p,n), conjunctively with node selection.
+      required_atoms:
+      - uses_scheduler
+      - assign
+      - node_affinity_ok
+    allowed_atoms:
+    - assign
+    - node_affinity_ok
+    - uses_scheduler
+    - selector_ok
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: P2
+    group: P
+    name: Unsatisfied required Pod affinity
+    description: >-
+      A target Pod using the scheduler must satisfy pod_affinity_ok on its assigned node.
+      This includes all required terms, selectors, namespaces, namespaceSelector, topology
+      keys, background Pods and target Pods scheduled earlier in a feasible order.
+      Include the first self-affine Pod exception. Preferred terms are not mandatory.
+      Mutually dependent future Pods cannot justify each other's placement.
+    requirements:
+    - id: P2.affinity
+      when: uses_scheduler(p) and assign(p,n)
+      guarded: true
+      must: Require pod_affinity_ok(p,n); atom semantics supply scheduling order and the self-affinity exception.
+      required_atoms:
+      - uses_scheduler
+      - assign
+      - pod_affinity_ok
+    allowed_atoms:
+    - assign
+    - pod_affinity_ok
+    - uses_scheduler
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: P3
+    group: P
+    name: Unsatisfied required Pod anti-affinity
+    description: >-
+      A target Pod using the scheduler must satisfy pod_anti_affinity_ok on its assigned node.
+      Include its required terms and applicable required anti-affinity terms of background
+      and earlier target Pods, including namespace and topology scope. Preferred terms are
+      not mandatory. Missing observations and unsupported selector features remain unknown.
+    requirements:
+    - id: P3.anti-affinity
+      when: uses_scheduler(p) and assign(p,n)
+      guarded: true
+      must: Require pod_anti_affinity_ok(p,n); atom semantics supply incoming and reverse terms.
+      required_atoms:
+      - uses_scheduler
+      - assign
+      - pod_anti_affinity_ok
+    allowed_atoms:
+    - assign
+    - pod_anti_affinity_ok
+    - uses_scheduler
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: P4
+    group: P
+    name: Unsatisfied hard topology spread constraints
+    description: For every Spread owned by a scheduler-managed target Pod via spread_applies, if that Pod is
+      assigned to a node, require spread_has_key and require spread_count plus spread_self_match minus spread_global_min
+      to be at most spread_max_skew. Only DoNotSchedule constraints are in this domain. Counts include matching
+      background and earlier target Pods in the same namespace, honoring topologyKey, labelSelector, matchLabelKeys,
+      minDomains, nodeAffinityPolicy and nodeTaintsPolicy. Missing observations remain unknown. Check every hard
+      constraint; ScheduleAnyway is not a hard constraint.
+    requirements:
+    - id: P4.topology-key
+      when: uses_scheduler(p) and spread_applies(s,p) and assign(p,n)
+      guarded: true
+      must: Require spread_has_key(s,n). spread_applies links a hard constraint to its owner; uses_scheduler
+        guards scheduler filtering.
+      required_atoms:
+      - uses_scheduler
+      - spread_applies
+      - assign
+      - spread_has_key
+    - id: P4.skew
+      when: uses_scheduler(p) and spread_applies(s,p) and assign(p,n)
+      guarded: true
+      must: Require spread_count(s,n) + spread_self_match(s) - spread_global_min(s) <= spread_max_skew(s).
+      required_atoms:
+      - uses_scheduler
+      - spread_applies
+      - assign
+      - spread_count
+      - spread_self_match
+      - spread_global_min
+      - spread_max_skew
+    allowed_atoms:
+    - assign
+    - uses_scheduler
+    - spread_applies
+    - spread_count
+    - spread_global_min
+    - spread_has_key
+    - spread_max_skew
+    - spread_self_match
+    excluded_scope: Atom internals and missing observations belong to the interpreter. Do not add other category
+      constraints.
+    test_policy: obligation-boundaries-v1
+  - id: S1
+    group: S
+    name: Invalid storage object references
+    description: >-
+      Every PVC referenced by a target Pod must satisfy claim_exists in that Pod's namespace.
+      If the PVC exists, require fixed_volume_exists, which checks an explicitly named or
+      already bound PV and is true when no PV is named. Missing inventories remain unknown.
+      StorageClass resolution for a dynamic path belongs to S2, an existing incompatible PV
+      to S3, and storage topology incompatibility to S4.
+    requirements:
+    - id: S1.claim
+      when: uses(p,c)
+      guarded: true
+      must: Require claim_exists(c).
+      required_atoms:
+      - uses
+      - claim_exists
+    - id: S1.fixed-reference
+      when: uses(p,c) and claim_exists(c)
+      guarded: true
+      must: Require fixed_volume_exists(c); the atom is true when no fixed volume is named.
+      required_atoms:
+      - uses
+      - claim_exists
+      - fixed_volume_exists
+    allowed_atoms:
+    - claim_exists
+    - fixed_volume_exists
+    - uses
+    excluded_scope: Do not check class, compatibility, or topology here; those belong to S2/S3/S4.
+    test_policy: obligation-boundaries-v1
+  - id: S2
+    group: S
+    name: Invalid dynamic or default provisioning configuration
+    description: >-
+      For an existing referenced PVC selecting dynamic, require storage_class_exists,
+      provisioner_configured and provisioner_parameters_valid. Resolve a default class only
+      for omitted or null storageClassName, not an explicitly empty string. Under scheduling-v2,
+      an omitted or null class with no default and a complete empty PV inventory remains
+      eligible for the default-provisioning path; selecting it exposes the missing default
+      class as S2 rather than reporting a duplicate S3 path failure. When a named class
+      has no StorageClass object but a same-class PV is observed, assess that static
+      candidate as S3 instead of inventing dynamic intent. An incomplete PV or StorageClass inventory
+      remains unknown. This is an explicit benchmark attribution convention, not proof of
+      the original author's storage intent. A provisioner
+      name alone does not prove controller health. Driver-specific parameters require a
+      matching validation contract; otherwise they remain unknown. Requested access modes must
+      be supported by the provisioner according to a matching capability contract; otherwise
+      they remain unknown. No dynamic path is required when static binding is selected. WaitForFirstConsumer and PVC Pending alone are not
+      failures. Backend availability requires external evidence beyond this static rule.
+    requirements:
+    - id: S2.class
+      when: uses(p,c) and claim_exists(c) and dynamic(c)
+      guarded: true
+      must: Require storage_class_exists(c). Do not force selection of dynamic.
+      required_atoms:
+      - uses
+      - claim_exists
+      - dynamic
+      - storage_class_exists
+    - id: S2.driver
+      when: uses(p,c) and claim_exists(c) and dynamic(c)
+      guarded: true
+      must: Require provisioner_configured(c).
+      required_atoms:
+      - uses
+      - claim_exists
+      - dynamic
+      - provisioner_configured
+    - id: S2.parameters
+      when: uses(p,c) and claim_exists(c) and dynamic(c)
+      guarded: true
+      must: Require provisioner_parameters_valid(c).
+      required_atoms:
+      - uses
+      - claim_exists
+      - dynamic
+      - provisioner_parameters_valid
+    - id: S2.access-modes
+      when: uses(p,c) and claim_exists(c) and dynamic(c)
+      guarded: true
+      must: Require access_modes_supported(c).
+      required_atoms:
+      - uses
+      - claim_exists
+      - dynamic
+      - access_modes_supported
+    allowed_atoms:
+    - access_modes_supported
+    - claim_exists
+    - dynamic
+    - provisioner_configured
+    - provisioner_parameters_valid
+    - storage_class_exists
+    - uses
+    excluded_scope: Do not force path existence (S3), prove backend health, or check topology (S4).
+    test_policy: obligation-boundaries-v1
+  - id: S3
+    group: S
+    name: Unsatisfied PV and PVC binding requirements
+    description: >-
+      Every referenced PVC satisfying claim_exists and fixed_volume_exists must select a
+      storage path: dynamic with dynamic_eligible, or some PV selected by bind. Every static
+      binding must satisfy class_ok, access_ok, mode_ok, capacity_ok, volume_available and
+      pv_selector_ok. If has_fixed_volume, require fixed_to for the selected PV and forbid
+      dynamic. Shared semantics enforce at most one PV per PVC, no simultaneous static and
+      dynamic paths, and no PV assigned to different PVCs. Multiple Pods may share one PVC.
+      Honor prebinding and existing binding semantics. No existing PV is not an S3 error when
+      dynamic is selected and dynamic_eligible holds; S2 checks its configuration and S4
+      checks its topology. Apply uses, claim_exists and fixed_volume_exists guards to
+      every S3 requirement, including static compatibility and fixed-volume restrictions.
+      Under scheduling-v2, an omitted/null class with no default and a complete empty PV
+      inventory is eligible for the S2 default-provisioning check. An explicit empty class
+      stays static-only; an observed same-class PV with no StorageClass object is a static
+      S3 candidate even when incompatible.
+    requirements:
+    - id: S3.path
+      when: uses(p,c) and claim_exists(c) and fixed_volume_exists(c)
+      guarded: true
+      must: Require (dynamic(c) AND dynamic_eligible(c)) OR an existing Volume v selected by bind(c,v). This is
+        implication from the guard, never OR with the guard.
+      required_atoms:
+      - uses
+      - claim_exists
+      - fixed_volume_exists
+      - dynamic
+      - dynamic_eligible
+      - bind
+    - id: S3.static-compatibility
+      when: uses(p,c) and claim_exists(c) and fixed_volume_exists(c) and bind(c,v)
+      guarded: true
+      must: Require class_ok(c,v), access_ok(c,v), mode_ok(c,v), capacity_ok(c,v), volume_available(c,v), and pv_selector_ok(c,v)
+        together.
+      required_atoms:
+      - uses
+      - claim_exists
+      - fixed_volume_exists
+      - bind
+      - class_ok
+      - access_ok
+      - mode_ok
+      - capacity_ok
+      - volume_available
+      - pv_selector_ok
+    - id: S3.fixed-choice
+      when: uses(p,c) and claim_exists(c) and fixed_volume_exists(c) and has_fixed_volume(c)
+      guarded: true
+      must: Forbid dynamic(c); every selected bind(c,v) must satisfy fixed_to(c,v).
+      required_atoms:
+      - uses
+      - claim_exists
+      - fixed_volume_exists
+      - has_fixed_volume
+      - dynamic
+      - bind
+      - fixed_to
+    allowed_atoms:
+    - access_ok
+    - bind
+    - capacity_ok
+    - claim_exists
+    - class_ok
+    - dynamic
+    - dynamic_eligible
+    - fixed_to
+    - fixed_volume_exists
+    - has_fixed_volume
+    - mode_ok
+    - pv_selector_ok
+    - uses
+    - volume_available
+    excluded_scope: Do not check missing references (S1), dynamic configuration (S2), or topology (S4). Dynamic
+      eligibility alone is the S3 alternative; shared axioms own uniqueness.
+    test_policy: obligation-boundaries-v1
+  - id: S4
+    group: S
+    name: Incompatible storage topology and node placement
+    description: >-
+      If a target Pod uses a PVC, is assigned to a node, and bind selects a PV for that PVC,
+      require volume_node_ok for that PV and node. If dynamic is selected, require
+      dynamic_node_ok for that PVC and node. Constrain only selected paths, not all candidate
+      PVs. Honor PV required nodeAffinity and StorageClass allowedTopologies. Unresolved
+      immediate-binding placement or unavailable backend topology remain unknown.
+      Evaluate jointly with node selection and other placement constraints.
+    requirements:
+    - id: S4.static-topology
+      when: uses(p,c) and assign(p,n) and bind(c,v)
+      guarded: true
+      must: Require volume_node_ok(v,n), only for the selected PV.
+      required_atoms:
+      - uses
+      - assign
+      - bind
+      - volume_node_ok
+    - id: S4.dynamic-topology
+      when: uses(p,c) and assign(p,n) and dynamic(c)
+      guarded: true
+      must: Require dynamic_node_ok(c,n), only for the selected dynamic path.
+      required_atoms:
+      - uses
+      - assign
+      - dynamic
+      - dynamic_node_ok
+    allowed_atoms:
+    - assign
+    - bind
+    - dynamic
+    - dynamic_node_ok
+    - uses
+    - volume_node_ok
+    excluded_scope: Do not force binding/provisioning, existence, or compatibility. S4 checks topology only on
+      selected paths.
+    test_policy: obligation-boundaries-v1
+  - id: E1
+    group: E
+    name: Conflicting host port allocations
+    description: >-
+      Each target Pod assigned to a node must satisfy host_ports_free against background
+      allocations. Distinct target Pods assigned to the same node must satisfy ports_disjoint.
+      Compare protocol, hostPort and hostIP reservations using the Kubernetes 1.30
+      application-container scheduler semantics. Init-container host ports are reported as unsupported. containerPort alone and Service ports are not hostPort reservations.
+      Different nodes do not conflict. Missing port inventories remain unknown.
+    requirements:
+    - id: E1.background
+      when: assign(p,n)
+      guarded: true
+      must: Require host_ports_free(p,n) against background reservations.
+      required_atoms:
+      - assign
+      - host_ports_free
+    - id: E1.target-pair
+      when: p and q are distinct targets, assign(p,n) and assign(q,n)
+      guarded: true
+      must: Require ports_disjoint(p,q). Different nodes must not conflict under this requirement.
+      required_atoms:
+      - assign
+      - ports_disjoint
+    allowed_atoms:
+    - assign
+    - host_ports_free
+    - ports_disjoint
+    excluded_scope: Do not count containerPort or Service ports as host reservations. Do not include init-container
+      ports in this profile.
+    test_policy: obligation-boundaries-v1
+
+# Fixed held-out R5 composition checks; no production formula is supplied.
+validation_cases:
+- id: R5-heldout-equal
+  category_id: R5
+  description: 'CSI volume budget boundary: equal'
+  domains:
+    Pod:
+    - p
+    Node:
+    - n
+    Claim: []
+    Volume: []
+    Resource: []
+    Spread: []
+    Driver:
+    - d
+  facts:
+  - predicate: uses_scheduler
+    arguments:
+    - p
+    value: true
+  - predicate: volume_limit_applies
+    arguments:
+    - n
+    - d
+    value: true
+  - predicate: volume_limit
+    arguments:
+    - n
+    - d
+    value: 2
+  - predicate: volume_count_before
+    arguments:
+    - p
+    - n
+    - d
+    value: 1
+  - predicate: volume_count_new
+    arguments:
+    - p
+    - n
+    - d
+    value: 1
+  decisions:
+  - predicate: assign
+    arguments:
+    - p
+    - n
+    value: true
+  expected: sat
+  requirement_ids:
+  - R5.driver-volume-budget
+  scenario_kind: positive
+- id: R5-heldout-empty-budget
+  category_id: R5
+  description: 'CSI volume budget boundary: empty-budget'
+  domains:
+    Pod:
+    - p
+    Node:
+    - n
+    Claim: []
+    Volume: []
+    Resource: []
+    Spread: []
+    Driver:
+    - d
+  facts:
+  - predicate: uses_scheduler
+    arguments:
+    - p
+    value: true
+  - predicate: volume_limit_applies
+    arguments:
+    - n
+    - d
+    value: true
+  - predicate: volume_limit
+    arguments:
+    - n
+    - d
+    value: 0
+  - predicate: volume_count_before
+    arguments:
+    - p
+    - n
+    - d
+    value: 0
+  - predicate: volume_count_new
+    arguments:
+    - p
+    - n
+    - d
+    value: 1
+  decisions:
+  - predicate: assign
+    arguments:
+    - p
+    - n
+    value: true
+  expected: unsat
+  requirement_ids:
+  - R5.driver-volume-budget
+  scenario_kind: negative
+- id: R5-heldout-over
+  category_id: R5
+  description: 'CSI volume budget boundary: over'
+  domains:
+    Pod:
+    - p
+    Node:
+    - n
+    Claim: []
+    Volume: []
+    Resource: []
+    Spread: []
+    Driver:
+    - d
+  facts:
+  - predicate: uses_scheduler
+    arguments:
+    - p
+    value: true
+  - predicate: volume_limit_applies
+    arguments:
+    - n
+    - d
+    value: true
+  - predicate: volume_limit
+    arguments:
+    - n
+    - d
+    value: 2
+  - predicate: volume_count_before
+    arguments:
+    - p
+    - n
+    - d
+    value: 2
+  - predicate: volume_count_new
+    arguments:
+    - p
+    - n
+    - d
+    value: 1
+  decisions:
+  - predicate: assign
+    arguments:
+    - p
+    - n
+    value: true
+  expected: unsat
+  requirement_ids:
+  - R5.driver-volume-budget
+  scenario_kind: negative
+- id: R5-heldout-room
+  category_id: R5
+  description: 'CSI volume budget boundary: room'
+  domains:
+    Pod:
+    - p
+    Node:
+    - n
+    Claim: []
+    Volume: []
+    Resource: []
+    Spread: []
+    Driver:
+    - d
+  facts:
+  - predicate: uses_scheduler
+    arguments:
+    - p
+    value: true
+  - predicate: volume_limit_applies
+    arguments:
+    - n
+    - d
+    value: true
+  - predicate: volume_limit
+    arguments:
+    - n
+    - d
+    value: 2
+  - predicate: volume_count_before
+    arguments:
+    - p
+    - n
+    - d
+    value: 0
+  - predicate: volume_count_new
+    arguments:
+    - p
+    - n
+    - d
+    value: 1
+  decisions:
+  - predicate: assign
+    arguments:
+    - p
+    - n
+    value: true
+  expected: sat
+  requirement_ids:
+  - R5.driver-volume-budget
+  scenario_kind: positive
+- id: R5-heldout-reuse
+  category_id: R5
+  description: 'CSI volume budget boundary: reuse'
+  domains:
+    Pod:
+    - p
+    Node:
+    - n
+    Claim: []
+    Volume: []
+    Resource: []
+    Spread: []
+    Driver:
+    - d
+  facts:
+  - predicate: uses_scheduler
+    arguments:
+    - p
+    value: true
+  - predicate: volume_limit_applies
+    arguments:
+    - n
+    - d
+    value: true
+  - predicate: volume_limit
+    arguments:
+    - n
+    - d
+    value: 2
+  - predicate: volume_count_before
+    arguments:
+    - p
+    - n
+    - d
+    value: 3
+  - predicate: volume_count_new
+    arguments:
+    - p
+    - n
+    - d
+    value: 0
+  decisions:
+  - predicate: assign
+    arguments:
+    - p
+    - n
+    value: true
+  expected: sat
+  requirement_ids:
+  - R5.driver-volume-budget
+  scenario_kind: guard_inactive
+- id: R5-heldout-no-limit
+  category_id: R5
+  description: 'CSI volume budget boundary: no-limit'
+  domains:
+    Pod:
+    - p
+    Node:
+    - n
+    Claim: []
+    Volume: []
+    Resource: []
+    Spread: []
+    Driver:
+    - d
+  facts:
+  - predicate: uses_scheduler
+    arguments:
+    - p
+    value: true
+  - predicate: volume_limit_applies
+    arguments:
+    - n
+    - d
+    value: false
+  - predicate: volume_limit
+    arguments:
+    - n
+    - d
+    value: 0
+  - predicate: volume_count_before
+    arguments:
+    - p
+    - n
+    - d
+    value: 4
+  - predicate: volume_count_new
+    arguments:
+    - p
+    - n
+    - d
+    value: 2
+  decisions:
+  - predicate: assign
+    arguments:
+    - p
+    - n
+    value: true
+  expected: sat
+  requirement_ids:
+  - R5.driver-volume-budget
+  scenario_kind: guard_inactive
+- id: R5-heldout-direct-node
+  category_id: R5
+  description: 'CSI volume budget boundary: direct-node'
+  domains:
+    Pod:
+    - p
+    Node:
+    - n
+    Claim: []
+    Volume: []
+    Resource: []
+    Spread: []
+    Driver:
+    - d
+  facts:
+  - predicate: uses_scheduler
+    arguments:
+    - p
+    value: false
+  - predicate: volume_limit_applies
+    arguments:
+    - n
+    - d
+    value: true
+  - predicate: volume_limit
+    arguments:
+    - n
+    - d
+    value: 0
+  - predicate: volume_count_before
+    arguments:
+    - p
+    - n
+    - d
+    value: 2
+  - predicate: volume_count_new
+    arguments:
+    - p
+    - n
+    - d
+    value: 1
+  decisions:
+  - predicate: assign
+    arguments:
+    - p
+    - n
+    value: true
+  expected: sat
+  requirement_ids:
+  - R5.driver-volume-budget
+  scenario_kind: guard_inactive

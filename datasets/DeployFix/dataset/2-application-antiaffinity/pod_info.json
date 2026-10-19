@@ -1,0 +1,255 @@
+{
+  "pod_status": {
+    "default/Deployment/app1/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app1",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:33:04Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.1.1",
+      "podIPs": [
+        {
+          "ip": "10.0.1.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:33:04Z",
+      "namespace": "default",
+      "actual_name": "app1-8f97dbf94-5q66d",
+      "uid": "99127adc-1411-4396-86aa-627f3a160ac9",
+      "nodeName": "node-000001"
+    },
+    "default/Deployment/app1/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app1",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:33:04Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:33:04Z",
+      "namespace": "default",
+      "actual_name": "app1-8f97dbf94-fdfxc",
+      "uid": "8e473ae3-a514-4156-9532-4544678f7582",
+      "nodeName": "node-000000"
+    },
+    "default/Deployment/app2/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app2",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:33:04Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.1.3",
+      "podIPs": [
+        {
+          "ip": "10.0.1.3"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:33:04Z",
+      "namespace": "default",
+      "actual_name": "app2-6cf9596674-46kj8",
+      "uid": "a2fc1259-b97f-44b8-b656-6d81b197c00f",
+      "nodeName": "node-000002"
+    },
+    "default/Deployment/app2/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:33:04Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app2",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:33:04Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.1.2",
+      "podIPs": [
+        {
+          "ip": "10.0.1.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:33:04Z",
+      "namespace": "default",
+      "actual_name": "app2-6cf9596674-cjvqc",
+      "uid": "92de9947-32b3-4e5b-84c8-b45a323f9dde",
+      "nodeName": "node-000002"
+    }
+  },
+  "pod_events": {
+    "default/Deployment/app1/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app1-8f97dbf94-5q66d to node-000001",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:33:04.008249Z"
+      }
+    ],
+    "default/Deployment/app1/1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app1-8f97dbf94-fdfxc to node-000000",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:33:04.019090Z"
+      }
+    ],
+    "default/Deployment/app2/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app2-6cf9596674-46kj8 to node-000002",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:33:04.017641Z"
+      }
+    ],
+    "default/Deployment/app2/1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app2-6cf9596674-cjvqc to node-000002",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:33:04.008341Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-06T12:33:06.395255+00:00",
+  "candidate_hash": "3f254b44851ca069c835626472710bd9736ff97524fd529441579572b179e2d2",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-06T12:33:06.395255+00:00",
+    "candidate_hash": "3f254b44851ca069c835626472710bd9736ff97524fd529441579572b179e2d2",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

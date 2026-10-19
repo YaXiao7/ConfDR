@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: block-node
+  namespace: default
+spec:
+  serviceName: block-node
+  replicas: 1
+  selector:
+    matchLabels:
+      app: block-node
+  template:
+    metadata:
+      labels:
+        app: block-node
+    spec:
+      containers:
+      - name: block-node
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data-claim

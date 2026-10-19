@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "mlo-dev/Deployment/web-deployment/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:28:33Z",
+          "message": "0/1 nodes are available: preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "mlo-dev",
+      "actual_name": "web-deployment-59858b9689-5xjkf",
+      "uid": "154ef175-f73b-4ab8-b4d7-417e3c6eee81",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "mlo-dev/Deployment/web-deployment/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:28:33.678178Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "mlo-dev/pvc-web": {
+      "phase": "Bound",
+      "volumeName": "pv-web"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:28:34.028873+00:00",
+  "candidate_hash": "0b9b6c3406a07cea044ae4b870cad038119e2c096d7f9c1c35cb8f2727641e93",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:28:34.028873+00:00",
+    "candidate_hash": "0b9b6c3406a07cea044ae4b870cad038119e2c096d7f9c1c35cb8f2727641e93",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

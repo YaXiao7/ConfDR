@@ -1,0 +1,45 @@
+# Before fix: the memory requested by the Pod exceeds the Node memory capacity
+# spec:
+#   containers:
+#   - name: container1
+#     image: registry.k8s.io/pause:2.0
+#     resources:
+#       requests:
+#         cpu: "2"
+#         memory: "2Gi"
+#       limits:
+#         cpu: "2"
+#         memory: "2Gi"
+# ---
+# status:
+#   capacity:
+#     cpu: "3"
+#     memory: "1Gi"
+#     pods: "100"
+#   allocatable:
+#     cpu: "3"          # 3 CPU cores
+#     memory: "1Gi"
+#     pods: "100"       # maximum number of Pods on this node
+
+# After fix: the memory requested by the Pod does not exceed the Node memory capacity
+spec:
+  containers:
+  - name: container1
+    image: registry.k8s.io/pause:2.0
+    resources:
+      requests:
+        cpu: "2"
+        memory: "100Mi"  # reduce memory request to be within Node allocatable memory
+      limits:
+        cpu: "2"
+        memory: "100Mi"
+---
+status:
+  capacity:
+    cpu: "3"
+    memory: "1Gi"
+    pods: "100"
+  allocatable:
+    cpu: "3"
+    memory: "1Gi"       # total allocatable memory on the node
+    pods: "100"         # maximum number of Pods on this node

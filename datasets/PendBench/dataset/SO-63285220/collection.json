@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-8e324865d5b9",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:28:13.661212+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "6b718aa5f68c2e62a073c9db6c7ee9c119a7e7ba3ddec3bce47bc5c164ca4b08"
+}

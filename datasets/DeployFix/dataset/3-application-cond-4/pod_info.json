@@ -1,0 +1,259 @@
+{
+  "pod_status": {
+    "default/Deployment/app1/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app1-5847d7f44c-7ftqh",
+      "uid": "2ce473d6-73b5-46de-b758-8620205b429f",
+      "nodeName": null
+    },
+    "default/Deployment/app1/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app1-5847d7f44c-jdmz6",
+      "uid": "1a081f4c-3717-4795-ba52-82d41376f427",
+      "nodeName": null
+    },
+    "default/Deployment/app2/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app2-68d799576f-46k78",
+      "uid": "db6a12cf-59b9-4fda-b693-99ddd23f27be",
+      "nodeName": null
+    },
+    "default/Deployment/app2/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "app2-68d799576f-d69tr",
+      "uid": "83e0a046-4b44-48c2-8767-b69b9741a19c",
+      "nodeName": null
+    },
+    "default/Deployment/app3/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app3",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:37:35Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.1.1",
+      "podIPs": [
+        {
+          "ip": "10.0.1.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:37:35Z",
+      "namespace": "default",
+      "actual_name": "app3-f7d5bfddf-6mrm2",
+      "uid": "5d6549ca-b7be-4ae6-b806-b01866f09132",
+      "nodeName": "node-000002"
+    },
+    "default/Deployment/app3/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-06T12:37:35Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:2.0",
+          "imageID": "",
+          "lastState": {},
+          "name": "app3",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-06T12:37:35Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-06T12:37:35Z",
+      "namespace": "default",
+      "actual_name": "app3-f7d5bfddf-ctndg",
+      "uid": "5a7ff2d2-4e08-4d83-ba37-d1162ace8df8",
+      "nodeName": "node-000000"
+    }
+  },
+  "pod_events": {
+    "default/Deployment/app1/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:35.495006Z"
+      },
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:37.245573Z"
+      }
+    ],
+    "default/Deployment/app1/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:35.457754Z"
+      },
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:37.245281Z"
+      }
+    ],
+    "default/Deployment/app2/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:35.501875Z"
+      }
+    ],
+    "default/Deployment/app2/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:35.469795Z"
+      }
+    ],
+    "default/Deployment/app3/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app3-f7d5bfddf-6mrm2 to node-000002",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:35.515541Z"
+      }
+    ],
+    "default/Deployment/app3/1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/app3-f7d5bfddf-ctndg to node-000000",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-06T12:37:35.515473Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-06T12:37:48.448937+00:00",
+  "candidate_hash": "e297adb7fa89f851f2272b171024f088b2bd64e11cad9d8f39a9d50ad524badc",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-06T12:37:48.448937+00:00",
+    "candidate_hash": "e297adb7fa89f851f2272b171024f088b2bd64e11cad9d8f39a9d50ad524badc",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/monitor/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:52Z",
+          "message": "0/9 nodes are available: 9 node(s) didn't match Pod's node affinity/selector. preemption: 0/9 nodes are available: 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "monitor",
+      "uid": "a9590025-47e9-4124-971e-bbdca2b41ebc",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/monitor/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/9 nodes are available: 9 node(s) didn't match Pod's node affinity/selector. preemption: 0/9 nodes are available: 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:52.240189Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:22:52.503452+00:00",
+  "candidate_hash": "e637c8cfd62b0de433f02871d1a7290872e863a081baa3a40e1f21636a7dea30",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:22:52.503452+00:00",
+    "candidate_hash": "e637c8cfd62b0de433f02871d1a7290872e863a081baa3a40e1f21636a7dea30",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

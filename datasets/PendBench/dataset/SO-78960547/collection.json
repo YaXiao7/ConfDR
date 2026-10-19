@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/4 nodes are available: 4 Insufficient cpu, 4 Insufficient memory. preemption: 0/4 nodes are available: 4 No preemption victims found for incoming pod.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-c15e04d52d96",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:32:02.793271+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "1be635677268621d060705c5c2f5c4de0bad57d43ab433bdf42cf74e7d2e3b00"
+}

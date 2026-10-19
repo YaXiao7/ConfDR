@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Job/precheck/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:17:06Z",
+          "message": "0/1 nodes are available: 1 node(s) had untolerated taint {kb-controller: true}. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "precheck-jx5xd",
+      "uid": "34ddeec2-510c-403d-8521-4a4ee0a2040c",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Job/precheck/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) had untolerated taint {kb-controller: true}. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:17:06.011428Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:17:06.268198+00:00",
+  "candidate_hash": "9f9b55369c905d64478b14e291bae7aaa1f2cd7baa617e32794a0f020bba1a43",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:17:06.268198+00:00",
+    "candidate_hash": "9f9b55369c905d64478b14e291bae7aaa1f2cd7baa617e32794a0f020bba1a43",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

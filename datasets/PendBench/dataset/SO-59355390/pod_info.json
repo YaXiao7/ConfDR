@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Deployment/xyz/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:25Z",
+          "message": "0/19 nodes are available: 1 node(s) had untolerated taint {esxcluster: bi}, 3 node(s) had untolerated taint {node-role.kubernetes.io/master: }, 4 node(s) had untolerated taint {esxcluster: ci}, 5 node(s) had untolerated taint {esxcluster: svc}, 6 node(s) had untolerated taint {esxcluster: app}. preemption: 0/19 nodes are available: 19 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "xyz-7d85c9cb69-sp8p7",
+      "uid": "a839b209-f3db-49fb-abae-bd9335a8ffd9",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/xyz/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/19 nodes are available: 1 node(s) had untolerated taint {esxcluster: bi}, 3 node(s) had untolerated taint {node-role.kubernetes.io/master: }, 4 node(s) had untolerated taint {esxcluster: ci}, 5 node(s) had untolerated taint {esxcluster: svc}, 6 node(s) had untolerated taint {esxcluster: app}. preemption: 0/19 nodes are available: 19 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:25.565859Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:25.861945+00:00",
+  "candidate_hash": "b404d2226e014d2c6f296f69aa81d4c319c3fa28aab74eb0a15522d399a62bb7",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:25.861945+00:00",
+    "candidate_hash": "b404d2226e014d2c6f296f69aa81d4c319c3fa28aab74eb0a15522d399a62bb7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

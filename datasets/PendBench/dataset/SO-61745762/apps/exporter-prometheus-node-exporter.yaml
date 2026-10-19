@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: exporter-prometheus-node-exporter
+  namespace: monitoring
+  labels:
+    app: prometheus
+    chart: prometheus-11.1.2
+    component: node-exporter
+    heritage: Helm
+    release: exporter
+spec:
+  selector:
+    matchLabels:
+      app: prometheus
+      component: node-exporter
+      release: exporter
+  template:
+    metadata:
+      labels:
+        app: prometheus
+        chart: prometheus-11.1.2
+        component: node-exporter
+        heritage: Helm
+        release: exporter
+    spec:
+      hostNetwork: true
+      hostPID: true
+      containers:
+      - name: prometheus-node-exporter
+        image: prom/node-exporter:v0.18.1
+        imagePullPolicy: IfNotPresent
+        args:
+        - --path.procfs=/host/proc
+        - --path.sysfs=/host/sys
+        ports:
+        - containerPort: 9100
+          hostPort: 9100
+          name: metrics
+          protocol: TCP
+        volumeMounts:
+        - name: proc
+          mountPath: /host/proc
+          readOnly: true
+        - name: sys
+          mountPath: /host/sys
+          readOnly: true
+      volumes:
+      - name: proc
+        hostPath:
+          path: /proc
+      - name: sys
+        hostPath:
+          path: /sys

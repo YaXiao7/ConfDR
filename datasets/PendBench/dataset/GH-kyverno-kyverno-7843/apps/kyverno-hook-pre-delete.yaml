@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kyverno-hook-pre-delete
+  namespace: kyverno
+spec:
+  template:
+    metadata:
+      labels:
+        app: kyverno-hook-pre-delete
+    spec:
+      containers:
+      - name: kubectl
+        image: bitnami/kubectl:latest
+      restartPolicy: Never
+  backoffLimit: 0

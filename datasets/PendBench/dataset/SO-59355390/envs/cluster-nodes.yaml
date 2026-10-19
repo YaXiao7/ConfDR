@@ -1,0 +1,774 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-app-stg-c1-01
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: app
+    role: preemptible
+    kubernetes.io/hostname: k8s-app-stg-c1-01
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: app
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-app-stg-c1-02
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: app
+    role: preemptible
+    kubernetes.io/hostname: k8s-app-stg-c1-02
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: app
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-app-stg-c1-03
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: app
+    role: preemptible
+    kubernetes.io/hostname: k8s-app-stg-c1-03
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: app
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-app-stg-c1-04
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: app
+    role: preemptible
+    kubernetes.io/hostname: k8s-app-stg-c1-04
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: app
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-app-stg-c1-05
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: app
+    role: preemptible
+    kubernetes.io/hostname: k8s-app-stg-c1-05
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: app
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-app-stg-c1-06
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: app
+    role: preemtible
+    kubernetes.io/hostname: k8s-app-stg-c1-06
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: app
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-bi-stg-c1-01
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: bi
+    kubernetes.io/hostname: k8s-bi-stg-c1-01
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: bi
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-ci-stg-c1-01
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: ci
+    role: preemtible
+    kubernetes.io/hostname: k8s-ci-stg-c1-01
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: ci
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-ci-stg-c1-02
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: ci
+    role: preemtible
+    kubernetes.io/hostname: k8s-ci-stg-c1-02
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: ci
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-ci-stg-c1-03
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: ci
+    role: preemtible
+    kubernetes.io/hostname: k8s-ci-stg-c1-03
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: ci
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-ci-stg-c1-04
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: ci
+    role: preemtible
+    kubernetes.io/hostname: k8s-ci-stg-c1-04
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: ci
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-master-stg-c1-01
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    node-role.kubernetes.io/master: ''
+    kubernetes.io/hostname: k8s-master-stg-c1-01
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: node-role.kubernetes.io/master
+    value: ''
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-master-stg-c1-02
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    node-role.kubernetes.io/master: ''
+    kubernetes.io/hostname: k8s-master-stg-c1-02
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: node-role.kubernetes.io/master
+    value: ''
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-master-stg-c1-03
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    node-role.kubernetes.io/master: ''
+    kubernetes.io/hostname: k8s-master-stg-c1-03
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: node-role.kubernetes.io/master
+    value: ''
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-svc-stg-c1-01
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: svc
+    role: preemptible
+    kubernetes.io/hostname: k8s-svc-stg-c1-01
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: svc
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-svc-stg-c1-02
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: svc
+    role: preemptible
+    kubernetes.io/hostname: k8s-svc-stg-c1-02
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: svc
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-svc-stg-c1-03
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: svc
+    role: preemptible
+    kubernetes.io/hostname: k8s-svc-stg-c1-03
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: svc
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-svc-stg-c1-04
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: svc
+    role: preemptible
+    kubernetes.io/hostname: k8s-svc-stg-c1-04
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: svc
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: k8s-svc-stg-c1-05
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    esxcluster: svc
+    role: preemptible
+    kubernetes.io/hostname: k8s-svc-stg-c1-05
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints:
+  - key: esxcluster
+    value: svc
+    effect: NoSchedule
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running

@@ -1,0 +1,112 @@
+# English specification summaries pinned to Kubernetes 1.30.2 source code to avoid documentation version drift.
+- id: k8s-resource-accounting
+  title: Effective resource requests and scheduler budgets
+  url: https://github.com/kubernetes/kubernetes/blob/v1.30.2/pkg/scheduler/framework/plugins/noderesources/fit.go
+  categories: [R1, R2, R3, R4]
+  text: >-
+    Resource feasibility compares effective requests against allocatable capacity after existing
+    reservations. Targets share each node budget. Do not compare against live utilization.
+    Extended resource names are separate dimensions. This model includes init-container peaks,
+    restartable init containers, limits-derived defaults and overhead for CPU and memory.
+    GPU resources use nonnegative integer device-plugin units; DRA is not modeled.
+- id: k8s-taints
+  title: Hard taint filtering
+  url: https://github.com/kubernetes/kubernetes/blob/v1.30.2/pkg/scheduler/framework/plugins/tainttoleration/taint_toleration.go
+  categories: [A1]
+  text: >-
+    Scheduler filtering rejects nodes with unmatched NoSchedule or NoExecute taints.
+    PreferNoSchedule affects preference, not hard feasibility. This category concerns
+    scheduling only, not eviction expiry. Explicit nodeName bypasses scheduler filters.
+- id: k8s-node-affinity
+  title: Required node selection
+  url: https://github.com/kubernetes/kubernetes/blob/v1.30.2/pkg/scheduler/framework/plugins/nodeaffinity/node_affinity.go
+  categories: [P1]
+  text: >-
+    Both nodeSelector and required nodeAffinity apply. Required terms are alternatives;
+    expressions within each term must all hold. Preferred terms are not necessary conditions.
+    Missing observations differ from observed missing labels. Profile-specific addedAffinity
+    requires separate scheduler configuration evidence and is outside this profile.
+- id: k8s-pod-affinity
+  title: Required inter-Pod affinity and anti-affinity
+  url: https://github.com/kubernetes/kubernetes/blob/v1.30.2/pkg/scheduler/framework/plugins/interpodaffinity/filtering.go
+  categories: [P2, P3]
+  text: >-
+    Required affinity considers Pods matching all incoming affinity terms, their namespaces
+    and topology domains. The first self-affine Pod has a defined exception when no matching
+    Pods are present. Anti-affinity checks incoming terms and existing Pods' required terms.
+    Later target Pods cannot count as already present. The model searches for a valid order
+    against an unchanged background snapshot; it does not predict scheduler queue order.
+- id: k8s-hard-spread
+  title: Hard topology spread filtering
+  url: https://github.com/kubernetes/kubernetes/blob/v1.30.2/pkg/scheduler/framework/plugins/podtopologyspread/filtering.go
+  categories: [P4]
+  text: >-
+    Hard filtering uses the candidate domain's prior matching count plus an incoming self-match
+    contribution minus the global minimum, bounded by maxSkew. Below minDomains, the minimum
+    is zero. Node inclusion policies affect counting domains; all hard topology keys must be
+    present. Counts concern matching Pods in the incoming Pod's namespace. Soft constraints
+    do not prohibit placement. Explicit constraints are modeled; scheduler-injected defaults
+    require additional configuration evidence.
+- id: k8s-storage-binding
+  title: PVC references and static binding
+  url: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+  categories: [S1, S3, S4]
+  text: >-
+    Resolve PVC references within the Pod namespace. An explicit PV reference must exist.
+    Static selection considers class, capacity, access modes, volume mode, selector and ownership;
+    explicit prebinding changes selector applicability. A PV is bound to one PVC, while multiple
+    Pods can reference that PVC. Enforce a storage path for each valid referenced PVC, and
+    apply node topology to the chosen binding only. An absent PV can be compatible with
+    a valid dynamic supply path. Do not classify normal delayed binding as failure.
+- id: k8s-access-mode-capabilities
+  title: Access modes supported by dynamic provisioners
+  url: https://github.com/kubernetes/website/blob/release-1.26/content/en/docs/concepts/storage/persistent-volumes.md#access-modes
+  categories: [S2]
+  text: >-
+    A volume plugin or CSI driver supports only some access modes. For example, the AWS EBS and
+    Azure Disk plugins support ReadWriteOnce only, the GCE persistent disk plugin supports
+    ReadWriteOnce and ReadOnlyMany but not ReadWriteMany, and the Compute Engine persistent disk
+    CSI driver rejects ReadWriteMany with the filesystem access type. A dynamically provisioned
+    PVC that requests a mode its provisioner rejects cannot be provisioned. Capabilities are
+    checked only against an explicit matching capability contract; a provisioner without a
+    contract, or a mode the contract does not cover, remains unknown.
+- id: k8s-dynamic-provisioning
+  title: Dynamic provisioning prerequisites and evidence boundaries
+  url: https://kubernetes.io/docs/concepts/storage/storage-classes/
+  categories: [S2, S4]
+  text: >-
+    Omitted or null storageClassName can resolve through the effective default class; an explicit
+    empty string disables that default. For this benchmark's scheduling-v2 profile only,
+    omitted/null class with no default and a complete empty PV inventory is attributed to
+    missing default-provisioning configuration (S2); this does not establish author intent.
+    A named class without a StorageClass but with an observed same-class PV is attributed
+    to static binding (S3), not an assumed dynamic request.
+    A provisioner name is configuration, not proof of
+    controller health. Validate driver parameters only against an explicit matching contract.
+    WaitForFirstConsumer can legitimately delay provisioning. Pending alone does not establish
+    a failure. Unknown backend state must remain unknown; successful static binding does not
+    require dynamic provisioning. Immediate provisioning may leave topology unresolved.
+- id: k8s-host-ports
+  title: Host port reservations
+  url: https://github.com/kubernetes/kubernetes/blob/v1.30.2/pkg/scheduler/framework/plugins/nodeports/node_ports.go
+  categories: [E1]
+  text: >-
+    Host port conflicts depend on protocol, port number and overlapping host addresses on the
+    same node. Account for existing reservations and reservations between target Pods.
+    containerPort alone and Service ports are not hostPort reservations. Preserve the
+    original requested ports when reconstructing candidate resource facts.
+
+- id: k8s-csi-volume-count
+  title: Unique CSI volume scheduling limits
+  url: https://github.com/kubernetes/kubernetes/blob/v1.30.2/pkg/scheduler/framework/plugins/nodevolumelimits/csi.go
+  categories: [R5]
+  text: >-
+    Read per-node per-driver limits from CSINode.spec.drivers[].allocatable.count.
+    Count unique driver/volume identities of background Pods; remove already reserved
+    identities from incoming Pod demand. Reject only when a positive new count plus
+    existing count exceeds that driver's limit. Equality and zero new volumes pass.
+    Do not count the same volume multiple times across Pods or containers. Unbound PVCs
+    can be identified by StorageClass provisioner and namespaced PVC identity until bound.
+    This interpreter extends the check to earlier assigned target Pods in the chosen order
+    and uses selected static/dynamic paths. It supports CSI PVs; legacy migration is unknown.
+    Missing collection is unknown; a successfully observed absent limit is not zero capacity.

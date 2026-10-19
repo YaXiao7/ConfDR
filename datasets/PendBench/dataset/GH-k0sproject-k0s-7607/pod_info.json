@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/pending-workload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:00Z",
+          "message": "0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "pending-workload",
+      "uid": "a361b573-11b3-4eea-aee6-066e6c28b4da",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/pending-workload/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:00.605186Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:19:00.927515+00:00",
+  "candidate_hash": "0a8b53ba7d88b556ad8b37378b88d166a4fc68ef8a9d20cd0f66a832a903c136",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:00.927515+00:00",
+    "candidate_hash": "0a8b53ba7d88b556ad8b37378b88d166a4fc68ef8a9d20cd0f66a832a903c136",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

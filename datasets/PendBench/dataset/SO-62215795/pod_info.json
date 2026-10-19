@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "infra/Pod/elasticsearch/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:23Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "infra",
+      "actual_name": "elasticsearch",
+      "uid": "59b0c19c-ed99-416c-ab69-4bf1415115a3",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "infra/Pod/elasticsearch/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:23.829747Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "infra/elasticsearch-data-persistent-storage-elasticsearch-data-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:27:24.099201+00:00",
+  "candidate_hash": "5ef3ac28de477c6eaa5da8aab7a5e4efeb267d7c1e66e0ca807d19456af63600",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:24.099201+00:00",
+    "candidate_hash": "5ef3ac28de477c6eaa5da8aab7a5e4efeb267d7c1e66e0ca807d19456af63600",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

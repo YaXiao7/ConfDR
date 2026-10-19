@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Deployment/wordpress/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:24:00Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "wordpress-8669d45695-9qv6t",
+      "uid": "4d0d1722-d931-450a-b189-c7b277d389c4",
+      "nodeName": null
+    },
+    "default/Deployment/wordpress/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:24:00Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "wordpress-8669d45695-c79gh",
+      "uid": "ebba0926-4f0a-40b3-b21e-af653076280c",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/wordpress/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:24:00.056669Z"
+      }
+    ],
+    "default/Deployment/wordpress/1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:24:00.043632Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/task-pv-claim": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:24:00.330335+00:00",
+  "candidate_hash": "7c4d1dca87baf12fd112198c0f7f9e9d3d2ed168c35f0154bbe33a23ced943e7",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:00.330335+00:00",
+    "candidate_hash": "7c4d1dca87baf12fd112198c0f7f9e9d3d2ed168c35f0154bbe33a23ced943e7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

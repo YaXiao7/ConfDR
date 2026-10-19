@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "matched/Pod/pending-workload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:30:39Z",
+          "message": "0/5 nodes are available: 5 node(s) had untolerated taint {eks.amazonaws.com/compute-type: fargate}. preemption: 0/5 nodes are available: 5 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "matched",
+      "actual_name": "pending-workload",
+      "uid": "20e361b5-725e-4315-b4c2-a1091b944b70",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "matched/Pod/pending-workload/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/5 nodes are available: 5 node(s) had untolerated taint {eks.amazonaws.com/compute-type: fargate}. preemption: 0/5 nodes are available: 5 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:30:39.146912Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:30:39.412665+00:00",
+  "candidate_hash": "1ce0bbd018e03e876485a6fc049beae7be7a55f0b5f1cc75a530d9ffd60d8873",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:30:39.412665+00:00",
+    "candidate_hash": "1ce0bbd018e03e876485a6fc049beae7be7a55f0b5f1cc75a530d9ffd60d8873",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

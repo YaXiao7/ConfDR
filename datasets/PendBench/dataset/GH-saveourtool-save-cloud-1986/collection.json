@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't have free ports for the requested pod ports. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-c87e48099a97",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:23:10.527524+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "9e2653f31c38ab3fdd7d78f29ea576a3cb032fdff30e9147ca7b332b89194c06"
+}

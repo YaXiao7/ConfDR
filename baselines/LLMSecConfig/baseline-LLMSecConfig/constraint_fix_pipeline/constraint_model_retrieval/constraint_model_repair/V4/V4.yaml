@@ -1,0 +1,64 @@
+# Before fix: the Pod mounts a PVC with accessModes set to ReadWriteMany,
+# but the corresponding PV only supports ReadWriteOnce.
+
+#     spec:
+#       containers:
+#       - name: app1-container
+#         image: registry.k8s.io/pause:2.0
+#         volumeMounts:
+#         - name: data-volume
+#           mountPath: /data
+#       volumes:
+#       - name: data-volume
+#         persistentVolumeClaim:
+#           claimName: app1-pvc
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: app1-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteMany
+#   resources:
+#     requests:
+#       storage: 1Gi
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: app1-pv
+# spec:
+#   capacity:
+#     storage: 1Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   hostPath:
+#     path: /tmp/pv1
+#   persistentVolumeReclaimPolicy: Retain
+
+# After fix: update the access mode to ensure consistency between the PVC and the PV.
+# The access modes must be aligned for successful volume binding.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app1-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app1-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /tmp/pv1
+  persistentVolumeReclaimPolicy: Retain

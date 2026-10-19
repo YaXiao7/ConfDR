@@ -1,0 +1,577 @@
+{
+  "pod_status": {
+    "default/DaemonSet/vault/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.8",
+      "podIPs": [
+        {
+          "ip": "10.0.0.8"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-2wbbp",
+      "uid": "b54bdaca-87cb-4569-bc4c-e59b4404b72a",
+      "nodeName": "node-3"
+    },
+    "default/DaemonSet/vault/node-10": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.7",
+      "podIPs": [
+        {
+          "ip": "10.0.0.7"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-4s2dh",
+      "uid": "92ece34c-1e12-4d65-9ae5-7397a920fe35",
+      "nodeName": "node-9"
+    },
+    "default/DaemonSet/vault/node-2": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.3",
+      "podIPs": [
+        {
+          "ip": "10.0.0.3"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-8db24",
+      "uid": "2c4ebc59-d285-4950-be60-8b15d02f52c0",
+      "nodeName": "node-10"
+    },
+    "default/DaemonSet/vault/node-3": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.10",
+      "podIPs": [
+        {
+          "ip": "10.0.0.10"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-9ts97",
+      "uid": "665be188-7f82-4ec1-99c4-4b80800d970b",
+      "nodeName": "node-5"
+    },
+    "default/DaemonSet/vault/node-4": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.9",
+      "podIPs": [
+        {
+          "ip": "10.0.0.9"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-cqf4r",
+      "uid": "1c54b216-e8c7-4b7c-9a2a-3ae7159040e1",
+      "nodeName": "node-6"
+    },
+    "default/DaemonSet/vault/node-5": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-dxljl",
+      "uid": "c7d52d74-85ea-4b18-a780-06e5bc1e6b5d",
+      "nodeName": "node-8"
+    },
+    "default/DaemonSet/vault/node-6": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.5",
+      "podIPs": [
+        {
+          "ip": "10.0.0.5"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-fk6rc",
+      "uid": "12c7f787-e5cf-4097-8051-9a58d063bf6e",
+      "nodeName": "node-2"
+    },
+    "default/DaemonSet/vault/node-7": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.6",
+      "podIPs": [
+        {
+          "ip": "10.0.0.6"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-gc5lx",
+      "uid": "2a92ebb3-546b-40b9-956e-7d2284ce844a",
+      "nodeName": "node-7"
+    },
+    "default/DaemonSet/vault/node-8": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "vault",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:18:43Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.4",
+      "podIPs": [
+        {
+          "ip": "10.0.0.4"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:18:43Z",
+      "namespace": "default",
+      "actual_name": "vault-lr5pg",
+      "uid": "e30163d2-a1c3-4b41-99c2-36f9cffa842d",
+      "nodeName": "node-4"
+    },
+    "default/DaemonSet/vault/node-9": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:43Z",
+          "message": "0/10 nodes are available: 1 node(s) didn't have free ports for the requested pod ports. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "vault-qmnnp",
+      "uid": "fded3ddc-923f-4c10-8e01-7c8d31c5c765",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/DaemonSet/vault/node-1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-2wbbp to node-3",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.129023Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-10": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-4s2dh to node-9",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.129069Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-2": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-8db24 to node-10",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.124581Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-3": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-9ts97 to node-5",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.129096Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-4": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-cqf4r to node-6",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.124657Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-5": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-dxljl to node-8",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.104912Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-6": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-fk6rc to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.124743Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-7": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-gc5lx to node-7",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.124547Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-8": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/vault-lr5pg to node-4",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.124659Z"
+      }
+    ],
+    "default/DaemonSet/vault/node-9": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 node(s) didn't have free ports for the requested pod ports. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:43.105525Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:18:43.397497+00:00",
+  "candidate_hash": "099d306395050b3c03ca83f49515e2b393d10280ceb499be9fee23bf563a39b2",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:18:43.397497+00:00",
+    "candidate_hash": "099d306395050b3c03ca83f49515e2b393d10280ceb499be9fee23bf563a39b2",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,29 @@
+## Before fix: the Pod defines strict pod anti-affinity rules, but after applying these rules,
+## no schedulable node remains in the cluster.
+# spec:
+#   affinity:
+#     podAntiAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#       - labelSelector:
+#           matchExpressions:
+#           - key: app
+#             operator: In
+#             values:
+#             - app1
+#         topologyKey: kubernetes.io/hostname
+
+## After fix: change the pod anti-affinity rule from
+## "requiredDuringSchedulingIgnoredDuringExecution" to
+## "preferredDuringSchedulingIgnoredDuringExecution" to increase scheduling flexibility.
+## This allows the Pod to be scheduled even when the anti-affinity constraint cannot be fully satisfied.
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - app1
+        topologyKey: kubernetes.io/hostname

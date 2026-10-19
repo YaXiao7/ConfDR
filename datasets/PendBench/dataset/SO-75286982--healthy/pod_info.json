@@ -1,0 +1,83 @@
+{
+  "pod_status": {
+    "default/Deployment/found/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:51Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:51Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:51Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "found",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:51Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:51Z",
+      "namespace": "default",
+      "actual_name": "found-669ffb4d6c-6fgt4",
+      "uid": "8595af3d-da4b-49f9-bd0f-5237ec596ce1",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Deployment/found/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/found-669ffb4d6c-6fgt4 to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:51.090894Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/grafana-configuration": {
+      "phase": "Bound",
+      "volumeName": "grafana-configuration"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:54:51.419403+00:00",
+  "candidate_hash": "f24173303a15144343d85c12cc867a788ac3313cfc0f8760d289a998f8e20e56",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:54:51.419403+00:00",
+    "candidate_hash": "f24173303a15144343d85c12cc867a788ac3313cfc0f8760d289a998f8e20e56",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

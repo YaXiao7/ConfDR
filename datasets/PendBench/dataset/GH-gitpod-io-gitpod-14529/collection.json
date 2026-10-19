@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/1 nodes are available: persistentvolumeclaim \"data-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-0b606a8bf612",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:18:23.093940+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "b49fabf7cd0573c6bb01219f085691c184368071d3f36453e42dc15e171f2631"
+}

@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/jenkins/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:21Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "jenkins",
+      "uid": "ab21788b-e398-4c35-9ccf-cc4b2109d22c",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/jenkins/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:21.268004Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/had": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:25:21.537100+00:00",
+  "candidate_hash": "9c113c386a952ace6bdc64cd2c6100e9b60a9ab76f810d018dea6adab21daaba",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:25:21.537100+00:00",
+    "candidate_hash": "9c113c386a952ace6bdc64cd2c6100e9b60a9ab76f810d018dea6adab21daaba",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,52 @@
+# Before fix: the storage size requested by the PVC exceeds the available
+# storage capacity provided by the PersistentVolume.
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: app1-pv
+# spec:
+#   capacity:
+#     storage: 1Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   hostPath:
+#     path: /tmp/pv1
+#   persistentVolumeReclaimPolicy: Retain
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: app1-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 2Gi
+
+# After fix: ensure that the storage size requested by the PVC does not exceed
+# the available storage capacity of the associated PersistentVolume.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app1-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /tmp/pv1
+  persistentVolumeReclaimPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app1-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitor-prometheus-server
+  namespace: monitoring
+  labels:
+    app: prometheus
+    component: server
+    release: monitor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+      component: server
+      release: monitor
+  template:
+    metadata:
+      labels:
+        app: prometheus
+        component: server
+        release: monitor
+    spec:
+      containers:
+      - name: prometheus-server-configmap-reload
+        image: registry.k8s.io/pause:3.9
+      - name: prometheus-server
+        image: registry.k8s.io/pause:3.9
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: storage-volume
+          mountPath: /data
+      volumes:
+      - name: storage-volume
+        persistentVolumeClaim:
+          claimName: monitor-prometheus-server

@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "kyverno/Job/kyverno-hook-pre-delete/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:21:51Z",
+          "message": "0/1 nodes are available: 1 node(s) had untolerated taint {CriticalAddonsOnly: true}. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kyverno",
+      "actual_name": "kyverno-hook-pre-delete-q2r4v",
+      "uid": "ae84637d-76d2-4575-b37d-6969f53bae89",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kyverno/Job/kyverno-hook-pre-delete/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) had untolerated taint {CriticalAddonsOnly: true}. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:21:51.689666Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:21:51.952862+00:00",
+  "candidate_hash": "506ae4e24b2e54167d14db81d32ad2fd9e450f77224f71033e5a7ed1d772880d",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:21:51.952862+00:00",
+    "candidate_hash": "506ae4e24b2e54167d14db81d32ad2fd9e450f77224f71033e5a7ed1d772880d",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

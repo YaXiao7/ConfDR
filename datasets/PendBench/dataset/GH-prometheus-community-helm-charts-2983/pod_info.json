@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/DaemonSet/prometheus-stack-prometheus-node-exporter/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:13Z",
+          "message": "0/1 nodes are available: 1 node(s) didn't have free ports for the requested pod ports. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "prometheus-stack-prometheus-node-exporter-gkwlz",
+      "uid": "9eaf02df-ce19-448f-907c-be1c75470bc6",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/DaemonSet/prometheus-stack-prometheus-node-exporter/node-1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) didn't have free ports for the requested pod ports. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:13.846709Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:22:14.104746+00:00",
+  "candidate_hash": "d1e93beb161d57b75869c8addb1704bef1c3d4b00b9e23ceb3d4f17952491316",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:22:14.104746+00:00",
+    "candidate_hash": "d1e93beb161d57b75869c8addb1704bef1c3d4b00b9e23ceb3d4f17952491316",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

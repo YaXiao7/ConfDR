@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Deployment/wordpress/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:23:54Z",
+          "message": "0/1 nodes are available: 1 Insufficient cpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "wordpress-54b644b97c-v84b6",
+      "uid": "0188c739-7b21-4692-a118-b867cc56a955",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/wordpress/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 Insufficient cpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:23:54.223491Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:23:54.510545+00:00",
+  "candidate_hash": "9f8271faa05f4f2455f46f0ae6cda62e53da370e02bad8f119b213fd340979c4",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:23:54.510545+00:00",
+    "candidate_hash": "9f8271faa05f4f2455f46f0ae6cda62e53da370e02bad8f119b213fd340979c4",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

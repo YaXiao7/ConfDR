@@ -1,0 +1,83 @@
+{
+  "pod_status": {
+    "default/Pod/jenkins/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:04Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:04Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:04Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "jenkins",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:53:04Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:53:04Z",
+      "namespace": "default",
+      "actual_name": "jenkins",
+      "uid": "569c09bc-0676-47a1-b5db-88d14891a55b",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Pod/jenkins/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/jenkins to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:53:04.077141Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Bound",
+      "volumeName": "data-volume"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:53:04.390110+00:00",
+  "candidate_hash": "b72b63732e6e4c6cab1ff96b2df4d2833a7d5783e2f429681306c022210dcb7c",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:53:04.390110+00:00",
+    "candidate_hash": "b72b63732e6e4c6cab1ff96b2df4d2833a7d5783e2f429681306c022210dcb7c",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

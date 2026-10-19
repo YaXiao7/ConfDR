@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kb-post-provision-job-mango-86d8fd56bd-redis
+  namespace: kubeblocks-cloud-ns
+spec:
+  template:
+    metadata:
+      labels:
+        app: kb-post-provision-job-mango-86d8fd56bd-redis
+    spec:
+      containers:
+      - name: kb-lifecycle-action-job
+        image: apecloud-registry.cn-zhangjiakou.cr.aliyuncs.com/apecloud/redis-stack-server:7.2.0-v10
+      restartPolicy: Never
+  backoffLimit: 0

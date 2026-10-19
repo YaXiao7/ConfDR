@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/StatefulSet/redis/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:30Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "redis-0",
+      "uid": "bc10416d-d46f-4275-adb4-ee47d270117d",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/redis/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:30.686814Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/redis-data-open-match-redis-node-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:18:31.034097+00:00",
+  "candidate_hash": "5dd8e448a6c8ad9165f7865ca9826a51db8498a67786352fe4916efa620a8941",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:18:31.034097+00:00",
+    "candidate_hash": "5dd8e448a6c8ad9165f7865ca9826a51db8498a67786352fe4916efa620a8941",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

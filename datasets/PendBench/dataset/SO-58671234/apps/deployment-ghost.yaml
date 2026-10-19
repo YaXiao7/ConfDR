@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-ghost
+  namespace: ghost
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-ghost
+  template:
+    metadata:
+      labels:
+        app: deployment-ghost
+    spec:
+      containers:
+      - name: ghost
+        image: arm32v7/ghost
+        volumeMounts:
+        - name: ghost-data
+          mountPath: /var/lib/ghost/content
+      nodeSelector:
+        beta.kubernetes.io/arch: arm
+      volumes:
+      - name: ghost-data
+        persistentVolumeClaim:
+          claimName: pvc-ghost

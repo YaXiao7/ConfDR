@@ -1,0 +1,229 @@
+{
+  "WaitingDeployPods": {
+    "default/Deployment/mysql/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "mysql"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "mysql-storage",
+          "persistentVolumeClaim": {
+            "claimName": "mysql"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "mysql"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "mysql"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Deployment",
+        "default",
+        "mysql"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "control-static"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "mysql-control-pv"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "single-node-cluster"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "single-node-cluster": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "kubernetes.io/hostname": "single-node-cluster"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "mysql": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "control-static",
+          "volumeMode": "Filesystem",
+          "volumeName": "mysql-control-pv",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"972d2ed440f9\"},\"name\":\"mysql\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"control-static\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes",
+              "pv.kubernetes.io/bound-by-controller": "yes"
+            },
+            "creationTimestamp": "2026-09-25T06:52:58Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "972d2ed440f9"
+            },
+            "name": "mysql",
+            "namespace": "default",
+            "resourceVersion": "235",
+            "uid": "44678566-58c4-45d5-8eda-b9a65fa3f5ce"
+          },
+          "uid": "44678566-58c4-45d5-8eda-b9a65fa3f5ce",
+          "requestsGi": "1Gi",
+          "STATUS": "Bound"
+        }
+      }
+    },
+    "PVs": {
+      "mysql-control-pv": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "mysql",
+          "namespace": "default",
+          "resourceVersion": "229",
+          "uid": "44678566-58c4-45d5-8eda-b9a65fa3f5ce"
+        },
+        "hostPath": {
+          "path": "/mnt/controls/mysql",
+          "type": ""
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "control-static",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"mysql-control-pv\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"hostPath\":{\"path\":\"/mnt/controls/mysql\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"control-static\"}}\n",
+            "pv.kubernetes.io/bound-by-controller": "yes"
+          },
+          "creationTimestamp": "2026-09-25T06:52:55Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "mysql-control-pv",
+          "resourceVersion": "232",
+          "uid": "c17be02a-3679-421e-b0c8-f0be4e4fb568"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Bound"
+      }
+    },
+    "StorageClasses": {
+      "control-static": {
+        "provisioner": "kubernetes.io/no-provisioner",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{},\"name\":\"control-static\"},\"provisioner\":\"kubernetes.io/no-provisioner\",\"volumeBindingMode\":\"Immediate\"}\n"
+          },
+          "creationTimestamp": "2026-09-25T06:52:55Z",
+          "name": "control-static",
+          "resourceVersion": "203",
+          "uid": "81a78d30-d676-412d-84a7-e36cb8c6c2a8"
+        },
+        "parameters": {},
+        "volumeBindingMode": "Immediate",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:58.601101+00:00",
+    "candidate_hash": "b9f43215ddc7e2add34b8beae01d612d861b2abee2967c4228ad6c97d0e0ee3a",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

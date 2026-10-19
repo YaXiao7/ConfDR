@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: existing-csi-volume-node-1
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  claimRef:
+    namespace: default
+    name: existing-csi-claim-node-1
+  csi:
+    driver: pd.csi.storage.gke.io
+    volumeHandle: existing-csi-volume-node-1
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: existing-csi-volume-node-2
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  claimRef:
+    namespace: default
+    name: existing-csi-claim-node-2
+  csi:
+    driver: pd.csi.storage.gke.io
+    volumeHandle: existing-csi-volume-node-2
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: existing-csi-volume-node-3
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  claimRef:
+    namespace: default
+    name: existing-csi-claim-node-3
+  csi:
+    driver: pd.csi.storage.gke.io
+    volumeHandle: existing-csi-volume-node-3

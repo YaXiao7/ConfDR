@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "ghost/Deployment/deployment-ghost/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:11Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match Pod's node affinity/selector. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "ghost",
+      "actual_name": "deployment-ghost-7b6d86c775-84qqx",
+      "uid": "ef7c9716-4593-4a39-8b09-15d798c1d72e",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "ghost/Deployment/deployment-ghost/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match Pod's node affinity/selector. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:11.771880Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "ghost/pvc-ghost": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:12.062872+00:00",
+  "candidate_hash": "4d7a2a36a1812c3a6a3b72fdf63825c92523a82daecaa7a09d88b7f6e2a79188",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:12.062872+00:00",
+    "candidate_hash": "4d7a2a36a1812c3a6a3b72fdf63825c92523a82daecaa7a09d88b7f6e2a79188",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

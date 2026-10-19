@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: switchover
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: switchover
+    spec:
+      containers:
+      - name: switchover
+        image: registry.k8s.io/pause:3.9
+      restartPolicy: Never
+  backoffLimit: 0

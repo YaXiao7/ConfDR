@@ -1,0 +1,71 @@
+{
+  "pod_status": {
+    "default/StatefulSet/zoo/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T09:15:17Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "zoo-0",
+      "uid": "4021324b-1511-49e5-b9f8-9d40a0dba594",
+      "nodeName": null
+    },
+    "default/StatefulSet/zoo/1": {
+      "namespace": "default",
+      "phase": "NotObserved",
+      "actual_name": null
+    },
+    "default/StatefulSet/zoo/2": {
+      "namespace": "default",
+      "phase": "NotObserved",
+      "actual_name": null
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/zoo/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T09:15:17.956519Z"
+      }
+    ],
+    "default/StatefulSet/zoo/1": [],
+    "default/StatefulSet/zoo/2": []
+  },
+  "pvc_status": {
+    "default/datadir-zoo-0": {
+      "phase": "Pending",
+      "volumeName": null
+    },
+    "default/datadir-zoo-1": {
+      "phase": "NotObserved",
+      "volumeName": null
+    },
+    "default/datadir-zoo-2": {
+      "phase": "NotObserved",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T09:15:18.266083+00:00",
+  "candidate_hash": "5c4a5f078f8f73c8fd758e02e10bb562690200aaaf918e22fcc98355b659c572",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:15:18.266083+00:00",
+    "candidate_hash": "5c4a5f078f8f73c8fd758e02e10bb562690200aaaf918e22fcc98355b659c572",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

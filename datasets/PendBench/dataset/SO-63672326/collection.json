@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/4 nodes are available: 4 node(s) had untolerated taint {cattle.io/os: linux}. preemption: 0/4 nodes are available: 4 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-8fd1284f7349",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:28:27.605629+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "9bded721a0f4853a5051d5471545e1e0a3c269acd781ee966fee6fa48f41f9e3"
+}

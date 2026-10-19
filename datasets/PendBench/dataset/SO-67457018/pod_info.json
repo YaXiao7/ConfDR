@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "monitoring/Deployment/monitor-prometheus-server/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T09:15:24Z",
+          "message": "0/6 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "monitoring",
+      "actual_name": "monitor-prometheus-server-7fd988c94b-7vddf",
+      "uid": "0935d656-49fa-4d53-bcb8-b8f6cd7c6bc7",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "monitoring/Deployment/monitor-prometheus-server/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/6 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T09:15:24.075015Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "monitoring/monitor-prometheus-server": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T09:15:24.410749+00:00",
+  "candidate_hash": "ff2e452b2054f241dc7d421cedc03011e4b568e2e495573ac533cbe59471b80c",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:15:24.410749+00:00",
+    "candidate_hash": "ff2e452b2054f241dc7d421cedc03011e4b568e2e495573ac533cbe59471b80c",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

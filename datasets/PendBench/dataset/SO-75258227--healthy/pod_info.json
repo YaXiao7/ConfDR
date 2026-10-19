@@ -1,0 +1,83 @@
+{
+  "pod_status": {
+    "default/Pod/pending-workload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:45Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:45Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:45Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "pending-workload",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:45Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:45Z",
+      "namespace": "default",
+      "actual_name": "pending-workload",
+      "uid": "8023766f-b4ab-434f-9177-c5d5bf90bcf1",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Pod/pending-workload/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/pending-workload to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:45.117140Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/references": {
+      "phase": "Bound",
+      "volumeName": "references"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:54:45.427086+00:00",
+  "candidate_hash": "159bb2d9c2998ae7b1540a0b740cfaefa2121b0c57a473cdab65ff5f96610ffe",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:54:45.427086+00:00",
+    "candidate_hash": "159bb2d9c2998ae7b1540a0b740cfaefa2121b0c57a473cdab65ff5f96610ffe",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

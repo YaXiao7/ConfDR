@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/StatefulSet/nim-llama-3-2-3b-instruct/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:15:00Z",
+          "message": "0/2 nodes are available: 2 Insufficient nvidia.com/gpu. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "nim-llama-3-2-3b-instruct-0",
+      "uid": "5785be84-1a91-463e-9276-e0ae6b2deaa8",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/nim-llama-3-2-3b-instruct/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: 2 Insufficient nvidia.com/gpu. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:15:00.767732Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:15:01.036580+00:00",
+  "candidate_hash": "339272aab7a79fe9db523fe982de683fc135e885ed15a79246cdf09debc42f11",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:01.036580+00:00",
+    "candidate_hash": "339272aab7a79fe9db523fe982de683fc135e885ed15a79246cdf09debc42f11",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/elasticsearch/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:07Z",
+          "message": "0/1 nodes are available: 1 Insufficient memory. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "elasticsearch",
+      "uid": "1cd19485-856c-474b-b933-74624a61cbc2",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/elasticsearch/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 Insufficient memory. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:29:07.443350Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:29:07.708312+00:00",
+  "candidate_hash": "94a01ab1f522d930b266af49a05be59593d7b1cfb9b0d6385b769252e2642d93",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:29:07.708312+00:00",
+    "candidate_hash": "94a01ab1f522d930b266af49a05be59593d7b1cfb9b0d6385b769252e2642d93",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

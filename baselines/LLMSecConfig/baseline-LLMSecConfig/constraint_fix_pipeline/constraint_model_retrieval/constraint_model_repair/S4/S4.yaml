@@ -1,0 +1,14 @@
+# Before fix: the Node has taints applied. The Pod cannot be scheduled onto a node with specific taints,
+# because Pods are rejected by default if no tolerations are defined.
+# spec:
+#   taints:                  # By default, the Pod has no tolerations
+#     - key: dedicated       # Matches the existing taint key on node1
+#       value: gpu           # Accepts any taint value
+#       effect: NoSchedule   # Prevents Pods without tolerations from being scheduled
+
+# After fix: add tolerations to the Pod to allow scheduling onto nodes with the specified taint
+spec:
+  tolerations:
+    - key: "dedicated"        # Matches the existing taint key on node1
+      operator: "Exists"      # Accepts any taint value
+      effect: "NoSchedule"    # Allows the Pod to be scheduled onto nodes with a NoSchedule taint

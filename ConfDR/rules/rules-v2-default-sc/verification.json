@@ -1,0 +1,2089 @@
+{
+  "rules_hash": "3fb5869692fcea1a5766412a3cc754eb30ca72a8f298ea82a29da04da97294b8",
+  "semantics_version": "scheduling-atoms-v2",
+  "verification_material": {
+    "origin": "manual_v2_adaptation_of_v1_reference",
+    "reference": {
+      "categories": {
+        "R1": [
+          {
+            "category_id": "R1",
+            "formula": {
+              "body": {
+                "args": [
+                  {
+                    "body": {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            }
+                          ],
+                          "call": "cpu_request"
+                        },
+                        {
+                          "int": 0
+                        }
+                      ],
+                      "op": "ite"
+                    },
+                    "quantifier": "sum",
+                    "sort": "Pod",
+                    "variable": "p"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "n"
+                      }
+                    ],
+                    "call": "free_cpu"
+                  }
+                ],
+                "op": "le"
+              },
+              "quantifier": "forall",
+              "sort": "Node",
+              "variable": "n"
+            },
+            "id": "R1.cpu-budget",
+            "requirement_ids": [
+              "R1.budget"
+            ],
+            "source_ids": [
+              "taxonomy:R1",
+              "k8s-resource-accounting"
+            ],
+            "title": "Assigned target Pods must fit each node CPU budget"
+          }
+        ],
+        "R2": [
+          {
+            "category_id": "R2",
+            "formula": {
+              "body": {
+                "args": [
+                  {
+                    "body": {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            }
+                          ],
+                          "call": "memory_request"
+                        },
+                        {
+                          "int": 0
+                        }
+                      ],
+                      "op": "ite"
+                    },
+                    "quantifier": "sum",
+                    "sort": "Pod",
+                    "variable": "p"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "n"
+                      }
+                    ],
+                    "call": "free_memory"
+                  }
+                ],
+                "op": "le"
+              },
+              "quantifier": "forall",
+              "sort": "Node",
+              "variable": "n"
+            },
+            "id": "R2.memory_budget_per_node",
+            "requirement_ids": [
+              "R2.budget"
+            ],
+            "source_ids": [
+              "k8s-resource-accounting",
+              "taxonomy:R2"
+            ],
+            "title": "Assigned target Pods must fit each node's memory budget"
+          }
+        ],
+        "R3": [
+          {
+            "category_id": "R3",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "r"
+                        }
+                      ],
+                      "call": "is_gpu_resource"
+                    },
+                    {
+                      "args": [
+                        {
+                          "body": {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "p"
+                                  },
+                                  {
+                                    "var": "n"
+                                  }
+                                ],
+                                "call": "assign"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "p"
+                                  },
+                                  {
+                                    "var": "r"
+                                  }
+                                ],
+                                "call": "resource_request"
+                              },
+                              {
+                                "int": 0
+                              }
+                            ],
+                            "op": "ite"
+                          },
+                          "quantifier": "sum",
+                          "sort": "Pod",
+                          "variable": "p"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "n"
+                            },
+                            {
+                              "var": "r"
+                            }
+                          ],
+                          "call": "resource_free"
+                        }
+                      ],
+                      "op": "le"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Resource",
+                "variable": "r"
+              },
+              "quantifier": "forall",
+              "sort": "Node",
+              "variable": "n"
+            },
+            "id": "R3.gpu_resource_budget",
+            "requirement_ids": [
+              "R3.budget"
+            ],
+            "source_ids": [
+              "taxonomy:R3",
+              "k8s-resource-accounting"
+            ],
+            "title": "Assigned target GPU requests do not exceed each node-resource budget"
+          }
+        ],
+        "R4": [
+          {
+            "category_id": "R4",
+            "formula": {
+              "body": {
+                "args": [
+                  {
+                    "body": {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        },
+                        {
+                          "int": 1
+                        },
+                        {
+                          "int": 0
+                        }
+                      ],
+                      "op": "ite"
+                    },
+                    "quantifier": "sum",
+                    "sort": "Pod",
+                    "variable": "p"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "n"
+                      }
+                    ],
+                    "call": "pod_slots"
+                  }
+                ],
+                "op": "le"
+              },
+              "quantifier": "forall",
+              "sort": "Node",
+              "variable": "n"
+            },
+            "id": "R4.rule.slots",
+            "requirement_ids": [
+              "R4.slots"
+            ],
+            "source_ids": [
+              "taxonomy:R4",
+              "k8s-resource-accounting"
+            ],
+            "title": "Assigned target Pods do not exceed remaining node Pod slots"
+          }
+        ],
+        "A1": [
+          {
+            "category_id": "A1",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            }
+                          ],
+                          "call": "uses_scheduler"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "n"
+                        }
+                      ],
+                      "call": "scheduling_tolerates"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Node",
+                "variable": "n"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "A1.rule.tolerations",
+            "requirement_ids": [
+              "A1.tolerations"
+            ],
+            "source_ids": [
+              "taxonomy:A1",
+              "k8s-taints"
+            ],
+            "title": "Scheduler-assigned Pods must tolerate hard node taints"
+          }
+        ],
+        "P1": [
+          {
+            "category_id": "P1",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            }
+                          ],
+                          "call": "uses_scheduler"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "n"
+                        }
+                      ],
+                      "call": "selector_ok"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Node",
+                "variable": "n"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "P1.rule.selector",
+            "requirement_ids": [
+              "P1.selector"
+            ],
+            "source_ids": [
+              "taxonomy:P1",
+              "k8s-node-affinity"
+            ],
+            "title": "Scheduler-assigned Pods satisfy node selectors"
+          },
+          {
+            "category_id": "P1",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            }
+                          ],
+                          "call": "uses_scheduler"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "n"
+                        }
+                      ],
+                      "call": "node_affinity_ok"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Node",
+                "variable": "n"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "P1.rule.affinity",
+            "requirement_ids": [
+              "P1.affinity"
+            ],
+            "source_ids": [
+              "taxonomy:P1",
+              "k8s-node-affinity"
+            ],
+            "title": "Scheduler-assigned Pods satisfy required node affinity"
+          }
+        ],
+        "P2": [
+          {
+            "category_id": "P2",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            }
+                          ],
+                          "call": "uses_scheduler"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "n"
+                        }
+                      ],
+                      "call": "pod_affinity_ok"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Node",
+                "variable": "n"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "P2.required-pod-affinity",
+            "requirement_ids": [
+              "P2.affinity"
+            ],
+            "source_ids": [
+              "taxonomy:P2",
+              "k8s-pod-affinity"
+            ],
+            "title": "Scheduler-assigned Pods satisfy required Pod affinity"
+          }
+        ],
+        "P3": [
+          {
+            "category_id": "P3",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            }
+                          ],
+                          "call": "uses_scheduler"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "n"
+                            }
+                          ],
+                          "call": "assign"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "n"
+                        }
+                      ],
+                      "call": "pod_anti_affinity_ok"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Node",
+                "variable": "n"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "P3.required-pod-anti-affinity",
+            "requirement_ids": [
+              "P3.anti-affinity"
+            ],
+            "source_ids": [
+              "taxonomy:P3",
+              "k8s-pod-affinity"
+            ],
+            "title": "Scheduler-assigned Pods must satisfy required Pod anti-affinity"
+          }
+        ],
+        "P4": [
+          {
+            "category_id": "P4",
+            "formula": {
+              "body": {
+                "body": {
+                  "body": {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "p"
+                              }
+                            ],
+                            "call": "uses_scheduler"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "s"
+                              },
+                              {
+                                "var": "p"
+                              }
+                            ],
+                            "call": "spread_applies"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "p"
+                              },
+                              {
+                                "var": "n"
+                              }
+                            ],
+                            "call": "assign"
+                          }
+                        ],
+                        "op": "and"
+                      },
+                      {
+                        "args": [
+                          {
+                            "var": "s"
+                          },
+                          {
+                            "var": "n"
+                          }
+                        ],
+                        "call": "spread_has_key"
+                      }
+                    ],
+                    "op": "implies"
+                  },
+                  "quantifier": "forall",
+                  "sort": "Node",
+                  "variable": "n"
+                },
+                "quantifier": "forall",
+                "sort": "Spread",
+                "variable": "s"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "P4.topology-key.rule",
+            "requirement_ids": [
+              "P4.topology-key"
+            ],
+            "source_ids": [
+              "taxonomy:P4",
+              "k8s-hard-spread"
+            ],
+            "title": "Assigned scheduler-managed Pods require every applicable hard spread topology key"
+          },
+          {
+            "category_id": "P4",
+            "formula": {
+              "body": {
+                "body": {
+                  "body": {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "p"
+                              }
+                            ],
+                            "call": "uses_scheduler"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "s"
+                              },
+                              {
+                                "var": "p"
+                              }
+                            ],
+                            "call": "spread_applies"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "p"
+                              },
+                              {
+                                "var": "n"
+                              }
+                            ],
+                            "call": "assign"
+                          }
+                        ],
+                        "op": "and"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "s"
+                                      },
+                                      {
+                                        "var": "n"
+                                      }
+                                    ],
+                                    "call": "spread_count"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "s"
+                                      }
+                                    ],
+                                    "call": "spread_self_match"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "s"
+                                  }
+                                ],
+                                "call": "spread_global_min"
+                              }
+                            ],
+                            "op": "sub"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "s"
+                              }
+                            ],
+                            "call": "spread_max_skew"
+                          }
+                        ],
+                        "op": "le"
+                      }
+                    ],
+                    "op": "implies"
+                  },
+                  "quantifier": "forall",
+                  "sort": "Node",
+                  "variable": "n"
+                },
+                "quantifier": "forall",
+                "sort": "Spread",
+                "variable": "s"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "P4.skew.rule",
+            "requirement_ids": [
+              "P4.skew"
+            ],
+            "source_ids": [
+              "taxonomy:P4",
+              "k8s-hard-spread"
+            ],
+            "title": "Assigned scheduler-managed Pods must remain within every applicable hard spread maximum skew"
+          }
+        ],
+        "S1": [
+          {
+            "category_id": "S1",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "c"
+                        }
+                      ],
+                      "call": "uses"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "c"
+                        }
+                      ],
+                      "call": "claim_exists"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "S1-R1-claim-exists",
+            "requirement_ids": [
+              "S1.claim"
+            ],
+            "source_ids": [
+              "taxonomy:S1",
+              "k8s-storage-binding"
+            ],
+            "title": "Referenced PVCs must exist"
+          },
+          {
+            "category_id": "S1",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "uses"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "claim_exists"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "c"
+                        }
+                      ],
+                      "call": "fixed_volume_exists"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "S1-R2-fixed-volume-exists",
+            "requirement_ids": [
+              "S1.fixed-reference"
+            ],
+            "source_ids": [
+              "taxonomy:S1",
+              "k8s-storage-binding"
+            ],
+            "title": "Existing referenced PVCs must have valid fixed-volume references"
+          }
+        ],
+        "S2": [
+          {
+            "category_id": "S2",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p_class"
+                            },
+                            {
+                              "var": "c_class"
+                            }
+                          ],
+                          "call": "uses"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c_class"
+                            }
+                          ],
+                          "call": "claim_exists"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c_class"
+                            }
+                          ],
+                          "call": "dynamic"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "c_class"
+                        }
+                      ],
+                      "call": "storage_class_exists"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c_class"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p_class"
+            },
+            "id": "S2-rule-class",
+            "requirement_ids": [
+              "S2.class"
+            ],
+            "source_ids": [
+              "taxonomy:S2",
+              "k8s-dynamic-provisioning"
+            ],
+            "title": "Dynamic provisioning requires an existing effective StorageClass"
+          },
+          {
+            "category_id": "S2",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p_driver"
+                            },
+                            {
+                              "var": "c_driver"
+                            }
+                          ],
+                          "call": "uses"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c_driver"
+                            }
+                          ],
+                          "call": "claim_exists"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c_driver"
+                            }
+                          ],
+                          "call": "dynamic"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "c_driver"
+                        }
+                      ],
+                      "call": "provisioner_configured"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c_driver"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p_driver"
+            },
+            "id": "S2-rule-driver",
+            "requirement_ids": [
+              "S2.driver"
+            ],
+            "source_ids": [
+              "taxonomy:S2",
+              "k8s-dynamic-provisioning"
+            ],
+            "title": "Dynamic provisioning requires a configured provisioner"
+          },
+          {
+            "category_id": "S2",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p_parameters"
+                            },
+                            {
+                              "var": "c_parameters"
+                            }
+                          ],
+                          "call": "uses"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c_parameters"
+                            }
+                          ],
+                          "call": "claim_exists"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c_parameters"
+                            }
+                          ],
+                          "call": "dynamic"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "c_parameters"
+                        }
+                      ],
+                      "call": "provisioner_parameters_valid"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c_parameters"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p_parameters"
+            },
+            "id": "S2-rule-parameters",
+            "requirement_ids": [
+              "S2.parameters"
+            ],
+            "source_ids": [
+              "taxonomy:S2",
+              "k8s-dynamic-provisioning"
+            ],
+            "title": "Dynamic provisioning requires valid provisioner parameters"
+          }
+        ],
+        "S3": [
+          {
+            "category_id": "S3",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "uses"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "claim_exists"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "fixed_volume_exists"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "var": "c"
+                                }
+                              ],
+                              "call": "dynamic"
+                            },
+                            {
+                              "args": [
+                                {
+                                  "var": "c"
+                                }
+                              ],
+                              "call": "dynamic_eligible"
+                            }
+                          ],
+                          "op": "and"
+                        },
+                        {
+                          "body": {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "bind"
+                          },
+                          "quantifier": "exists",
+                          "sort": "Volume",
+                          "variable": "v"
+                        }
+                      ],
+                      "op": "or"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "S3-path-selection",
+            "requirement_ids": [
+              "S3.path"
+            ],
+            "source_ids": [
+              "taxonomy:S3",
+              "k8s-storage-binding"
+            ],
+            "title": "Referenced existing claims select a static or eligible dynamic path"
+          },
+          {
+            "category_id": "S3",
+            "formula": {
+              "body": {
+                "body": {
+                  "body": {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "p"
+                              },
+                              {
+                                "var": "c"
+                              }
+                            ],
+                            "call": "uses"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              }
+                            ],
+                            "call": "claim_exists"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              }
+                            ],
+                            "call": "fixed_volume_exists"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "bind"
+                          }
+                        ],
+                        "op": "and"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "class_ok"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "access_ok"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "mode_ok"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "capacity_ok"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "volume_available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c"
+                              },
+                              {
+                                "var": "v"
+                              }
+                            ],
+                            "call": "pv_selector_ok"
+                          }
+                        ],
+                        "op": "and"
+                      }
+                    ],
+                    "op": "implies"
+                  },
+                  "quantifier": "forall",
+                  "sort": "Volume",
+                  "variable": "v"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "S3-static-compatibility",
+            "requirement_ids": [
+              "S3.static-compatibility"
+            ],
+            "source_ids": [
+              "taxonomy:S3",
+              "k8s-storage-binding"
+            ],
+            "title": "Every selected static volume satisfies all binding compatibility checks"
+          },
+          {
+            "category_id": "S3",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "p"
+                            },
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "uses"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "claim_exists"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "fixed_volume_exists"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "c"
+                            }
+                          ],
+                          "call": "has_fixed_volume"
+                        }
+                      ],
+                      "op": "and"
+                    },
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "var": "c"
+                                }
+                              ],
+                              "call": "dynamic"
+                            }
+                          ],
+                          "op": "not"
+                        },
+                        {
+                          "body": {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "c"
+                                  },
+                                  {
+                                    "var": "v"
+                                  }
+                                ],
+                                "call": "bind"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "c"
+                                  },
+                                  {
+                                    "var": "v"
+                                  }
+                                ],
+                                "call": "fixed_to"
+                              }
+                            ],
+                            "op": "implies"
+                          },
+                          "quantifier": "forall",
+                          "sort": "Volume",
+                          "variable": "v"
+                        }
+                      ],
+                      "op": "and"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "S3-fixed-volume-choice",
+            "requirement_ids": [
+              "S3.fixed-choice"
+            ],
+            "source_ids": [
+              "taxonomy:S3",
+              "k8s-storage-binding"
+            ],
+            "title": "Fixed-volume claims forbid dynamic provisioning and bind only to the fixed volume"
+          }
+        ],
+        "S4": [
+          {
+            "category_id": "S4",
+            "formula": {
+              "body": {
+                "body": {
+                  "body": {
+                    "body": {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "var": "p_static"
+                                },
+                                {
+                                  "var": "c_static"
+                                }
+                              ],
+                              "call": "uses"
+                            },
+                            {
+                              "args": [
+                                {
+                                  "var": "p_static"
+                                },
+                                {
+                                  "var": "n_static"
+                                }
+                              ],
+                              "call": "assign"
+                            },
+                            {
+                              "args": [
+                                {
+                                  "var": "c_static"
+                                },
+                                {
+                                  "var": "v_static"
+                                }
+                              ],
+                              "call": "bind"
+                            }
+                          ],
+                          "op": "and"
+                        },
+                        {
+                          "args": [
+                            {
+                              "var": "v_static"
+                            },
+                            {
+                              "var": "n_static"
+                            }
+                          ],
+                          "call": "volume_node_ok"
+                        }
+                      ],
+                      "op": "implies"
+                    },
+                    "quantifier": "forall",
+                    "sort": "Volume",
+                    "variable": "v_static"
+                  },
+                  "quantifier": "forall",
+                  "sort": "Node",
+                  "variable": "n_static"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c_static"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p_static"
+            },
+            "id": "S4.static-selected-volume-topology",
+            "requirement_ids": [
+              "S4.static-topology"
+            ],
+            "source_ids": [
+              "taxonomy:S4",
+              "k8s-storage-binding"
+            ],
+            "title": "Selected static volume must permit the assigned node"
+          },
+          {
+            "category_id": "S4",
+            "formula": {
+              "body": {
+                "body": {
+                  "body": {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "p_dynamic"
+                              },
+                              {
+                                "var": "c_dynamic"
+                              }
+                            ],
+                            "call": "uses"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "p_dynamic"
+                              },
+                              {
+                                "var": "n_dynamic"
+                              }
+                            ],
+                            "call": "assign"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "c_dynamic"
+                              }
+                            ],
+                            "call": "dynamic"
+                          }
+                        ],
+                        "op": "and"
+                      },
+                      {
+                        "args": [
+                          {
+                            "var": "c_dynamic"
+                          },
+                          {
+                            "var": "n_dynamic"
+                          }
+                        ],
+                        "call": "dynamic_node_ok"
+                      }
+                    ],
+                    "op": "implies"
+                  },
+                  "quantifier": "forall",
+                  "sort": "Node",
+                  "variable": "n_dynamic"
+                },
+                "quantifier": "forall",
+                "sort": "Claim",
+                "variable": "c_dynamic"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p_dynamic"
+            },
+            "id": "S4.dynamic-selected-path-topology",
+            "requirement_ids": [
+              "S4.dynamic-topology"
+            ],
+            "source_ids": [
+              "taxonomy:S4",
+              "k8s-dynamic-provisioning"
+            ],
+            "title": "Selected dynamic path must permit the assigned node"
+          }
+        ],
+        "E1": [
+          {
+            "category_id": "E1",
+            "formula": {
+              "body": {
+                "body": {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "n"
+                        }
+                      ],
+                      "call": "assign"
+                    },
+                    {
+                      "args": [
+                        {
+                          "var": "p"
+                        },
+                        {
+                          "var": "n"
+                        }
+                      ],
+                      "call": "host_ports_free"
+                    }
+                  ],
+                  "op": "implies"
+                },
+                "quantifier": "forall",
+                "sort": "Node",
+                "variable": "n"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "E1.background.rule",
+            "requirement_ids": [
+              "E1.background"
+            ],
+            "source_ids": [
+              "taxonomy:E1",
+              "k8s-host-ports"
+            ],
+            "title": "Assigned Pods must have host ports free from background allocations"
+          },
+          {
+            "category_id": "E1",
+            "formula": {
+              "body": {
+                "body": {
+                  "body": {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "p"
+                              },
+                              {
+                                "var": "q"
+                              }
+                            ],
+                            "op": "ne"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "p"
+                              },
+                              {
+                                "var": "n"
+                              }
+                            ],
+                            "call": "assign"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "q"
+                              },
+                              {
+                                "var": "n"
+                              }
+                            ],
+                            "call": "assign"
+                          }
+                        ],
+                        "op": "and"
+                      },
+                      {
+                        "args": [
+                          {
+                            "var": "p"
+                          },
+                          {
+                            "var": "q"
+                          }
+                        ],
+                        "call": "ports_disjoint"
+                      }
+                    ],
+                    "op": "implies"
+                  },
+                  "quantifier": "forall",
+                  "sort": "Node",
+                  "variable": "n"
+                },
+                "quantifier": "forall",
+                "sort": "Pod",
+                "variable": "q"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "id": "E1.target-pair.rule",
+            "requirement_ids": [
+              "E1.target-pair"
+            ],
+            "source_ids": [
+              "taxonomy:E1",
+              "k8s-host-ports"
+            ],
+            "title": "Distinct target Pods on the same node must have disjoint host ports"
+          }
+        ],
+        "R5": [
+          {
+            "requirement_ids": [
+              "R5.driver-volume-budget"
+            ],
+            "source_ids": [
+              "taxonomy:R5",
+              "k8s-csi-volume-count"
+            ],
+            "id": "R5.driver-volume-budget",
+            "formula": {
+              "body": {
+                "body": {
+                  "body": {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "p"
+                                  }
+                                ],
+                                "call": "uses_scheduler"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "p"
+                                  },
+                                  {
+                                    "var": "n"
+                                  }
+                                ],
+                                "call": "assign"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "n"
+                                  },
+                                  {
+                                    "var": "d"
+                                  }
+                                ],
+                                "call": "volume_limit_applies"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "p"
+                                      },
+                                      {
+                                        "var": "n"
+                                      },
+                                      {
+                                        "var": "d"
+                                      }
+                                    ],
+                                    "call": "volume_count_new"
+                                  },
+                                  {
+                                    "int": 0
+                                  }
+                                ],
+                                "op": "gt"
+                              }
+                            ],
+                            "op": "and"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "p"
+                                      },
+                                      {
+                                        "var": "n"
+                                      },
+                                      {
+                                        "var": "d"
+                                      }
+                                    ],
+                                    "call": "volume_count_before"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "p"
+                                      },
+                                      {
+                                        "var": "n"
+                                      },
+                                      {
+                                        "var": "d"
+                                      }
+                                    ],
+                                    "call": "volume_count_new"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "n"
+                                  },
+                                  {
+                                    "var": "d"
+                                  }
+                                ],
+                                "call": "volume_limit"
+                              }
+                            ],
+                            "op": "le"
+                          }
+                        ],
+                        "op": "implies"
+                      }
+                    ],
+                    "op": "and"
+                  },
+                  "quantifier": "forall",
+                  "sort": "Driver",
+                  "variable": "d"
+                },
+                "quantifier": "forall",
+                "sort": "Node",
+                "variable": "n"
+              },
+              "quantifier": "forall",
+              "sort": "Pod",
+              "variable": "p"
+            },
+            "category_id": "R5",
+            "title": "Enforce each applicable CSI driver volume-count budget"
+          }
+        ]
+      }
+    },
+    "provenance": "v1 independent formula references retained because rule ASTs are unchanged; v2 atom semantics require separate interpreter and dataset regression tests. No fresh independent language review is claimed."
+  },
+  "validation": {
+    "status": "bounded_verified",
+    "scope": "bounded_equivalence_to_reference",
+    "unbounded_theorem_proved": false,
+    "reference_hash": "e41209756289c9d797efb9f053f29dfddebb44375af2a8da55b63748337e733d",
+    "catalog_hash": "e4fbdb14c2ee9120abae15accd55a0a6d8da49ed349d41e1e440c7e73b6d2fc6",
+    "natural_language_correctness_proved": false,
+    "bounds": [
+      {
+        "Pod": 0,
+        "Node": 1,
+        "Claim": 0,
+        "Volume": 0,
+        "Resource": 0,
+        "Spread": 0,
+        "Driver": 0
+      },
+      {
+        "Pod": 1,
+        "Node": 0,
+        "Claim": 1,
+        "Volume": 0,
+        "Resource": 1,
+        "Spread": 1,
+        "Driver": 1
+      },
+      {
+        "Pod": 1,
+        "Node": 1,
+        "Claim": 1,
+        "Volume": 1,
+        "Resource": 1,
+        "Spread": 1,
+        "Driver": 1
+      },
+      {
+        "Pod": 2,
+        "Node": 2,
+        "Claim": 2,
+        "Volume": 2,
+        "Resource": 2,
+        "Spread": 2,
+        "Driver": 2
+      },
+      {
+        "Pod": 3,
+        "Node": 2,
+        "Claim": 2,
+        "Volume": 2,
+        "Resource": 2,
+        "Spread": 2,
+        "Driver": 2
+      }
+    ],
+    "categories": [
+      {
+        "category_id": "R1",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "R2",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "R3",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "R4",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "R5",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "A1",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "P1",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "P2",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "P3",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "P4",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "S1",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "S2",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "S3",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "S4",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      },
+      {
+        "category_id": "E1",
+        "status": "bounded_verified",
+        "checks": 10,
+        "counterexamples": []
+      }
+    ],
+    "errors": [],
+    "category_status": {
+      "R1": "bounded_verified",
+      "R2": "bounded_verified",
+      "R3": "bounded_verified",
+      "R4": "bounded_verified",
+      "R5": "bounded_verified",
+      "A1": "bounded_verified",
+      "P1": "bounded_verified",
+      "P2": "bounded_verified",
+      "P3": "bounded_verified",
+      "P4": "bounded_verified",
+      "S1": "bounded_verified",
+      "S2": "bounded_verified",
+      "S3": "bounded_verified",
+      "S4": "bounded_verified",
+      "E1": "bounded_verified"
+    }
+  },
+  "generation": {
+    "method": "manual_versioned_semantics_adaptation"
+  }
+}

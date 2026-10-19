@@ -1,0 +1,702 @@
+{
+  "WaitingDeployPods": {
+    "default/Deployment/wordpress/0": {
+      "cpu": 300,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "wordpress"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "wordpress-persistent-storage",
+          "gcePersistentDisk": {
+            "pdName": "wordpress-disk",
+            "fsType": "ext4"
+          }
+        },
+        {
+          "name": "cloudsql-instance-credentials",
+          "secret": {
+            "secretName": "cloudsql-instance-credentials"
+          }
+        },
+        {
+          "name": "ssl-certs",
+          "hostPath": {
+            "path": "/etc/ssl/certs"
+          }
+        },
+        {
+          "name": "cloudsql",
+          "emptyDir": {}
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "wordpress"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Deployment",
+        "default",
+        "wordpress"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "LimitRange",
+        "default",
+        "default-cpu-request"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "fluentd-gcp-v2.0-t3rzf"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "gke-wordpress-default-pool-91c14317-jdlj"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "heapster-v1.3.0-3440173064-d66jq"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kube-dns-1829567597-n6kz6"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kube-dns-autoscaler-2501648610-88ch6"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kube-proxy-gke-wordpress-default-pool-91c14317-jdlj"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "kubernetes-dashboard-490794276-93cn2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kube-system",
+        "l7-default-backend-3574702981-509zt"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "gke-wordpress-default-pool-91c14317-jdlj": {
+        "cpu": 272,
+        "mem": "3167952896",
+        "remain_pods": 103,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/fluentd-ds-ready": "true",
+          "beta.kubernetes.io/instance-type": "n1-standard-1",
+          "beta.kubernetes.io/os": "linux",
+          "cloud.google.com/gke-nodepool": "default-pool",
+          "failure-domain.beta.kubernetes.io/region": "europe-west1",
+          "failure-domain.beta.kubernetes.io/zone": "europe-west1-b",
+          "kubernetes.io/hostname": "gke-wordpress-default-pool-91c14317-jdlj"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "1",
+          "memory": "3794520Ki",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {
+      "kube-system/fluentd-gcp-v2.0-t3rzf": {
+        "cpu": 100,
+        "mem": "209715200",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-wordpress-default-pool-91c14317-jdlj",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-wp4tt",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "34a93274-3d18-438d-be3b-67e391fc1a17"
+      },
+      "kube-system/heapster-v1.3.0-3440173064-d66jq": {
+        "cpu": 138,
+        "mem": "308690944",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-wordpress-default-pool-91c14317-jdlj",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-bcq8t",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "bafdaf1c-3f28-4d22-9e62-1d85d9104a85"
+      },
+      "kube-system/kube-dns-1829567597-n6kz6": {
+        "cpu": 260,
+        "mem": "115343360",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-wordpress-default-pool-91c14317-jdlj",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-2q65s",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "31537d22-c349-40ec-a6e5-eb6c3a2680d2"
+      },
+      "kube-system/kube-dns-autoscaler-2501648610-88ch6": {
+        "cpu": 20,
+        "mem": "10485760",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-wordpress-default-pool-91c14317-jdlj",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-stjk5",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "d1e1b73a-a125-412f-8509-a62c4c6af3ff"
+      },
+      "kube-system/kube-proxy-gke-wordpress-default-pool-91c14317-jdlj": {
+        "cpu": 100,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-wordpress-default-pool-91c14317-jdlj",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-5fg5d",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "d7091b49-14a4-4e05-9b0c-704f996b650c"
+      },
+      "kube-system/kubernetes-dashboard-490794276-93cn2": {
+        "cpu": 100,
+        "mem": "52428800",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-wordpress-default-pool-91c14317-jdlj",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-wq6r5",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "cbbf6ddf-1528-42c6-aa3b-00df730dc57f"
+      },
+      "kube-system/l7-default-backend-3574702981-509zt": {
+        "cpu": 10,
+        "mem": "20971520",
+        "extended_requests": {},
+        "namespace": "kube-system",
+        "labels": {},
+        "host_ports": [],
+        "nodeName": "gke-wordpress-default-pool-91c14317-jdlj",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "kube-api-access-lrmh6",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "18ff2021-22a0-4e62-860c-a3a84047e6cc"
+      }
+    },
+    "LimitRanges": [
+      {
+        "apiVersion": "v1",
+        "kind": "LimitRange",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"LimitRange\",\"metadata\":{\"annotations\":{},\"name\":\"default-cpu-request\",\"namespace\":\"default\"},\"spec\":{\"limits\":[{\"defaultRequest\":{\"cpu\":\"100m\"},\"type\":\"Container\"}]}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:23:49Z",
+          "name": "default-cpu-request",
+          "namespace": "default",
+          "resourceVersion": "202",
+          "uid": "cb0df5cb-27bb-4335-ae4e-8823c57d496d"
+        },
+        "spec": {
+          "limits": [
+            {
+              "defaultRequest": {
+                "cpu": "100m"
+              },
+              "type": "Container"
+            }
+          ]
+        }
+      }
+    ],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:23:54.510545+00:00",
+    "candidate_hash": "9f8271faa05f4f2455f46f0ae6cda62e53da370e02bad8f119b213fd340979c4",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

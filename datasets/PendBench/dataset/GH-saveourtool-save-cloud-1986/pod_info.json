@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Job/multiple/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:23:10Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't have free ports for the requested pod ports. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "multiple-2nzfr",
+      "uid": "1ea72d2b-37fa-4013-9c00-dc7bb550f350",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Job/multiple/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't have free ports for the requested pod ports. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:23:10.259120Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:23:10.525439+00:00",
+  "candidate_hash": "9e2653f31c38ab3fdd7d78f29ea576a3cb032fdff30e9147ca7b332b89194c06",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:23:10.525439+00:00",
+    "candidate_hash": "9e2653f31c38ab3fdd7d78f29ea576a3cb032fdff30e9147ca7b332b89194c06",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

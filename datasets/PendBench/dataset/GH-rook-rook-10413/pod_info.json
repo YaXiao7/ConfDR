@@ -1,0 +1,55 @@
+{
+  "pod_status": {
+    "mysql/Deployment/found/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:39Z",
+          "message": "0/3 nodes are available: persistentvolumeclaim \"manifest\" not found. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "mysql",
+      "actual_name": "found-86d96f569c-rx7b8",
+      "uid": "fa66586a-91e6-40a6-a544-14c939cd3fa1",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "mysql/Deployment/found/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: persistentvolumeclaim \"manifest\" not found. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:39.695495Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "mysql/manifest": {
+      "phase": "NotObserved",
+      "volumeName": null
+    },
+    "storage/manifest": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:22:39.983141+00:00",
+  "candidate_hash": "2d47dd9f2e6f79cd552ed6bfcea298f048bd739f727cecfffafcadebdd4d3f05",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:22:39.983141+00:00",
+    "candidate_hash": "2d47dd9f2e6f79cd552ed6bfcea298f048bd739f727cecfffafcadebdd4d3f05",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

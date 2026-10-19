@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "airflow/StatefulSet/airflow-postgresql/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:30:13Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "airflow",
+      "actual_name": "airflow-postgresql-0",
+      "uid": "d55e0ead-8184-44a7-8f1a-f308ddf3adb3",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "airflow/StatefulSet/airflow-postgresql/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:30:13.345576Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "airflow/data-airflow-postgresql-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:30:13.609466+00:00",
+  "candidate_hash": "d316b5aa030c0ffb29283031e76f741844aebe422b3e3aa52aa5c4a1d59e272e",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:30:13.609466+00:00",
+    "candidate_hash": "d316b5aa030c0ffb29283031e76f741844aebe422b3e3aa52aa5c4a1d59e272e",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

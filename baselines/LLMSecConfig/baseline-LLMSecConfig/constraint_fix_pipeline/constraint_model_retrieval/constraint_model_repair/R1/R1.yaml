@@ -1,0 +1,45 @@
+# Before fix: the CPU requested by the Pod exceeds the CPU capacity of the Node
+# spec:
+#   containers:
+#   - name: container1
+#     image: registry.k8s.io/pause:2.0
+#     resources:
+#       requests:
+#         cpu: "4"
+#         memory: "100Mi"
+#       limits:
+#         cpu: "4"
+#         memory: "100Mi"
+# ---
+# status:
+#   capacity:
+#     cpu: "3"
+#     memory: "1Gi"
+#     pods: "100"
+#   allocatable:
+#     cpu: "3"          # 3 CPU cores
+#     memory: "1Gi"
+#     pods: "100"       # maximum number of Pods on this node
+
+# After fix: the CPU requested by the Pod does not exceed the Node CPU capacity
+spec:
+  containers:
+  - name: container1
+    image: registry.k8s.io/pause:2.0
+    resources:
+      requests:
+        cpu: "2"
+        memory: "100Mi"
+      limits:
+        cpu: "2"
+        memory: "100Mi"
+---
+status:
+  capacity:
+    cpu: "3"
+    memory: "1Gi"
+    pods: "100"
+  allocatable:
+    cpu: "3"          # 3 CPU cores
+    memory: "1Gi"
+    pods: "100"       # maximum number of Pods on this node

@@ -1,0 +1,83 @@
+# Before fix: the number of Pod replicas exceeds the Node pod capacity limit, causing scheduling failure
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: app1
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: app1
+#   template:
+#     metadata:
+#       labels:
+#         app: app1
+#     spec:
+#       containers:
+#       - name: container1
+#         image: registry.k8s.io/pause:2.0
+#         resources:
+#           requests:
+#             cpu: "1"        # 1 CPU core per Pod
+#             memory: "256Mi"
+#           limits:
+#             cpu: "1"
+#             memory: "256Mi"
+# ---
+# apiVersion: v1
+# kind: Node
+# metadata:
+#   name: node1
+# spec:
+#   taints: []
+# status:
+#   capacity:
+#     cpu: "5"
+#     memory: "1Gi"
+#     pods: "2"
+#   allocatable:
+#     cpu: "5"          # total available CPU cores on this node
+#     memory: "1Gi"     # total available memory on this node
+#     pods: "2"         # maximum number of Pods on this node
+
+# After fix: the number of Pod replicas does not exceed the Node allocatable pod limit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+spec:
+  replicas: 2  # adjusted to 2, within the Node allocatable pods limit
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: container1
+        image: registry.k8s.io/pause:2.0
+        resources:
+          requests:
+            cpu: "1"        # 1 CPU core per Pod
+            memory: "256Mi"
+          limits:
+            cpu: "1"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: node1
+spec:
+  taints: []
+status:
+  capacity:
+    cpu: "5"
+    memory: "1Gi"
+    pods: "2"
+  allocatable:
+    cpu: "5"          # total available CPU cores on this node
+    memory: "1Gi"     # total available memory on this node
+    pods: "2"         # maximum number of Pods on this node

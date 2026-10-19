@@ -1,0 +1,152 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test
+  labels:
+    app: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - name: container-test2-tickers
+        image: gcr.io/testing-11111/testology:latest
+        command:
+        - process_cmd
+        - arg1
+        - test2
+        env:
+        - name: DB_HOST
+          value: 127.0.0.1:5432
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: password
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: username
+        resources:
+          requests:
+            cpu: 100m
+            memory: 375Mi
+          limits:
+            cpu: 150m
+            memory: 375Mi
+      - name: container-kraken-tickers
+        image: gcr.io/testing-11111/testology:latest
+        command:
+        - process_cmd
+        - arg1
+        - arg2
+        env:
+        - name: DB_HOST
+          value: 127.0.0.1:5432
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: password
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: username
+        resources:
+          requests:
+            cpu: 100m
+            memory: 375Mi
+          limits:
+            cpu: 150m
+            memory: 375Mi
+      - name: container-gdax-tickers
+        image: gcr.io/testing-11111/testology:latest
+        command:
+        - process_cmd
+        - arg1
+        - arg2
+        env:
+        - name: DB_HOST
+          value: 127.0.0.1:5432
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: password
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: username
+        resources:
+          requests:
+            cpu: 100m
+            memory: 375Mi
+          limits:
+            cpu: 150m
+            memory: 375Mi
+      - name: container-bittrex-tickers
+        image: gcr.io/testing-11111/testology:latest
+        command:
+        - process_cmd
+        - arg1
+        - arg2
+        env:
+        - name: DB_HOST
+          value: 127.0.0.1:5432
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: password
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: username
+        resources:
+          requests:
+            cpu: 100m
+            memory: 375Mi
+          limits:
+            cpu: 150m
+            memory: 375Mi
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.09
+        command:
+        - /cloud_sql_proxy
+        - --dir=/cloudsql
+        - -instances=testing-11111:europe-west2:testology=tcp:5432
+        - -credential_file=/secrets/cloudsql/credentials.json
+        resources:
+          requests:
+            cpu: 100m
+            memory: 375Mi
+          limits:
+            cpu: 150m
+            memory: 375Mi
+        volumeMounts:
+        - name: cloudsql-instance-credentials
+          mountPath: /secrets/cloudsql
+          readOnly: true
+        - name: ssl-certs
+          mountPath: /etc/ssl/certs
+        - name: cloudsql
+          mountPath: /cloudsql
+      volumes:
+      - name: cloudsql-instance-credentials
+        secret:
+          secretName: cloudsql-instance-credentials
+      - name: ssl-certs
+        hostPath:
+          path: /etc/ssl/certs
+      - name: cloudsql
+        emptyDir: {}

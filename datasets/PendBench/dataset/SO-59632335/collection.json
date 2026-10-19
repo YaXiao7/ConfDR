@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/1 nodes are available: persistentvolumeclaim \"data-my-cluster-zookeeper-0\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-769cd4577e91",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:26:42.662781+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "05952f1081d8b8c71136e9ab1b3bbb18243c53a4f86e22d6885b5f7a583b436c"
+}

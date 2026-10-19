@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "awx/Pod/awx-postgresql-postgresql-0/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:15:37Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "awx",
+      "actual_name": "awx-postgresql-postgresql-0",
+      "uid": "bc521e75-4947-4348-b162-a0320d1440c2",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "awx/Pod/awx-postgresql-postgresql-0/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:15:37.129710Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "awx/data-awx-postgresql-postgresql-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:15:37.403497+00:00",
+  "candidate_hash": "18092e94dcdd4e94c6427b86e8e28660a05d60934cb601fab0b0a2e92bdfadc1",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:37.403497+00:00",
+    "candidate_hash": "18092e94dcdd4e94c6427b86e8e28660a05d60934cb601fab0b0a2e92bdfadc1",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

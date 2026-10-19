@@ -1,0 +1,83 @@
+{
+  "pod_status": {
+    "default/Deployment/mysql/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:58Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:58Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:58Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "mysql",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:58Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:58Z",
+      "namespace": "default",
+      "actual_name": "mysql-6c76665cb-nrbzc",
+      "uid": "caccc44b-ec3b-4e08-9795-53e3e693b18e",
+      "nodeName": "single-node-cluster"
+    }
+  },
+  "pod_events": {
+    "default/Deployment/mysql/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/mysql-6c76665cb-nrbzc to single-node-cluster",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:58.274009Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/mysql": {
+      "phase": "Bound",
+      "volumeName": "mysql-control-pv"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:58.601101+00:00",
+  "candidate_hash": "b9f43215ddc7e2add34b8beae01d612d861b2abee2967c4228ad6c97d0e0ee3a",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:58.601101+00:00",
+    "candidate_hash": "b9f43215ddc7e2add34b8beae01d612d861b2abee2967c4228ad6c97d0e0ee3a",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

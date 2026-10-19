@@ -1,0 +1,188 @@
+{
+  "WaitingDeployPods": {
+    "kubeflow/Pod/step/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "kubeflow",
+      "labels": {
+        "app": "step"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "data",
+          "persistentVolumeClaim": {
+            "claimName": "volumeop-sequential-w8gjk-newpvc"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "step"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "kubeflow",
+        "volumeop-sequential-w8gjk-newpvc"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "kubeflow",
+        "step"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "standard"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "kubeflow": {
+        "volumeop-sequential-w8gjk-newpvc": {
+          "accessModes": [
+            "ReadWriteMany"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "10Gi"
+            }
+          },
+          "storageClassName": "standard",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"957f7b62a2de\"},\"name\":\"volumeop-sequential-w8gjk-newpvc\",\"namespace\":\"kubeflow\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"10Gi\"}}}}\n",
+              "volume.beta.kubernetes.io/storage-provisioner": "pd.csi.storage.gke.io",
+              "volume.kubernetes.io/storage-provisioner": "pd.csi.storage.gke.io"
+            },
+            "creationTimestamp": "2026-10-02T03:19:38Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "957f7b62a2de"
+            },
+            "name": "volumeop-sequential-w8gjk-newpvc",
+            "namespace": "kubeflow",
+            "resourceVersion": "230",
+            "uid": "a885e688-98a8-4079-8dac-71a9e66df2ec"
+          },
+          "uid": "a885e688-98a8-4079-8dac-71a9e66df2ec",
+          "requestsGi": "10Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {},
+    "StorageClasses": {
+      "standard": {
+        "provisioner": "kubernetes.io/gce-pd",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{\"storageclass.kubernetes.io/is-default-class\":\"true\"},\"name\":\"standard\"},\"provisioner\":\"kubernetes.io/gce-pd\",\"volumeBindingMode\":\"Immediate\"}\n",
+            "storageclass.kubernetes.io/is-default-class": "true"
+          },
+          "creationTimestamp": "2026-10-02T03:19:36Z",
+          "name": "standard",
+          "resourceVersion": "200",
+          "uid": "14cd2275-2fe4-4576-8708-75401f16fc0f"
+        },
+        "parameters": {},
+        "volumeBindingMode": "Immediate",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      },
+      "kubeflow": {
+        "kubernetes.io/metadata.name": "kubeflow"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:39.230528+00:00",
+    "candidate_hash": "d87b2c7f6ba5b37528df8d8f567e182547807de6ce033134061b64db9b4e54e7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

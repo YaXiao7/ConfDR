@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/ceph/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:45Z",
+          "message": "0/10 nodes are available: persistentvolumeclaim \"data-claim\" not found. preemption: 0/10 nodes are available: 10 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "ceph",
+      "uid": "94a071f9-20b2-4053-87a2-c8356dcf28d9",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/ceph/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: persistentvolumeclaim \"data-claim\" not found. preemption: 0/10 nodes are available: 10 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:45.858637Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:22:46.145648+00:00",
+  "candidate_hash": "11a864877455e90e0d8ebaadefd91088905e001f25344c7dbd60798f8da825ad",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:22:46.145648+00:00",
+    "candidate_hash": "11a864877455e90e0d8ebaadefd91088905e001f25344c7dbd60798f8da825ad",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xyz
+  namespace: default
+  labels:
+    app: xyz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xyz
+  template:
+    metadata:
+      labels:
+        app: xyz
+    spec:
+      volumes:
+      - name: confd
+        configMap:
+          name: xyz
+          items:
+          - key: resolver
+            path: resolver.conf
+      - name: nginx-config
+        configMap:
+          name: xyz
+          items:
+          - key: nginxConf
+            path: default
+      containers:
+      - name: xyz
+        image: nginx:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d
+          name: confd
+        - mountPath: /etc/nginx/sites-enabled
+          name: nginx-config
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+        env:
+        - name: XYZ_API_URL
+          value: xyz-api

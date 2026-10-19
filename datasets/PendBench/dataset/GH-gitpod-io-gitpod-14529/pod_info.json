@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/constraints/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:22Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"data-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "constraints",
+      "uid": "caca729e-e78f-4d7e-9018-bb5f046fa5ab",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/constraints/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"data-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:22.809077Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Bound",
+      "volumeName": "data-volume"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:18:23.089429+00:00",
+  "candidate_hash": "b49fabf7cd0573c6bb01219f085691c184368071d3f36453e42dc15e171f2631",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:18:23.089429+00:00",
+    "candidate_hash": "b49fabf7cd0573c6bb01219f085691c184368071d3f36453e42dc15e171f2631",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

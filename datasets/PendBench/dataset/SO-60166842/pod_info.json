@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/grafana/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:54Z",
+          "message": "0/6 nodes are available: 6 node(s) didn't match Pod's node affinity/selector. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "grafana",
+      "uid": "8c3672dc-96a9-4f48-9cdd-32d221328a0a",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/grafana/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/6 nodes are available: 6 node(s) didn't match Pod's node affinity/selector. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:54.050883Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:54.314885+00:00",
+  "candidate_hash": "186624ae035786abb3710a8411bb496ed0da009ac8783c9ac0e156a39e5f2995",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:54.314885+00:00",
+    "candidate_hash": "186624ae035786abb3710a8411bb496ed0da009ac8783c9ac0e156a39e5f2995",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

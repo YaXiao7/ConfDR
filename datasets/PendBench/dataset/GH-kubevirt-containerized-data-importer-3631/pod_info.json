@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/image-upload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:21:28Z",
+          "message": "0/3 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "image-upload",
+      "uid": "100afe44-fe96-453b-a3bb-850cfddbd1e9",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/image-upload/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:21:28.764964Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Pending",
+      "volumeName": "topology"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:21:29.032531+00:00",
+  "candidate_hash": "7eca4bc191cf1a37b380ce14ce3a3e0fc4cb7c4ba865addc5de3df69b529c92a",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:21:29.032531+00:00",
+    "candidate_hash": "7eca4bc191cf1a37b380ce14ce3a3e0fc4cb7c4ba865addc5de3df69b529c92a",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

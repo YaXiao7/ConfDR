@@ -1,0 +1,303 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/nginx/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {},
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": {
+        "nodeAffinity": {
+          "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+              "weight": 1,
+              "preference": {
+                "matchExpressions": [
+                  {
+                    "key": "tier",
+                    "operator": "In",
+                    "values": [
+                      "production"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "volumes": [
+        {
+          "name": "mypd",
+          "persistentVolumeClaim": {
+            "claimName": "volume-claim"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "nginx"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "nginx"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "volume-claim"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "local-storage"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "satisfying"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "volume-pv"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "volume-claim": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "selector": {
+            "matchExpressions": [
+              {
+                "key": "tier",
+                "operator": "In",
+                "values": [
+                  "production"
+                ]
+              }
+            ]
+          },
+          "storageClassName": "local-storage",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"d6b075a84836\"},\"name\":\"volume-claim\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"1Gi\"}},\"selector\":{\"matchExpressions\":[{\"key\":\"tier\",\"operator\":\"In\",\"values\":[\"production\"]}]},\"storageClassName\":\"local-storage\",\"volumeMode\":\"Filesystem\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:31:16Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "d6b075a84836"
+            },
+            "name": "volume-claim",
+            "namespace": "default",
+            "resourceVersion": "231",
+            "uid": "f5141110-532e-417c-9130-180ce88ad6f3"
+          },
+          "uid": "f5141110-532e-417c-9130-180ce88ad6f3",
+          "requestsGi": "1Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "satisfying": {
+        "accessModes": [
+          "ReadWriteMany"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "hostPath": {
+          "path": "/mnt/satisfying",
+          "type": ""
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "manual",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{},\"name\":\"satisfying\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"capacity\":{\"storage\":\"1Gi\"},\"hostPath\":{\"path\":\"/mnt/satisfying\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"manual\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:31:13Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "satisfying",
+          "resourceVersion": "224",
+          "uid": "d5584f70-7ac4-46fa-b0ff-614caa166c1b"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Available"
+      },
+      "volume-pv": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "local": {
+          "path": "/tmp/nginx/"
+        },
+        "nodeAffinity": {
+          "required": {
+            "nodeSelectorTerms": [
+              {
+                "matchExpressions": [
+                  {
+                    "key": "tier",
+                    "operator": "In",
+                    "values": [
+                      "production"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "local-storage",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"volume-pv\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"local\":{\"path\":\"/tmp/nginx/\"},\"nodeAffinity\":{\"required\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"tier\",\"operator\":\"In\",\"values\":[\"production\"]}]}]}},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"local-storage\",\"volumeMode\":\"Filesystem\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:31:13Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "volume-pv",
+          "resourceVersion": "227",
+          "uid": "0a3cfae1-730b-4997-9b23-eab97a893f1d"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {
+      "local-storage": {
+        "provisioner": "kubernetes.io/no-provisioner",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{},\"name\":\"local-storage\"},\"provisioner\":\"kubernetes.io/no-provisioner\",\"volumeBindingMode\":\"WaitForFirstConsumer\"}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:31:13Z",
+          "name": "local-storage",
+          "resourceVersion": "200",
+          "uid": "ac5ae400-f9b7-4bfa-a547-da2147eadbc9"
+        },
+        "parameters": {},
+        "volumeBindingMode": "WaitForFirstConsumer",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:16.470519+00:00",
+    "candidate_hash": "446069c7fa00bcb49182b2d783ff108e08c40564cf2e84d8fdb09a5d0e05720f",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

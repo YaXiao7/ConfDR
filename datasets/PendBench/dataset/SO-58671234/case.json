@@ -1,0 +1,327 @@
+{
+  "WaitingDeployPods": {
+    "ghost/Deployment/deployment-ghost/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "ghost",
+      "labels": {
+        "app": "deployment-ghost"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": {
+        "beta.kubernetes.io/arch": "arm"
+      },
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "ghost-data",
+          "persistentVolumeClaim": {
+            "claimName": "pvc-ghost"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "deployment-ghost"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Deployment",
+        "ghost",
+        "deployment-ghost"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "ghost",
+        "pvc-ghost"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "local-storage"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "rpi-k8-workernode-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "rpi-mon-k8-worker"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "udubuntu"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "pv-ghost"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "rpi-k8-workernode-2": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "rpi-k8-workernode-2",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "rpi-mon-k8-worker": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "rpi-mon-k8-worker",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "udubuntu": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "udubuntu",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "ghost": {
+        "pvc-ghost": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "selector": {
+            "matchLabels": {
+              "name": "pv-ghost"
+            }
+          },
+          "storageClassName": "local-storage",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"96eeace8dbf3\"},\"name\":\"pvc-ghost\",\"namespace\":\"ghost\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"1Gi\"}},\"selector\":{\"matchLabels\":{\"name\":\"pv-ghost\"}},\"storageClassName\":\"local-storage\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:26:11Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "96eeace8dbf3"
+            },
+            "name": "pvc-ghost",
+            "namespace": "ghost",
+            "resourceVersion": "245",
+            "uid": "a32fcc71-4a1d-4c14-bc48-fd52fce4df4b"
+          },
+          "uid": "a32fcc71-4a1d-4c14-bc48-fd52fce4df4b",
+          "requestsGi": "1Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "pv-ghost": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "local": {
+          "path": "/mnt/mydrive/ghost-data/"
+        },
+        "nodeAffinity": {
+          "required": {
+            "nodeSelectorTerms": [
+              {
+                "matchExpressions": [
+                  {
+                    "key": "kubernetes.io/hostname",
+                    "operator": "In",
+                    "values": [
+                      "rpi-mon-k8-worker"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "local-storage",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{},\"name\":\"pv-ghost\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"local\":{\"path\":\"/mnt/mydrive/ghost-data/\"},\"nodeAffinity\":{\"required\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"rpi-mon-k8-worker\"]}]}]}},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"local-storage\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:26:09Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "pv-ghost",
+          "resourceVersion": "240",
+          "uid": "b22db478-8f50-49a8-9f5e-96fbd5f8c354"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {
+      "local-storage": {
+        "provisioner": "kubernetes.io/no-provisioner",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{},\"name\":\"local-storage\"},\"provisioner\":\"kubernetes.io/no-provisioner\",\"volumeBindingMode\":\"WaitForFirstConsumer\"}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:26:09Z",
+          "name": "local-storage",
+          "resourceVersion": "204",
+          "uid": "425e1870-8187-4893-acf8-a108e52d2fae"
+        },
+        "parameters": {},
+        "volumeBindingMode": "WaitForFirstConsumer",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "ghost": {
+        "kubernetes.io/metadata.name": "ghost"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:12.062872+00:00",
+    "candidate_hash": "4d7a2a36a1812c3a6a3b72fdf63825c92523a82daecaa7a09d88b7f6e2a79188",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

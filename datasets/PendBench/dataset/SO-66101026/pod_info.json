@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Deployment/schedulable/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:29:22Z",
+          "message": "0/2 nodes are available: 2 Too many pods. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "schedulable-8665c55766-f2t77",
+      "uid": "b868f236-2982-4875-b6d6-8353d5aad8d8",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/schedulable/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: 2 Too many pods. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:29:22.969430Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:29:25.239070+00:00",
+  "candidate_hash": "4e4f4fb3175973a8349db6951c6d9064814adf06c83643b88bdb4913128e54f2",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:29:25.239070+00:00",
+    "candidate_hash": "4e4f4fb3175973a8349db6951c6d9064814adf06c83643b88bdb4913128e54f2",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

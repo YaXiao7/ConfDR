@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: virt-launcher
+  namespace: default
+  labels:
+    app: virt-launcher
+spec:
+  containers:
+  - name: virt-launcher
+    image: registry.k8s.io/pause:3.9
+  nodeSelector:
+    workload: required

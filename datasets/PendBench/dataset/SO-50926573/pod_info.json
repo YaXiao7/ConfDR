@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Deployment/mysql/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:24:31Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "mysql-64bf6694b9-fncw7",
+      "uid": "a8bca080-3c83-4759-8d09-c1cbfe9c56a5",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/mysql/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:24:31.406260Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/mysql": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:24:31.689737+00:00",
+  "candidate_hash": "3e3be97f246c9778d58f16403b03014a7990dc776b585b6c45ce9d2e4e134709",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:31.689737+00:00",
+    "candidate_hash": "3e3be97f246c9778d58f16403b03014a7990dc776b585b6c45ce9d2e4e134709",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

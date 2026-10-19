@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: match
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: match
+  template:
+    metadata:
+      labels:
+        app: match
+    spec:
+      nodeSelector:
+        node-role.kubernetes.io/master: ''
+      containers:
+      - name: match
+        image: registry.k8s.io/pause:3.9

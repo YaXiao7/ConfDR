@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: dgraph-alpha
+  namespace: dgraph
+spec:
+  serviceName: dgraph-alpha
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dgraph-alpha
+  template:
+    metadata:
+      labels:
+        app: dgraph-alpha
+    spec:
+      containers:
+      - name: alpha
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: datadir
+          mountPath: /dgraph
+  volumeClaimTemplates:
+  - metadata:
+      name: datadir
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: anything
+      resources:
+        requests:
+          storage: 5Gi

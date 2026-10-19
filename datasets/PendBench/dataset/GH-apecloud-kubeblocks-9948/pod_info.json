@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/mysql/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:17:17Z",
+          "message": "0/10 nodes are available: 10 node(s) had untolerated taint {dedicated: true}. preemption: 0/10 nodes are available: 10 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "mysql",
+      "uid": "c6e96da9-070a-4352-a5c7-615298356825",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/mysql/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 10 node(s) had untolerated taint {dedicated: true}. preemption: 0/10 nodes are available: 10 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:17:17.093045Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:17:17.362896+00:00",
+  "candidate_hash": "01f7ee2c1adfac718d6d37f3ca6c53e8b7383a9a1ca11d0c8bb85101a631e4f5",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:17:17.362896+00:00",
+    "candidate_hash": "01f7ee2c1adfac718d6d37f3ca6c53e8b7383a9a1ca11d0c8bb85101a631e4f5",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

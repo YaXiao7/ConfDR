@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  namespace: mlo-dev
+  labels:
+    app: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: xxxxxx/web:latest
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: webdir
+          mountPath: /service
+      volumes:
+      - name: webdir
+        persistentVolumeClaim:
+          claimName: pvc-web

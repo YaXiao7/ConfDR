@@ -1,0 +1,33 @@
+{
+  "pod_status": {
+    "kubeblocks/Job/backup-kubeblocks-mysqltest-20230615135636/0": {
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kubeblocks",
+      "actual_name": "backup-kubeblocks-mysqltest-20230615135636-m6p2z",
+      "uid": "9f8f2728-d0c4-4aa7-aa31-18c9bfa489bf",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kubeblocks/Job/backup-kubeblocks-mysqltest-20230615135636/0": []
+  },
+  "pvc_status": {
+    "kubeblocks/logfile-backup-data": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:16:41.772509+00:00",
+  "candidate_hash": "a48cb059e676bef35ab56d1a64e6d72bb8ba64fd97ce617d268f8ec34dbc4b84",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:16:41.772509+00:00",
+    "candidate_hash": "a48cb059e676bef35ab56d1a64e6d72bb8ba64fd97ce617d268f8ec34dbc4b84",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

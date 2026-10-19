@@ -1,0 +1,83 @@
+{
+  "pod_status": {
+    "default/Pod/database/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:34Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:34Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:34Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "database",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:34Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:34Z",
+      "namespace": "default",
+      "actual_name": "database",
+      "uid": "893c001e-a149-4de0-b767-129cf5d47fb7",
+      "nodeName": "node-2"
+    }
+  },
+  "pod_events": {
+    "default/Pod/database/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/database to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:34.229658Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Bound",
+      "volumeName": "data-volume"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:34.554508+00:00",
+  "candidate_hash": "6a179a70f27fc2591a3f665793117151e7ecfb0146fd2ec988a2b803105a8d37",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:34.554508+00:00",
+    "candidate_hash": "6a179a70f27fc2591a3f665793117151e7ecfb0146fd2ec988a2b803105a8d37",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

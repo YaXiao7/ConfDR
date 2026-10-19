@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Deployment/nginx-ingress-controller/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:17Z",
+          "message": "0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "nginx-ingress-controller-896bb76b9-84mqf",
+      "uid": "f8596485-a7c7-497e-91f8-e046eb8c1d8c",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/nginx-ingress-controller/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:17.602439Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:17.877498+00:00",
+  "candidate_hash": "9b7e6a9a324123efb8aedd6e39eb36192f6690c284917d0e7e0500aa62bacb8f",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:17.877498+00:00",
+    "candidate_hash": "9b7e6a9a324123efb8aedd6e39eb36192f6690c284917d0e7e0500aa62bacb8f",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

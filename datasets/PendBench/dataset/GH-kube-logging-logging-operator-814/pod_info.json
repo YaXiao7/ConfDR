@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/and/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:12Z",
+          "message": "0/1 nodes are available: 1 node(s) didn't match pod anti-affinity rules. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "and",
+      "uid": "84eebdb4-5068-4c9b-a366-9dd3b19eef4c",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/and/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) didn't match pod anti-affinity rules. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:12.492736Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:19:12.758008+00:00",
+  "candidate_hash": "dae1ec0e5b18d928d4fb3dd73b969bd1d695a457daa0b210ee872a240b6158de",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:12.758008+00:00",
+    "candidate_hash": "dae1ec0e5b18d928d4fb3dd73b969bd1d695a457daa0b210ee872a240b6158de",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

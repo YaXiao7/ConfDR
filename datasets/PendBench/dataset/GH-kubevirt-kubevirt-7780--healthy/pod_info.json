@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/virt-launcher/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:16Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:16Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:16Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "virt-launcher",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:16Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:16Z",
+      "namespace": "default",
+      "actual_name": "virt-launcher",
+      "uid": "03678926-d7ae-48bf-bced-01ee88cf9aa6",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Pod/virt-launcher/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/virt-launcher to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:16.876076Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:17.187409+00:00",
+  "candidate_hash": "38bb55b0200645e027360fd014c10b7f5146e3b319068b07dbacb01c409be113",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:17.187409+00:00",
+    "candidate_hash": "38bb55b0200645e027360fd014c10b7f5146e3b319068b07dbacb01c409be113",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

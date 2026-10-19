@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fedora-datavolume-original-scratch
+  namespace: kubevirt
+spec:
+  storageClassName: managed-premium
+  volumeName: fedora-datavolume-original-scratch-pv
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi

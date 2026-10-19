@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+  "failure_settled_seconds": 10.532703042030334,
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-5b0250bd58c5",
+  "phase": "original",
+  "observed_at": "2026-10-06T12:34:44.723192+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "9a45e2a33b3b092c0b2a02c651aeef54f0a1cc7a0b607ff434892f5456eb9e4c"
+}

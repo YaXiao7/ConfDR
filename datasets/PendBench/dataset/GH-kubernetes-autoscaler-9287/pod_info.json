@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/replacement/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:50Z",
+          "message": "0/3 nodes are available: 1 node(s) had untolerated taint {ToBeDeletedByClusterAutoscaler: true}, 2 node(s) didn't match pod topology spread constraints. preemption: 0/3 nodes are available: 1 Preemption is not helpful for scheduling, 2 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "replacement",
+      "uid": "374a73e7-83e6-4578-aa22-982ff043877f",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/replacement/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 1 node(s) had untolerated taint {ToBeDeletedByClusterAutoscaler: true}, 2 node(s) didn't match pod topology spread constraints. preemption: 0/3 nodes are available: 1 Preemption is not helpful for scheduling, 2 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:50.668500Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:19:50.938809+00:00",
+  "candidate_hash": "306fa3615f368b1cc5bcd764b09c33a81d353dd694f83930385cc9bea7c48e43",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:50.938809+00:00",
+    "candidate_hash": "306fa3615f368b1cc5bcd764b09c33a81d353dd694f83930385cc9bea7c48e43",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

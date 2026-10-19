@@ -1,0 +1,3 @@
+node-000000 beta.kubernetes.io/arch=amd64;beta.kubernetes.io/os=linux;kubernetes.io/arch=amd64;kubernetes.io/hostname=node-000000;kubernetes.io/os=linux;kubernetes.io/role=agent;kwok.x-k8s.io/kwokctl-scale=node;node-role.kubernetes.io/agent=;type=kwok;
+node-000001 beta.kubernetes.io/arch=amd64;beta.kubernetes.io/os=linux;kubernetes.io/arch=amd64;kubernetes.io/hostname=node-000001;kubernetes.io/os=linux;kubernetes.io/role=agent;kwok.x-k8s.io/kwokctl-scale=node;node-role.kubernetes.io/agent=;type=S1;
+node-000002 beta.kubernetes.io/arch=amd64;beta.kubernetes.io/os=linux;kubernetes.io/arch=amd64;kubernetes.io/hostname=node-000002;kubernetes.io/os=linux;kubernetes.io/role=agent;kwok.x-k8s.io/kwokctl-scale=node;node-role.kubernetes.io/agent=;type=kwok;

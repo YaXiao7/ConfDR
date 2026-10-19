@@ -1,0 +1,1007 @@
+{
+  "WaitingDeployPods": {
+    "default/Deployment/xyz/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "xyz"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "confd",
+          "configMap": {
+            "name": "xyz",
+            "items": [
+              {
+                "key": "resolver",
+                "path": "resolver.conf"
+              }
+            ]
+          }
+        },
+        {
+          "name": "nginx-config",
+          "configMap": {
+            "name": "xyz",
+            "items": [
+              {
+                "key": "nginxConf",
+                "path": "default"
+              }
+            ]
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "xyz"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "ConfigMap",
+        "default",
+        "xyz"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Deployment",
+        "default",
+        "xyz"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-app-stg-c1-01"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-app-stg-c1-02"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-app-stg-c1-03"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-app-stg-c1-04"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-app-stg-c1-05"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-app-stg-c1-06"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-bi-stg-c1-01"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-ci-stg-c1-01"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-ci-stg-c1-02"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-ci-stg-c1-03"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-ci-stg-c1-04"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-master-stg-c1-01"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-master-stg-c1-02"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-master-stg-c1-03"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-svc-stg-c1-01"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-svc-stg-c1-02"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-svc-stg-c1-03"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-svc-stg-c1-04"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "k8s-svc-stg-c1-05"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "k8s-app-stg-c1-01": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "app",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-app-stg-c1-01",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "app"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-app-stg-c1-02": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "app",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-app-stg-c1-02",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "app"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-app-stg-c1-03": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "app",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-app-stg-c1-03",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "app"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-app-stg-c1-04": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "app",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-app-stg-c1-04",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "app"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-app-stg-c1-05": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "app",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-app-stg-c1-05",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "app"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-app-stg-c1-06": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "app",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-app-stg-c1-06",
+          "kubernetes.io/os": "linux",
+          "role": "preemtible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "app"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-bi-stg-c1-01": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "bi",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-bi-stg-c1-01",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "bi"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-ci-stg-c1-01": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "ci",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-ci-stg-c1-01",
+          "kubernetes.io/os": "linux",
+          "role": "preemtible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "ci"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-ci-stg-c1-02": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "ci",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-ci-stg-c1-02",
+          "kubernetes.io/os": "linux",
+          "role": "preemtible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "ci"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-ci-stg-c1-03": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "ci",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-ci-stg-c1-03",
+          "kubernetes.io/os": "linux",
+          "role": "preemtible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "ci"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-ci-stg-c1-04": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "ci",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-ci-stg-c1-04",
+          "kubernetes.io/os": "linux",
+          "role": "preemtible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "ci"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-master-stg-c1-01": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-master-stg-c1-01",
+          "kubernetes.io/os": "linux",
+          "node-role.kubernetes.io/master": ""
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "node-role.kubernetes.io/master"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-master-stg-c1-02": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-master-stg-c1-02",
+          "kubernetes.io/os": "linux",
+          "node-role.kubernetes.io/master": ""
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "node-role.kubernetes.io/master"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-master-stg-c1-03": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-master-stg-c1-03",
+          "kubernetes.io/os": "linux",
+          "node-role.kubernetes.io/master": ""
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "node-role.kubernetes.io/master"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-svc-stg-c1-01": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "svc",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-svc-stg-c1-01",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "svc"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-svc-stg-c1-02": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "svc",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-svc-stg-c1-02",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "svc"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-svc-stg-c1-03": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "svc",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-svc-stg-c1-03",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "svc"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-svc-stg-c1-04": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "svc",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-svc-stg-c1-04",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "svc"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "k8s-svc-stg-c1-05": {
+        "cpu": 8000,
+        "mem": "34359738368",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "esxcluster": "svc",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "k8s-svc-stg-c1-05",
+          "kubernetes.io/os": "linux",
+          "role": "preemptible"
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "esxcluster",
+            "value": "svc"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "8",
+          "memory": "32Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:25.861945+00:00",
+    "candidate_hash": "b404d2226e014d2c6f296f69aa81d4c319c3fa28aab74eb0a15522d399a62bb7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

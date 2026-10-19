@@ -1,0 +1,254 @@
+{
+  "WaitingDeployPods": {
+    "default/Deployment/wordpress/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "wordpress"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "wordpress-persistent-storage",
+          "persistentVolumeClaim": {
+            "claimName": "task-pv-claim"
+          }
+        },
+        {
+          "name": "cloudsql-instance-credentials",
+          "secret": {
+            "secretName": "cloudsql-instance-credentials"
+          }
+        },
+        {
+          "name": "ssl-certs",
+          "hostPath": {
+            "path": "/etc/ssl/certs"
+          }
+        },
+        {
+          "name": "cloudsql",
+          "emptyDir": {}
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "wordpress"
+      },
+      "resource_source": "observed_admitted_pod"
+    },
+    "default/Deployment/wordpress/1": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "wordpress"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "wordpress-persistent-storage",
+          "persistentVolumeClaim": {
+            "claimName": "task-pv-claim"
+          }
+        },
+        {
+          "name": "cloudsql-instance-credentials",
+          "secret": {
+            "secretName": "cloudsql-instance-credentials"
+          }
+        },
+        {
+          "name": "ssl-certs",
+          "hostPath": {
+            "path": "/etc/ssl/certs"
+          }
+        },
+        {
+          "name": "cloudsql",
+          "emptyDir": {}
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "wordpress"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "task-pv-claim"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Deployment",
+        "default",
+        "wordpress"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "kwok-storage-node"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "pv0001"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "kwok-storage-node": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "kubernetes.io/hostname": "kwok-storage-node"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "task-pv-claim": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "3Gi"
+            }
+          },
+          "storageClassName": "manual",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"2fa49ae5735f\"},\"name\":\"task-pv-claim\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"3Gi\"}},\"storageClassName\":\"manual\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:24:00Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "2fa49ae5735f"
+            },
+            "name": "task-pv-claim",
+            "namespace": "default",
+            "resourceVersion": "226",
+            "uid": "d383f078-d705-42ed-b25a-7219f200b2b2"
+          },
+          "uid": "d383f078-d705-42ed-b25a-7219f200b2b2",
+          "requestsGi": "3Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "pv0001": {
+        "accessModes": [
+          "ReadWriteMany"
+        ],
+        "capacity": {
+          "storage": "10Gi"
+        },
+        "gcePersistentDisk": {
+          "fsType": "ext4",
+          "pdName": "wordpress-disk"
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "manual",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"pv0001\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"capacity\":{\"storage\":\"10Gi\"},\"gcePersistentDisk\":{\"fsType\":\"ext4\",\"pdName\":\"wordpress-disk\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"manual\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:23:57Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "pv0001",
+          "resourceVersion": "224",
+          "uid": "ea069ab7-d48e-46d8-b2ad-26e40d77cfcf"
+        },
+        "labels": {},
+        "capacityGi": "10Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:00.330335+00:00",
+    "candidate_hash": "7c4d1dca87baf12fd112198c0f7f9e9d3d2ed168c35f0154bbe33a23ced943e7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

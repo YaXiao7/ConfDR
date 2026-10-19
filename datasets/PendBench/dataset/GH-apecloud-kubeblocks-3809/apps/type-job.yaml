@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backup-kubeblocks-mysqltest-20230615135636
+  namespace: kubeblocks
+spec:
+  template:
+    metadata:
+      labels:
+        app: mysqltest-backup
+    spec:
+      containers:
+      - name: backup
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: backup-logfile-backup-data
+          mountPath: /backupdata
+      volumes:
+      - name: backup-logfile-backup-data
+        persistentVolumeClaim:
+          claimName: logfile-backup-data
+      restartPolicy: Never
+  backoffLimit: 0

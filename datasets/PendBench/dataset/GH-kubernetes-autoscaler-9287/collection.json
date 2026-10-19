@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) had untolerated taint {ToBeDeletedByClusterAutoscaler: true}, 2 node(s) didn't match pod topology spread constraints. preemption: 0/3 nodes are available: 1 Preemption is not helpful for scheduling, 2 No preemption victims found for incoming pod.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-c67cef7a3069",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:19:50.940896+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "306fa3615f368b1cc5bcd764b09c33a81d353dd694f83930385cc9bea7c48e43"
+}

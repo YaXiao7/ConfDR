@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: autoscaler
+  namespace: default
+  labels:
+    app: autoscaler
+spec:
+  tolerations:
+  - key: node-role.kubernetes.io/control-plane
+    operator: Exists
+    effect: NoSchedule
+  containers:
+  - name: autoscaler
+    image: registry.k8s.io/pause:3.9

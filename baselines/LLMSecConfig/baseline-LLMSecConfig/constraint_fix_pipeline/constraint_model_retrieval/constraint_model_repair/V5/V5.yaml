@@ -1,0 +1,55 @@
+# Before fix: the PVC and the PV have inconsistent volumeMode settings.
+# The PVC uses "Filesystem" while the PV is configured as "Block".
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: app1-pv
+# spec:
+#   capacity:
+#     storage: 1Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   volumeMode: Block
+#   persistentVolumeReclaimPolicy: Retain
+#   hostPath:
+#     path: /mnt/data1
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: app1-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 1Gi
+#   volumeMode: Filesystem
+
+# After fix: update the PVC volumeMode to "Block" to make it consistent with the PV.
+# The volumeMode must be aligned for successful volume binding.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app1-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Block
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /mnt/data1
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app1-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Block

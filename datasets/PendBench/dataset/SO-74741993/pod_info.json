@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "ches/StatefulSet/ches/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:31:10Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "ches",
+      "actual_name": "ches-0",
+      "uid": "3683b5b8-c86c-4a8d-a0ef-8d3ba5f865f7",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "ches/StatefulSet/ches/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:31:10.123855Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "ches/data-ches-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:31:10.399975+00:00",
+  "candidate_hash": "66d30b0db17302aa8db2dcceba3c9af275c7a703e2b5d08a595442580b615006",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:10.399975+00:00",
+    "candidate_hash": "66d30b0db17302aa8db2dcceba3c9af275c7a703e2b5d08a595442580b615006",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,130 @@
+{
+  "pod_status": {
+    "default/Deployment/test/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:46Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:46Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:46Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "gcr.io/testing-11111/testology:latest",
+          "imageID": "",
+          "lastState": {},
+          "name": "container-test2-tickers",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:46Z"
+            }
+          }
+        },
+        {
+          "image": "gcr.io/testing-11111/testology:latest",
+          "imageID": "",
+          "lastState": {},
+          "name": "container-kraken-tickers",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:46Z"
+            }
+          }
+        },
+        {
+          "image": "gcr.io/testing-11111/testology:latest",
+          "imageID": "",
+          "lastState": {},
+          "name": "container-gdax-tickers",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:46Z"
+            }
+          }
+        },
+        {
+          "image": "gcr.io/testing-11111/testology:latest",
+          "imageID": "",
+          "lastState": {},
+          "name": "container-bittrex-tickers",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:46Z"
+            }
+          }
+        },
+        {
+          "image": "gcr.io/cloudsql-docker/gce-proxy:1.09",
+          "imageID": "",
+          "lastState": {},
+          "name": "cloudsql-proxy",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:46Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.7",
+      "podIPs": [
+        {
+          "ip": "10.0.0.7"
+        }
+      ],
+      "qosClass": "Burstable",
+      "startTime": "2026-09-25T06:52:46Z",
+      "namespace": "default",
+      "actual_name": "test-7c8968f8c9-tvcn6",
+      "uid": "fddb03e6-07b0-4e71-8386-495e1fac0416",
+      "nodeName": "gke-test-pool-extra"
+    }
+  },
+  "pod_events": {
+    "default/Deployment/test/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/test-7c8968f8c9-tvcn6 to gke-test-pool-extra",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:46.553923Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:46.902286+00:00",
+  "candidate_hash": "62923400687f93ee5f50f78cc7fbc859199a5eaee81531c5558bc0922098b5ca",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:46.902286+00:00",
+    "candidate_hash": "62923400687f93ee5f50f78cc7fbc859199a5eaee81531c5558bc0922098b5ca",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

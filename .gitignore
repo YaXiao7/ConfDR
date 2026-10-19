@@ -1,0 +1,12 @@
+# OS metadata
+._*
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Credentials: copy .env.example to tmp/baseline-keys.env, never commit it
+baseline-keys.env

@@ -1,0 +1,274 @@
+{
+  "WaitingDeployPods": {
+    "dev/Pod/qhub-conda-store/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dev",
+      "labels": {
+        "app": "pending-workload"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": {
+        "confdr.example/node-role": "general"
+      },
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "data",
+          "persistentVolumeClaim": {
+            "claimName": "provisioning"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "qhub-conda-store"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "dev",
+        "provisioning"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "dev",
+        "qhub-conda-store"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "data-volume"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-2"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "confdr.example/node-role": "general",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux",
+          "topology.kubernetes.io/zone": "us-east-2a"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-2": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "confdr.example/node-role": "user-worker",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-2",
+          "kubernetes.io/os": "linux",
+          "topology.kubernetes.io/zone": "us-east-2b"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "dev": {
+        "provisioning": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "2Gi"
+            }
+          },
+          "storageClassName": "",
+          "volumeMode": "Filesystem",
+          "volumeName": "data-volume",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"1f693a2ac0c9\"},\"name\":\"provisioning\",\"namespace\":\"dev\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"2Gi\"}},\"storageClassName\":\"\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes",
+              "pv.kubernetes.io/bound-by-controller": "yes"
+            },
+            "creationTimestamp": "2026-10-02T03:21:57Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "1f693a2ac0c9"
+            },
+            "name": "provisioning",
+            "namespace": "dev",
+            "resourceVersion": "244",
+            "uid": "c36f4f12-5efd-4bdd-886f-67bef0c7aee6"
+          },
+          "uid": "c36f4f12-5efd-4bdd-886f-67bef0c7aee6",
+          "requestsGi": "2Gi",
+          "STATUS": "Bound"
+        }
+      }
+    },
+    "PVs": {
+      "data-volume": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "2Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "provisioning",
+          "namespace": "dev",
+          "resourceVersion": "237",
+          "uid": "c36f4f12-5efd-4bdd-886f-67bef0c7aee6"
+        },
+        "hostPath": {
+          "path": "/mnt/data-volume",
+          "type": ""
+        },
+        "nodeAffinity": {
+          "required": {
+            "nodeSelectorTerms": [
+              {
+                "matchExpressions": [
+                  {
+                    "key": "topology.kubernetes.io/zone",
+                    "operator": "In",
+                    "values": [
+                      "us-east-2b"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{},\"name\":\"data-volume\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"2Gi\"},\"hostPath\":{\"path\":\"/mnt/data-volume\"},\"nodeAffinity\":{\"required\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"topology.kubernetes.io/zone\",\"operator\":\"In\",\"values\":[\"us-east-2b\"]}]}]}},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"\"}}\n",
+            "pv.kubernetes.io/bound-by-controller": "yes"
+          },
+          "creationTimestamp": "2026-10-02T03:21:55Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "data-volume",
+          "resourceVersion": "240",
+          "uid": "e7ac6712-a946-494b-8dce-edfb41b3cc3c"
+        },
+        "labels": {},
+        "capacityGi": "2Gi",
+        "phase": "Bound"
+      }
+    },
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "dev": {
+        "kubernetes.io/metadata.name": "dev"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:21:57.702019+00:00",
+    "candidate_hash": "49c84161d874f36546e47c17ea1ef1a8b9b8660d6606de21fe4e10f47d7233fe",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

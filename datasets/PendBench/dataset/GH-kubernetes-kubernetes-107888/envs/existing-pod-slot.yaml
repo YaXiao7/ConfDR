@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: existing-pod-slot
+  namespace: default
+  labels:
+    app: existing-pod-slot
+spec:
+  containers:
+  - name: main
+    image: registry.k8s.io/pause:3.9
+  nodeName: node-1

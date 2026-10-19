@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: prometheus-stack-prometheus-node-exporter
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: prometheus-stack-prometheus-node-exporter
+  template:
+    metadata:
+      labels:
+        app: prometheus-stack-prometheus-node-exporter
+    spec:
+      containers:
+      - name: node-exporter
+        image: quay.io/prometheus/node-exporter:v1.5.0
+        ports:
+        - containerPort: 9100
+          hostPort: 9100

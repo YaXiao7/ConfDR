@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "rook-nfs/Pod/task-pv-pod/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:57Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "rook-nfs",
+      "actual_name": "task-pv-pod",
+      "uid": "fb7e6ba4-d239-42be-8089-26515faf2095",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "rook-nfs/Pod/task-pv-pod/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:57.820401Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "rook-nfs/rook-nfs-pv-claim": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:22:58.093439+00:00",
+  "candidate_hash": "990123ecb3d3609952e1589b3cbc48c7c7b400e9e3a4a534a5c2b04629951c40",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:22:58.093439+00:00",
+    "candidate_hash": "990123ecb3d3609952e1589b3cbc48c7c7b400e9e3a4a534a5c2b04629951c40",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

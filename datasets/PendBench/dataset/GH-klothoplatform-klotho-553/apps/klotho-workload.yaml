@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: klotho-workload
+  namespace: default
+  labels:
+    app: match
+spec:
+  containers:
+  - name: match
+    image: registry.k8s.io/pause:3.9
+  nodeSelector:
+    eks.amazonaws.com/nodegroup: private_t3_xlarge
+    network_placement: private

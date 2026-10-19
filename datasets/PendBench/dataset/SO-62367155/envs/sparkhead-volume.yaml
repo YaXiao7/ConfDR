@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sparkhead-csi-volume
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  claimRef:
+    namespace: default
+    name: sparkhead-claim
+  csi:
+    driver: pd.csi.storage.gke.io
+    volumeHandle: sparkhead-csi-volume

@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "dev/Pod/qhub-conda-store/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:21:57Z",
+          "message": "0/2 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "dev",
+      "actual_name": "qhub-conda-store",
+      "uid": "62474d47-ceeb-45e8-b904-7a564d2cc883",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "dev/Pod/qhub-conda-store/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:21:57.437149Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "dev/provisioning": {
+      "phase": "Bound",
+      "volumeName": "data-volume"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:21:57.702019+00:00",
+  "candidate_hash": "49c84161d874f36546e47c17ea1ef1a8b9b8660d6606de21fe4e10f47d7233fe",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:21:57.702019+00:00",
+    "candidate_hash": "49c84161d874f36546e47c17ea1ef1a8b9b8660d6606de21fe4e10f47d7233fe",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

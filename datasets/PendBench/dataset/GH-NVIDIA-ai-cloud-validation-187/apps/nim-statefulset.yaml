@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nim-llama-3-2-3b-instruct
+  namespace: default
+spec:
+  serviceName: nim-llama-3-2-3b-instruct
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nim-llama-3-2-3b-instruct
+  template:
+    metadata:
+      labels:
+        app: nim-llama-3-2-3b-instruct
+    spec:
+      containers:
+      - name: nim
+        image: registry.k8s.io/pause:3.9
+        resources:
+          limits:
+            nvidia.com/gpu: '8'

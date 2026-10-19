@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: pzoo
+  namespace: kafka
+spec:
+  serviceName: pzoo
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pzoo
+  template:
+    metadata:
+      labels:
+        app: pzoo
+    spec:
+      containers:
+      - name: zookeeper
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: datadir
+          mountPath: /var/lib/zookeeper
+      volumes:
+      - name: datadir
+        persistentVolumeClaim:
+          claimName: datadir-pzoo-0

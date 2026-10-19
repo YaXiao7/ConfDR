@@ -1,0 +1,155 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/gpu-pod/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {
+        "nvidia.com/gpu": 1,
+        "nvidia.com/gpu-memory": 8001
+      },
+      "namespace": "default",
+      "labels": {},
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "gpu-pod"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "gpu-pod"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "g2-8xlarge-worker"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "m5-large-master"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "g2-8xlarge-worker": {
+        "cpu": 32000,
+        "mem": "64424509440",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/instance-type": "g2.8xlarge",
+          "kubernetes.io/hostname": "g2-8xlarge-worker"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "32",
+          "memory": "60Gi",
+          "nvidia.com/gpu": "4",
+          "nvidia.com/gpu-memory": "4k",
+          "pods": "110"
+        },
+        "extended_free": {
+          "nvidia.com/gpu": 4,
+          "nvidia.com/gpu-memory": 4000
+        }
+      },
+      "m5-large-master": {
+        "cpu": 2000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/instance-type": "m5.large",
+          "kubernetes.io/hostname": "m5-large-master",
+          "node-role.kubernetes.io/master": ""
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "node-role.kubernetes.io/master"
+          }
+        ],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "2",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {},
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:42.920322+00:00",
+    "candidate_hash": "6d2e392ebdc0dbcaf7abf3467b999a8044d53325a5bc0de810bbfac92aa850cc",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/4 nodes are available: 1 Too many pods. preemption: 0/4 nodes are available: 1 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-d02e646dff71",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:22:08.640239+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "c00bc0371774b3b25c2c15bcbcef8db1c4c2c652d8f3d7d1bb029cf35ab9424a"
+}

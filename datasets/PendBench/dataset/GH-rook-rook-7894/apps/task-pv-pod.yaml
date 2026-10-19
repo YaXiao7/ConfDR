@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: task-pv-pod
+  namespace: rook-nfs
+  labels:
+    app: pending-workload
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: nginx-html-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: nginx-html-storage
+    persistentVolumeClaim:
+      claimName: rook-nfs-pv-claim

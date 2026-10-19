@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/demo/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:17:42Z",
+          "message": "0/3 nodes are available: 3 node(s) had untolerated taint {harm.cn/system: }. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "demo",
+      "uid": "2f8e20ef-3dcf-4d14-955f-f1335b3d2a90",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/demo/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) had untolerated taint {harm.cn/system: }. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:17:42.759580Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:17:43.032697+00:00",
+  "candidate_hash": "4ba94ce4212883a83a9faf0ecb8ffa5c7c0b073388b32133101b7776eee83a33",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:17:43.032697+00:00",
+    "candidate_hash": "4ba94ce4212883a83a9faf0ecb8ffa5c7c0b073388b32133101b7776eee83a33",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

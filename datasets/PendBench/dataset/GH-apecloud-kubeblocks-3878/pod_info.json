@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/pgcluster-postgresql-backup-po-logfile/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:16:47Z",
+          "message": "0/4 nodes are available: 4 node(s) had untolerated taint {kb-controller: true}. preemption: 0/4 nodes are available: 4 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "pgcluster-postgresql-backup-po-logfile",
+      "uid": "9eb85ee9-2829-4dc5-bee3-65ef6021ad10",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/pgcluster-postgresql-backup-po-logfile/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/4 nodes are available: 4 node(s) had untolerated taint {kb-controller: true}. preemption: 0/4 nodes are available: 4 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:16:47.472019Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:16:47.739259+00:00",
+  "candidate_hash": "604e9a2247005ddc329568a8bd8ceb93e3396150c5009514ceb19441034e034b",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:16:47.739259+00:00",
+    "candidate_hash": "604e9a2247005ddc329568a8bd8ceb93e3396150c5009514ceb19441034e034b",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

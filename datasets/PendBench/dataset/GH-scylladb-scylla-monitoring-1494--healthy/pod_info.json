@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/node-exporter/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:40Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:40Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:40Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "node-exporter",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:40Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.3",
+      "podIPs": [
+        {
+          "ip": "10.0.0.3"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:40Z",
+      "namespace": "default",
+      "actual_name": "node-exporter",
+      "uid": "b00ca065-90e9-468d-a716-27a237441005",
+      "nodeName": "node-2"
+    }
+  },
+  "pod_events": {
+    "default/Pod/node-exporter/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/node-exporter to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:40.105196Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:40.428682+00:00",
+  "candidate_hash": "3a5a7d66d97b3089763dd35ba5e112e74373ddd4c57687452ae0155d6f0f2e18",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:40.428682+00:00",
+    "candidate_hash": "3a5a7d66d97b3089763dd35ba5e112e74373ddd4c57687452ae0155d6f0f2e18",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

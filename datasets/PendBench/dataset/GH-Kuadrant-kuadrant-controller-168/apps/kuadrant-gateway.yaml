@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuadrant-gateway
+  namespace: kuadrant-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kuadrant-gateway
+  template:
+    metadata:
+      labels:
+        app: kuadrant-gateway
+    spec:
+      containers:
+      - name: istio-proxy
+        image: registry.k8s.io/pause:3.9
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - ppc64le
+                - s390x

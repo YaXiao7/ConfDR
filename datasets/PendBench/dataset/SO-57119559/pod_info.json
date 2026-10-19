@@ -1,0 +1,289 @@
+{
+  "pod_status": {
+    "default/DaemonSet/another/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-27h8q",
+      "uid": "68f07548-433d-46ea-87b7-b25d64177c70",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-10": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-2cp89",
+      "uid": "ea216acc-180c-4370-a7e5-a0784a44667e",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-2": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-4fh4w",
+      "uid": "e7bd6451-1f33-4f33-8b93-06ff587ef466",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-3": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-9nl7k",
+      "uid": "970cbe09-63a6-4d2f-8903-52480f00ef5c",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-4": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-9tzvz",
+      "uid": "2856d4f5-f648-4baa-b056-39ecb6f190a0",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-5": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-c9bwb",
+      "uid": "c01074bd-fb88-4062-b2c6-32130cb4ce2c",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-6": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-n8gch",
+      "uid": "65f1512a-468e-4b6c-8193-427ce012aa1e",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-7": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-ptslh",
+      "uid": "c98ef72c-b207-4686-8985-506b09cb92ad",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-8": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-q4tgt",
+      "uid": "db920f78-66c4-4b47-9b03-c0f858cc3fe3",
+      "nodeName": null
+    },
+    "default/DaemonSet/another/node-9": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:25:47Z",
+          "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "another-zvtpq",
+      "uid": "34edef35-d6ed-4d37-99a6-71c45e55e510",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/DaemonSet/another/node-1": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.262637Z"
+      }
+    ],
+    "default/DaemonSet/another/node-10": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.229991Z"
+      }
+    ],
+    "default/DaemonSet/another/node-2": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.255757Z"
+      }
+    ],
+    "default/DaemonSet/another/node-3": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.177891Z"
+      }
+    ],
+    "default/DaemonSet/another/node-4": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.211955Z"
+      }
+    ],
+    "default/DaemonSet/another/node-5": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.195988Z"
+      }
+    ],
+    "default/DaemonSet/another/node-6": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.238810Z"
+      }
+    ],
+    "default/DaemonSet/another/node-7": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.203875Z"
+      }
+    ],
+    "default/DaemonSet/another/node-8": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.247226Z"
+      }
+    ],
+    "default/DaemonSet/another/node-9": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Insufficient cpu. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:25:47.269780Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:25:47.477725+00:00",
+  "candidate_hash": "55057bda36a75c6c34aa56c3556e9a34ba2171c720ee8b6cec25f1bb3e888797",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:25:47.477725+00:00",
+    "candidate_hash": "55057bda36a75c6c34aa56c3556e9a34ba2171c720ee8b6cec25f1bb3e888797",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

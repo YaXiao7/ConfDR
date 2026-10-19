@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: monitor-prometheus-server
+  namespace: monitoring
+  labels:
+    app: prometheus
+    component: server
+    release: monitor
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi

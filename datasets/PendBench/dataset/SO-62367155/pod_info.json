@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/sparkhead-0/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:44Z",
+          "message": "0/3 nodes are available: 3 node(s) exceed max volume count. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "sparkhead-0",
+      "uid": "96ea94a0-abaa-4530-939e-970e6dedd697",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/sparkhead-0/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) exceed max volume count. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:44.358785Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/sparkhead-claim": {
+      "phase": "Bound",
+      "volumeName": "sparkhead-csi-volume"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:27:44.646715+00:00",
+  "candidate_hash": "0b58ab5543963fb6d0257586b44b0fe8d4dd39f11493929f469d8d77cc683678",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:44.646715+00:00",
+    "candidate_hash": "0b58ab5543963fb6d0257586b44b0fe8d4dd39f11493929f469d8d77cc683678",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

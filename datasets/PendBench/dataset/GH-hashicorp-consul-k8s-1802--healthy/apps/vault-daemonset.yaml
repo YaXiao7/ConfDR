@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: vault
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: vault
+  template:
+    metadata:
+      labels:
+        app: vault
+    spec:
+      containers:
+      - name: vault
+        image: registry.k8s.io/pause:3.9
+        ports:
+        - containerPort: 8080
+          hostPort: 8081

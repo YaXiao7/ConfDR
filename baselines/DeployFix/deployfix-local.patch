@@ -1,0 +1,119 @@
+diff --git a/src/plugin/k8s/cli.rs b/src/plugin/k8s/cli.rs
+index 93a58da..9437eca 100644
+--- a/src/plugin/k8s/cli.rs
++++ b/src/plugin/k8s/cli.rs
+@@ -411,20 +411,21 @@ pub fn execute(command: K8SCommands) {
+                         if recommend {
+                             let recommendations = match recommend_policy {
+                                 RecommendPolicy::HighPriorityFirst => {
++                                    // local patch: upstream unwrapped the lookup, so a
++                                    // conflict key with no matching entity (an
++                                    // "unknown" selector target, e.g. a label selector
++                                    // that names no workload in the source dir) panicked
++                                    // instead of falling back to the default policy.
++                                    // Drop those keys and let the fallback handle them.
+                                     let priority_map = conflicts
+                                         .keys()
+                                         .into_iter()
+-                                        .map(|e| {
+-                                            (
+-                                                e,
+-                                                entity_map
+-                                                    .entities
+-                                                    .iter()
+-                                                    .find(|x| x.name.0.as_str() == e)
+-                                                    .unwrap()
+-                                                    .priority
+-                                                    .clone(),
+-                                            )
++                                        .filter_map(|e| {
++                                            entity_map
++                                                .entities
++                                                .iter()
++                                                .find(|x| x.name.0.as_str() == e)
++                                                .map(|x| (e, x.priority.clone()))
+                                         })
+                                         .collect::<HashMap<_, _>>();
+ 
+diff --git a/src/solver/z3.rs b/src/solver/z3.rs
+index 6bfdb52..3899f27 100644
+--- a/src/solver/z3.rs
++++ b/src/solver/z3.rs
+@@ -26,10 +26,11 @@ pub struct Z3Solver<'ctx> {
+ impl<'ctx> Z3Solver<'ctx> {
+     pub fn new() -> Pin<Box<Self>> {
+         let config = Config::new();
+-        let cpus = num_cpus::get();
+-        // enable parallelism
+-        z3::set_global_param("parallel.enable", "true");
+-        z3::set_global_param("parallel.threads.max", cpus.to_string().as_str());
++        // local patch: the parallel portfolio can return a different unsat core
++        // for the same input, which makes the reported conflict rules (and the
++        // category derived from them) drift between runs.  Reproducibility of
++        // the detection result matters more here than solver throughput.
++        z3::set_global_param("parallel.enable", "false");
+ 
+         let ctx = Context::new(&config);
+ 
+@@ -196,9 +197,16 @@ impl<'ctx> Solver<'ctx> for Z3Solver<'ctx> {
+             }
+         }
+ 
+-        let ret: HashMap<String, Vec<EntityRule>> = map
+-            .names
++        // local patch: `map.names` is a HashSet, so iteration order varies per
++        // process.  The assertions are order-independent in principle, but z3
++        // picks its unsat core from them, so an unsorted walk lets the reported
++        // conflict set drift.  Sort for a reproducible core.
++        let mut names: Vec<&String> = map.names.iter().collect();
++        names.sort();
++
++        let ret: HashMap<String, Vec<EntityRule>> = names
+             .iter()
++            .copied()
+             .filter_map(|name| {
+                 let vars = RefCell::borrow_mut(&self.vars);
+                 let var = match vars.get(name) {
+@@ -221,6 +229,13 @@ impl<'ctx> Solver<'ctx> for Z3Solver<'ctx> {
+                 let result = match envs.as_ref() {
+                     Some(envs) => {
+                         let mut results = HashSet::new();
++                        // local patch: upstream `return None` on a placable env
++                        // escaped both the env and the name `push()`, leaving
++                        // their assertions on the solver and poisoning every
++                        // later name (which then came back UNSAT with an empty
++                        // core and was read as "no conflict").  Track the flag,
++                        // pop first, decide after.
++                        let mut placable = false;
+ 
+                         for env in envs {
+                             debug!("Cosidering env: {:?}", env.name);
+@@ -259,19 +274,21 @@ impl<'ctx> Solver<'ctx> for Z3Solver<'ctx> {
+                             }
+ 
+                             let result = self.check_and_get(&mut solver);
++                            solver.pop(1u32);
+                             match result {
+                                 Some(r) => results.extend(r),
+-                                None => return None,
++                                None => {
++                                    placable = true;
++                                    break;
++                                }
+                             }
+-
+-                            solver.pop(1u32);
+                         }
+ 
+-                        if results.is_empty() {
+-                            return None;
++                        if placable || results.is_empty() {
++                            None
++                        } else {
++                            Some(results.into_iter().collect::<Vec<_>>())
+                         }
+-
+-                        Some(results.into_iter().collect::<Vec<_>>())
+                     }
+                     None => self.check_and_get(&mut solver),
+                 };

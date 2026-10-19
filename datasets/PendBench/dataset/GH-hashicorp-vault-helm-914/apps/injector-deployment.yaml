@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: injector
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: injector
+  template:
+    metadata:
+      labels:
+        app: injector
+    spec:
+      containers:
+      - name: injector
+        image: registry.k8s.io/pause:3.9
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: conflicting-peer
+            topologyKey: kubernetes.io/hostname

@@ -1,0 +1,183 @@
+{
+  "WaitingDeployPods": {
+    "rook-nfs/Pod/task-pv-pod/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "rook-nfs",
+      "labels": {
+        "app": "pending-workload"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "nginx-html-storage",
+          "persistentVolumeClaim": {
+            "claimName": "rook-nfs-pv-claim"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "task-pv-pod"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "rook-nfs",
+        "rook-nfs-pv-claim"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "rook-nfs",
+        "task-pv-pod"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Namespace",
+        "",
+        "makes"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Namespace",
+        "",
+        "storage"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "rook-nfs": {
+        "rook-nfs-pv-claim": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "rook-nfs-share1",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"10da78af576d\"},\"name\":\"rook-nfs-pv-claim\",\"namespace\":\"rook-nfs\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"rook-nfs-share1\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:22:57Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "10da78af576d"
+            },
+            "name": "rook-nfs-pv-claim",
+            "namespace": "rook-nfs",
+            "resourceVersion": "234",
+            "uid": "0c317219-f123-40a0-8692-16eaf8ac70b9"
+          },
+          "uid": "0c317219-f123-40a0-8692-16eaf8ac70b9",
+          "requestsGi": "1Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      },
+      "makes": {
+        "kubernetes.io/metadata.name": "makes"
+      },
+      "rook-nfs": {
+        "kubernetes.io/metadata.name": "rook-nfs"
+      },
+      "storage": {
+        "kubernetes.io/metadata.name": "storage"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:22:58.093439+00:00",
+    "candidate_hash": "990123ecb3d3609952e1589b3cbc48c7c7b400e9e3a4a534a5c2b04629951c40",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

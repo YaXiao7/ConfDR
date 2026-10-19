@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "kube-system/Pod/tiller-deploy-df4fdf55d-jwtcz/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:52Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:52Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:52Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "tiller",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:52Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:52Z",
+      "namespace": "kube-system",
+      "actual_name": "tiller-deploy-df4fdf55d-jwtcz",
+      "uid": "f4fb8564-6dca-46c6-a3f4-5f6fe968d811",
+      "nodeName": "master"
+    }
+  },
+  "pod_events": {
+    "kube-system/Pod/tiller-deploy-df4fdf55d-jwtcz/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned kube-system/tiller-deploy-df4fdf55d-jwtcz to master",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:52.654671Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:52.968620+00:00",
+  "candidate_hash": "ce2b252388f45fd5e16399566d00e406ce8acc7c062e1c90d970bac90a38b800",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:52.968620+00:00",
+    "candidate_hash": "ce2b252388f45fd5e16399566d00e406ce8acc7c062e1c90d970bac90a38b800",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

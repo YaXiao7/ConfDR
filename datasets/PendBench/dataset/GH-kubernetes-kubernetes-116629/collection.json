@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/1 nodes are available: 1 node(s) had volume node affinity conflict. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-3509e5351681",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:20:19.585327+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "6b5a029b7e5384b7fc6219538893fbb2e581c9142fb014a7f46b1dbbf067990c"
+}

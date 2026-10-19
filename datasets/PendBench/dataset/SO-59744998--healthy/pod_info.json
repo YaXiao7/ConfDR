@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/match/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:16Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:16Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:16Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:53:16Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.4",
+      "podIPs": [
+        {
+          "ip": "10.0.0.4"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:53:16Z",
+      "namespace": "default",
+      "actual_name": "match",
+      "uid": "83b47c7e-256f-49c0-8fa9-07687a8b3679",
+      "nodeName": "node-4"
+    }
+  },
+  "pod_events": {
+    "default/Pod/match/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/match to node-4",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:53:16.269494Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:53:16.588785+00:00",
+  "candidate_hash": "f8e737839190d67253fb4330c9a9b4e21b44ead5e389098141c2bb35103f4923",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:53:16.588785+00:00",
+    "candidate_hash": "f8e737839190d67253fb4330c9a9b4e21b44ead5e389098141c2bb35103f4923",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

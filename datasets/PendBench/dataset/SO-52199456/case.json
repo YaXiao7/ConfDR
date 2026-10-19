@@ -1,0 +1,238 @@
+{
+  "WaitingDeployPods": {
+    "default/Deployment/maptilesbackend/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "maptilesbackend"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "mapdata",
+          "persistentVolumeClaim": {
+            "claimName": "mapdata"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "maptilesbackend"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "mapdata"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Deployment",
+        "default",
+        "maptilesbackend"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "local-node"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "local-pv-9721c951"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "local-scsi"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "local-node": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "local-node",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "mapdata": {
+          "accessModes": [
+            "ReadOnlyMany"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "300Gi"
+            }
+          },
+          "storageClassName": "local-scsi",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"605f43ba4e20\"},\"name\":\"mapdata\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadOnlyMany\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"300Gi\"}},\"storageClassName\":\"local-scsi\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:24:55Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "605f43ba4e20"
+            },
+            "name": "mapdata",
+            "namespace": "default",
+            "resourceVersion": "230",
+            "uid": "e2f25a48-b93c-46bb-b777-5fa5356f9948"
+          },
+          "uid": "e2f25a48-b93c-46bb-b777-5fa5356f9948",
+          "requestsGi": "300Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "local-pv-9721c951": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "368Gi"
+        },
+        "hostPath": {
+          "path": "/mnt/local-pv-9721c951",
+          "type": ""
+        },
+        "nodeAffinity": {
+          "required": {
+            "nodeSelectorTerms": [
+              {
+                "matchExpressions": [
+                  {
+                    "key": "kubernetes.io/hostname",
+                    "operator": "In",
+                    "values": [
+                      "local-node"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "local-scsi",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{},\"name\":\"local-pv-9721c951\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"368Gi\"},\"hostPath\":{\"path\":\"/mnt/local-pv-9721c951\"},\"nodeAffinity\":{\"required\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"local-node\"]}]}]}},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"local-scsi\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:24:52Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "local-pv-9721c951",
+          "resourceVersion": "223",
+          "uid": "84c7ec25-215d-4b9b-9bbc-7b5bfe6f5f17"
+        },
+        "labels": {},
+        "capacityGi": "368Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {
+      "local-scsi": {
+        "provisioner": "kubernetes.io/no-provisioner",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{},\"name\":\"local-scsi\"},\"provisioner\":\"kubernetes.io/no-provisioner\",\"volumeBindingMode\":\"WaitForFirstConsumer\"}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:24:52Z",
+          "name": "local-scsi",
+          "resourceVersion": "204",
+          "uid": "872c72db-1a2b-4c43-92f2-8fcc08673d2f"
+        },
+        "parameters": {},
+        "volumeBindingMode": "WaitForFirstConsumer",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:55.596906+00:00",
+    "candidate_hash": "c046a757f669b6e48a97781d247b07dba75ea5358bce32a0bbbcbf988d507745",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

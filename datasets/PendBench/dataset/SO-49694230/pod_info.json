@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "kube-system/Pod/tiller-deploy-df4fdf55d-jwtcz/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:24:11Z",
+          "message": "0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/master: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kube-system",
+      "actual_name": "tiller-deploy-df4fdf55d-jwtcz",
+      "uid": "eb3ec70f-4b54-4746-bb0a-68823681c557",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kube-system/Pod/tiller-deploy-df4fdf55d-jwtcz/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/master: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:24:11.586585Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:24:11.850388+00:00",
+  "candidate_hash": "e49aa04604324591b87745ca82d9404305e251975313efe84b7e90765fecb881",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:11.850388+00:00",
+    "candidate_hash": "e49aa04604324591b87745ca82d9404305e251975313efe84b7e90765fecb881",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

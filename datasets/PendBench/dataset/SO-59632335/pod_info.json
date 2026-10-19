@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "my-kafka-project/Pod/my-cluster-zookeeper-0/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:42Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"data-my-cluster-zookeeper-0\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "my-kafka-project",
+      "actual_name": "my-cluster-zookeeper-0",
+      "uid": "51f4308a-a81e-41a5-bbec-b6726084aad4",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "my-kafka-project/Pod/my-cluster-zookeeper-0/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"data-my-cluster-zookeeper-0\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:42.393134Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "my-kafka-project/data-my-cluster-zookeeper-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:42.661665+00:00",
+  "candidate_hash": "05952f1081d8b8c71136e9ab1b3bbb18243c53a4f86e22d6885b5f7a583b436c",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:42.661665+00:00",
+    "candidate_hash": "05952f1081d8b8c71136e9ab1b3bbb18243c53a4f86e22d6885b5f7a583b436c",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

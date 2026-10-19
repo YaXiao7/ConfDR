@@ -1,0 +1,431 @@
+{
+  "WaitingDeployPods": {
+    "dgraph/StatefulSet/dgraph-alpha/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dgraph",
+      "labels": {
+        "app": "dgraph-alpha"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-dgraph-alpha-0"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "dgraph-alpha"
+      },
+      "resource_source": "observed_admitted_pod"
+    },
+    "dgraph/StatefulSet/dgraph-alpha/1": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dgraph",
+      "labels": {
+        "app": "dgraph-alpha"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-dgraph-alpha-1"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "dgraph-alpha"
+      }
+    },
+    "dgraph/StatefulSet/dgraph-alpha/2": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dgraph",
+      "labels": {
+        "app": "dgraph-alpha"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-dgraph-alpha-2"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "dgraph-alpha"
+      }
+    },
+    "dgraph/Deployment/dgraph-ratel/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dgraph",
+      "labels": {
+        "app": "dgraph-ratel"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": null,
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "dgraph-ratel"
+      },
+      "resource_source": "observed_admitted_pod"
+    },
+    "dgraph/StatefulSet/dgraph-zero/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dgraph",
+      "labels": {
+        "app": "dgraph-zero"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-dgraph-zero-0"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "dgraph-zero"
+      },
+      "resource_source": "observed_admitted_pod"
+    },
+    "dgraph/StatefulSet/dgraph-zero/1": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dgraph",
+      "labels": {
+        "app": "dgraph-zero"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-dgraph-zero-1"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "dgraph-zero"
+      }
+    },
+    "dgraph/StatefulSet/dgraph-zero/2": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "dgraph",
+      "labels": {
+        "app": "dgraph-zero"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "datadir",
+          "persistentVolumeClaim": {
+            "claimName": "datadir-dgraph-zero-2"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "StatefulSet",
+        "name": "dgraph-zero"
+      }
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "StatefulSet",
+        "dgraph",
+        "dgraph-alpha"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Deployment",
+        "dgraph",
+        "dgraph-ratel"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "StatefulSet",
+        "dgraph",
+        "dgraph-zero"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "dgraph": {
+        "datadir-dgraph-alpha-0": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          },
+          "storageClassName": "anything",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "creationTimestamp": "2026-10-02T03:27:11Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "app": "dgraph-alpha"
+            },
+            "name": "datadir-dgraph-alpha-0",
+            "namespace": "dgraph",
+            "resourceVersion": "233",
+            "uid": "700540a1-c7fc-45ef-998c-1a1379126392"
+          },
+          "uid": "700540a1-c7fc-45ef-998c-1a1379126392",
+          "requestsGi": "5Gi",
+          "STATUS": "Pending",
+          "_template_source": "dgraph/dgraph-alpha"
+        },
+        "datadir-dgraph-alpha-1": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "anything",
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          },
+          "metadata": {
+            "name": "datadir-dgraph-alpha-1",
+            "namespace": "dgraph"
+          },
+          "requestsGi": "5Gi",
+          "_template_source": "dgraph/dgraph-alpha",
+          "STATUS": "NotObserved"
+        },
+        "datadir-dgraph-alpha-2": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "anything",
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          },
+          "metadata": {
+            "name": "datadir-dgraph-alpha-2",
+            "namespace": "dgraph"
+          },
+          "requestsGi": "5Gi",
+          "_template_source": "dgraph/dgraph-alpha",
+          "STATUS": "NotObserved"
+        },
+        "datadir-dgraph-zero-0": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          },
+          "storageClassName": "anything",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "creationTimestamp": "2026-10-02T03:27:11Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "app": "dgraph-zero"
+            },
+            "name": "datadir-dgraph-zero-0",
+            "namespace": "dgraph",
+            "resourceVersion": "249",
+            "uid": "a2224352-7e99-4151-9bb7-073579f75d89"
+          },
+          "uid": "a2224352-7e99-4151-9bb7-073579f75d89",
+          "requestsGi": "5Gi",
+          "STATUS": "Pending",
+          "_template_source": "dgraph/dgraph-zero"
+        },
+        "datadir-dgraph-zero-1": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "anything",
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          },
+          "metadata": {
+            "name": "datadir-dgraph-zero-1",
+            "namespace": "dgraph"
+          },
+          "requestsGi": "5Gi",
+          "_template_source": "dgraph/dgraph-zero",
+          "STATUS": "NotObserved"
+        },
+        "datadir-dgraph-zero-2": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "storageClassName": "anything",
+          "resources": {
+            "requests": {
+              "storage": "5Gi"
+            }
+          },
+          "metadata": {
+            "name": "datadir-dgraph-zero-2",
+            "namespace": "dgraph"
+          },
+          "requestsGi": "5Gi",
+          "_template_source": "dgraph/dgraph-zero",
+          "STATUS": "NotObserved"
+        }
+      }
+    },
+    "PVs": {},
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "dgraph": {
+        "kubernetes.io/metadata.name": "dgraph"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:12.293805+00:00",
+    "candidate_hash": "69a9d138350aa429eeac71f18b26f764114fc193cb551489f5c7761e0f54b39d",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

@@ -1,0 +1,255 @@
+{
+  "pod_status": {
+    "default/DaemonSet/maximum/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "maximum",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:06Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.4",
+      "podIPs": [
+        {
+          "ip": "10.0.0.4"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:06Z",
+      "namespace": "default",
+      "actual_name": "maximum-2fgm4",
+      "uid": "90699214-341d-4730-a009-3248694dc878",
+      "nodeName": "node-2"
+    },
+    "default/DaemonSet/maximum/node-2": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "maximum",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:06Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.5",
+      "podIPs": [
+        {
+          "ip": "10.0.0.5"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:06Z",
+      "namespace": "default",
+      "actual_name": "maximum-fqx26",
+      "uid": "e3975565-f15a-4e9c-8cc6-5f35f1300860",
+      "nodeName": "node-4"
+    },
+    "default/DaemonSet/maximum/node-3": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "maximum",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:06Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.3",
+      "podIPs": [
+        {
+          "ip": "10.0.0.3"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:06Z",
+      "namespace": "default",
+      "actual_name": "maximum-pj5lg",
+      "uid": "a0eb9d0d-bb81-4fca-9394-8d15a602fa6c",
+      "nodeName": "node-3"
+    },
+    "default/DaemonSet/maximum/node-4": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:06Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "maximum",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:06Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:06Z",
+      "namespace": "default",
+      "actual_name": "maximum-rrpjj",
+      "uid": "cc582b8a-bc46-45ef-ac4d-7ce45b3b21cf",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/DaemonSet/maximum/node-1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/maximum-2fgm4 to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:06.519819Z"
+      }
+    ],
+    "default/DaemonSet/maximum/node-2": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/maximum-fqx26 to node-4",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:06.526478Z"
+      }
+    ],
+    "default/DaemonSet/maximum/node-3": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/maximum-pj5lg to node-3",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:06.515073Z"
+      }
+    ],
+    "default/DaemonSet/maximum/node-4": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/maximum-rrpjj to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:06.512153Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:54:08.944352+00:00",
+  "candidate_hash": "aed84f90c80a091b0fa83dde7ddf41e19963d380334d40524c0c00bcbd6076ee",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:54:08.944352+00:00",
+    "candidate_hash": "aed84f90c80a091b0fa83dde7ddf41e19963d380334d40524c0c00bcbd6076ee",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

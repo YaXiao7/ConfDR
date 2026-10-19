@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schedulable
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schedulable
+  template:
+    metadata:
+      labels:
+        app: schedulable
+    spec:
+      containers:
+      - name: schedulable
+        image: registry.k8s.io/pause:3.9

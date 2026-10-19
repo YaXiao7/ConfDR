@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/autoscaler/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:18:16Z",
+          "message": "0/1 nodes are available: 1 node(s) were unschedulable. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "autoscaler",
+      "uid": "83b94f5b-0b07-4e16-90a2-d4408eefe8e5",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/autoscaler/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) were unschedulable. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:18:16.785226Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:18:17.047063+00:00",
+  "candidate_hash": "798ad75920910b4644df14a39ba47784668f2286c4ed2b387bb216de0621c9d7",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:18:17.047063+00:00",
+    "candidate_hash": "798ad75920910b4644df14a39ba47784668f2286c4ed2b387bb216de0621c9d7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

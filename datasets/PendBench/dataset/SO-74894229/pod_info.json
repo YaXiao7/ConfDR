@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/nginx/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:31:16Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"volume-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "nginx",
+      "uid": "31698af3-4b19-4be6-b53b-03568c84743f",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/nginx/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"volume-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:31:16.196302Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/volume-claim": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:31:16.470519+00:00",
+  "candidate_hash": "446069c7fa00bcb49182b2d783ff108e08c40564cf2e84d8fdb09a5d0e05720f",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:16.470519+00:00",
+    "candidate_hash": "446069c7fa00bcb49182b2d783ff108e08c40564cf2e84d8fdb09a5d0e05720f",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

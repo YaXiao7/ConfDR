@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "kb-system/Job/install-apecloud-mysql-addon/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:16:53Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kb-system",
+      "actual_name": "install-apecloud-mysql-addon-9mrbq",
+      "uid": "e285a63d-4f01-46ce-9ddb-b008b906eec2",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kb-system/Job/install-apecloud-mysql-addon/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:16:53.584883Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:16:53.854669+00:00",
+  "candidate_hash": "ff79d60d4d08a2a63de0732187770e50705498c9acdedc477fd329db6cb24c42",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:16:53.854669+00:00",
+    "candidate_hash": "ff79d60d4d08a2a63de0732187770e50705498c9acdedc477fd329db6cb24c42",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

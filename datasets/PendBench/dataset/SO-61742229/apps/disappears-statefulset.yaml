@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: disappears
+  namespace: default
+spec:
+  serviceName: disappears
+  replicas: 1
+  selector:
+    matchLabels:
+      app: disappears
+  template:
+    metadata:
+      labels:
+        app: disappears
+    spec:
+      containers:
+      - name: disappears
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data-claim

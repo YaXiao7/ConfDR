@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "kubeflow/Pod/step/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:38Z",
+          "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kubeflow",
+      "actual_name": "step",
+      "uid": "c56e02ff-0ea7-4284-97b3-2134e3e98c40",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kubeflow/Pod/step/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:38.966092Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "kubeflow/volumeop-sequential-w8gjk-newpvc": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:19:39.230528+00:00",
+  "candidate_hash": "d87b2c7f6ba5b37528df8d8f567e182547807de6ce033134061b64db9b4e54e7",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:39.230528+00:00",
+    "candidate_hash": "d87b2c7f6ba5b37528df8d8f567e182547807de6ce033134061b64db9b4e54e7",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

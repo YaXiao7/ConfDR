@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/pending-workload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:14:35Z",
+          "message": "0/10 nodes are available: 10 Insufficient cpu, 10 Insufficient memory. preemption: 0/10 nodes are available: 10 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "pending-workload",
+      "uid": "85e7023d-b803-47f8-b19c-7d369ab925eb",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/pending-workload/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 10 Insufficient cpu, 10 Insufficient memory. preemption: 0/10 nodes are available: 10 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:14:35.481107Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:14:35.762060+00:00",
+  "candidate_hash": "b8b78df502583e7adf7a6c2c7398eda69507060ef5a893f109ec672b50d01419",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:14:35.762060+00:00",
+    "candidate_hash": "b8b78df502583e7adf7a6c2c7398eda69507060ef5a893f109ec672b50d01419",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

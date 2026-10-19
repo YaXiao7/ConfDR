@@ -1,0 +1,33 @@
+{
+  "pod_status": {
+    "flipkicks/Deployment/flipkicksdb/0": {
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "flipkicks",
+      "actual_name": "flipkicksdb-b4cd9fd97-m7n59",
+      "uid": "45cb62b4-ea51-4f6b-9dd5-c90160ad0719",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "flipkicks/Deployment/flipkicksdb/0": []
+  },
+  "pvc_status": {
+    "flipkicks/mysql-db": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T09:16:15.626924+00:00",
+  "candidate_hash": "79dc544c45541c014d99298bccd910302a42354cbd543c94e9de698e7d0555d9",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:16:15.626924+00:00",
+    "candidate_hash": "79dc544c45541c014d99298bccd910302a42354cbd543c94e9de698e7d0555d9",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

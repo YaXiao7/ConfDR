@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/manager/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:15:50Z",
+          "message": "0/3 nodes are available: 3 node(s) had untolerated taint {dev: true}. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "manager",
+      "uid": "39520b9c-38ed-483a-8a40-8586feb60e27",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/manager/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) had untolerated taint {dev: true}. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:15:50.744091Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:15:51.005494+00:00",
+  "candidate_hash": "dbd6b27fd1e679311ee76fe5d842d206d7d6a02b3c55d74d4162371ca8766d15",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:51.005494+00:00",
+    "candidate_hash": "dbd6b27fd1e679311ee76fe5d842d206d7d6a02b3c55d74d4162371ca8766d15",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

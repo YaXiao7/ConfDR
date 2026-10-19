@@ -1,0 +1,53 @@
+# Before fix: the PersistentVolumeClaim specifies a volumeName that refers to
+# a non-existent PersistentVolume, causing the binding to fail.
+
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: app1-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 1Gi
+#   volumeName: app2-pv
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: app1-pv
+# spec:
+#   capacity:
+#     storage: 1Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   hostPath:
+#     path: /tmp/pv1
+#   persistentVolumeReclaimPolicy: Retain
+
+# After fix: update the PVC volumeName to reference an existing PersistentVolume.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app1-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: app1-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app1-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /tmp/pv1
+  persistentVolumeReclaimPolicy: Retain

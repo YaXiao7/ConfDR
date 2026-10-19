@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kube-dns-autoscaler-2501648610-88ch6
+  namespace: kube-system
+spec:
+  nodeName: gke-wordpress-default-pool-91c14317-jdlj
+  containers:
+  - name: system-container
+    image: registry.k8s.io/pause:3.9
+    resources:
+      requests:
+        cpu: 20m
+        memory: 10Mi
+      limits: {}

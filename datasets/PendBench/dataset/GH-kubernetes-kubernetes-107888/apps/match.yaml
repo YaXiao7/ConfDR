@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: match
+  namespace: default
+spec:
+  serviceName: match
+  replicas: 4
+  selector:
+    matchLabels:
+      app: match
+  template:
+    metadata:
+      labels:
+        app: match
+    spec:
+      containers:
+      - name: match
+        image: registry.k8s.io/pause:3.9
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: required-peer
+            topologyKey: kubernetes.io/hostname

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: awx-postgresql-postgresql-0
+  namespace: awx
+  labels:
+    app: postgresql
+spec:
+  containers:
+  - name: postgresql
+    image: registry.k8s.io/pause:3.9
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: data-awx-postgresql-postgresql-0

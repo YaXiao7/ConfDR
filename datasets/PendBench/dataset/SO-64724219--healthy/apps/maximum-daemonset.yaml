@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: maximum
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: maximum
+  template:
+    metadata:
+      labels:
+        app: maximum
+    spec:
+      containers:
+      - name: maximum
+        image: registry.k8s.io/pause:3.9

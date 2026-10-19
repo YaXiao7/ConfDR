@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/match/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:51:18Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:51:18Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:51:18Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:51:18Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "Burstable",
+      "startTime": "2026-09-25T06:51:18Z",
+      "namespace": "default",
+      "actual_name": "match",
+      "uid": "d55136f3-7025-4de1-8370-759f2d6b9d01",
+      "nodeName": "node-11"
+    }
+  },
+  "pod_events": {
+    "default/Pod/match/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/match to node-11",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:51:18.832533Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:51:19.154783+00:00",
+  "candidate_hash": "c5e9adc54d95ac5b91f2d5dd6f6cc3c943c1026632abfbf4d6f8552178d218ec",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:51:19.154783+00:00",
+    "candidate_hash": "c5e9adc54d95ac5b91f2d5dd6f6cc3c943c1026632abfbf4d6f8552178d218ec",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

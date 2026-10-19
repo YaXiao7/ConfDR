@@ -1,0 +1,194 @@
+{
+  "WaitingDeployPods": {
+    "flipkicks/Deployment/flipkicksdb/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "flipkicks",
+      "labels": {
+        "app": "flipkicksdb"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "mysql-db",
+          "persistentVolumeClaim": {
+            "claimName": "mysql-db"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "flipkicksdb"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Deployment",
+        "flipkicks",
+        "flipkicksdb"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "flipkicks",
+        "mysql-db"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "fargate-ip-192-168-100-10.us-east-2.compute.internal"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "gp2"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "fargate-ip-192-168-100-10.us-east-2.compute.internal": {
+        "cpu": 2000,
+        "mem": "4294967296",
+        "remain_pods": 1,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "eks.amazonaws.com/compute-type": "fargate",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "fargate-ip-192-168-100-10.us-east-2.compute.internal",
+          "kubernetes.io/os": "linux",
+          "topology.kubernetes.io/region": "us-east-2"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "2",
+          "memory": "4Gi",
+          "pods": "1"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "flipkicks": {
+        "mysql-db": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "2Gi"
+            }
+          },
+          "storageClassName": "gp2",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"5af5c3923041\"},\"name\":\"mysql-db\",\"namespace\":\"flipkicks\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"2Gi\"}}}}\n",
+              "volume.beta.kubernetes.io/storage-provisioner": "ebs.csi.aws.com",
+              "volume.kubernetes.io/selected-node": "fargate-ip-192-168-100-10.us-east-2.compute.internal",
+              "volume.kubernetes.io/storage-provisioner": "ebs.csi.aws.com"
+            },
+            "creationTimestamp": "2026-10-02T09:15:30Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "5af5c3923041"
+            },
+            "name": "mysql-db",
+            "namespace": "flipkicks",
+            "resourceVersion": "241",
+            "uid": "566e3052-a14d-46f3-9bf5-c75ef4aadead"
+          },
+          "uid": "566e3052-a14d-46f3-9bf5-c75ef4aadead",
+          "requestsGi": "2Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {},
+    "StorageClasses": {
+      "gp2": {
+        "provisioner": "kubernetes.io/aws-ebs",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{\"storageclass.kubernetes.io/is-default-class\":\"true\"},\"name\":\"gp2\"},\"parameters\":{\"fsType\":\"ext4\",\"type\":\"gp2\"},\"provisioner\":\"kubernetes.io/aws-ebs\",\"reclaimPolicy\":\"Delete\",\"volumeBindingMode\":\"WaitForFirstConsumer\"}\n",
+            "storageclass.kubernetes.io/is-default-class": "true"
+          },
+          "creationTimestamp": "2026-10-02T09:15:27Z",
+          "name": "gp2",
+          "resourceVersion": "200",
+          "uid": "bea5edfd-9c83-4115-8b6e-5242fe7a63e4"
+        },
+        "parameters": {
+          "fsType": "ext4",
+          "type": "gp2"
+        },
+        "volumeBindingMode": "WaitForFirstConsumer",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "flipkicks": {
+        "kubernetes.io/metadata.name": "flipkicks"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:16:15.626924+00:00",
+    "candidate_hash": "79dc544c45541c014d99298bccd910302a42354cbd543c94e9de698e7d0555d9",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

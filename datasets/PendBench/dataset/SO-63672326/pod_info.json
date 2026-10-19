@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Deployment/tolerate/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:28:25Z",
+          "message": "0/4 nodes are available: 4 node(s) had untolerated taint {cattle.io/os: linux}. preemption: 0/4 nodes are available: 4 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "tolerate-97f8c9c57-xpfch",
+      "uid": "1764f47b-a8dc-422d-bd3d-5ad858752436",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/tolerate/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/4 nodes are available: 4 node(s) had untolerated taint {cattle.io/os: linux}. preemption: 0/4 nodes are available: 4 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:28:25.206355Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:28:27.603392+00:00",
+  "candidate_hash": "9bded721a0f4853a5051d5471545e1e0a3c269acd781ee966fee6fa48f41f9e3",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:28:27.603392+00:00",
+    "candidate_hash": "9bded721a0f4853a5051d5471545e1e0a3c269acd781ee966fee6fa48f41f9e3",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,83 @@
+{
+  "pod_status": {
+    "default/StatefulSet/match/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:00Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:00Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:00Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:00Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:00Z",
+      "namespace": "default",
+      "actual_name": "match-0",
+      "uid": "6e88357b-e5a3-4d95-9fb8-cf59244b5768",
+      "nodeName": "node-2"
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/match/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/match-0 to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:00.186177Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Bound",
+      "volumeName": "data-volume"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:00.490453+00:00",
+  "candidate_hash": "1552a1d0d380004eabaf547e86ccfa66da74173829d02e9a5f1d48f6aa2acbfd",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:00.490453+00:00",
+    "candidate_hash": "1552a1d0d380004eabaf547e86ccfa66da74173829d02e9a5f1d48f6aa2acbfd",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

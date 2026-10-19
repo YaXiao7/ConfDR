@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "kuadrant-system/Deployment/kuadrant-gateway/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:14:47Z",
+          "message": "0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kuadrant-system",
+      "actual_name": "kuadrant-gateway-bbcdc89c5-5zwqn",
+      "uid": "44595f0d-767b-4978-a1c0-3da1be88b2e4",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kuadrant-system/Deployment/kuadrant-gateway/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:14:47.562062Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:14:49.997888+00:00",
+  "candidate_hash": "27aec89c144edf08df9bebf16e38c2c4045c8378ae44e4abc2f2b80179b12230",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:14:49.997888+00:00",
+    "candidate_hash": "27aec89c144edf08df9bebf16e38c2c4045c8378ae44e4abc2f2b80179b12230",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,55 @@
+{
+  "pod_status": {
+    "kubevirt/Pod/importer-fedora-datavolume-original/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:21:23Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"fedora-datavolume-original\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kubevirt",
+      "actual_name": "importer-fedora-datavolume-original",
+      "uid": "a91ddbec-0e03-4b05-8ee5-77d593fefefe",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kubevirt/Pod/importer-fedora-datavolume-original/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"fedora-datavolume-original\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:21:23.112094Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "kubevirt/fedora-datavolume-original": {
+      "phase": "Pending",
+      "volumeName": null
+    },
+    "kubevirt/fedora-datavolume-original-scratch": {
+      "phase": "Bound",
+      "volumeName": "fedora-datavolume-original-scratch-pv"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:21:23.385885+00:00",
+  "candidate_hash": "ee6756e2489caaf9b4f4ac3e0c5bb2ebed06bd24d050f4fea7d816eeff67b3de",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:21:23.385885+00:00",
+    "candidate_hash": "ee6756e2489caaf9b4f4ac3e0c5bb2ebed06bd24d050f4fea7d816eeff67b3de",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

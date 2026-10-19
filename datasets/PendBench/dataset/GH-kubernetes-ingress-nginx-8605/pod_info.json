@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/ingress-controller/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:56Z",
+          "message": "0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "ingress-controller",
+      "uid": "e6a3e06d-d1ad-4906-8007-76416c81b911",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/ingress-controller/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:56.791820Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:19:59.116123+00:00",
+  "candidate_hash": "8b7d2871a3112ad9b304b9689704ccf97100ebf38430fcf4c08a85e103591eea",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:59.116123+00:00",
+    "candidate_hash": "8b7d2871a3112ad9b304b9689704ccf97100ebf38430fcf4c08a85e103591eea",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

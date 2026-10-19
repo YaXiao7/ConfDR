@@ -1,0 +1,205 @@
+{
+  "WaitingDeployPods": {
+    "awx/Pod/awx-postgresql-postgresql-0/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "awx",
+      "labels": {
+        "app": "postgresql"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "data",
+          "persistentVolumeClaim": {
+            "claimName": "data-awx-postgresql-postgresql-0"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "awx-postgresql-postgresql-0"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "awx",
+        "data-awx-postgresql-postgresql-0"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "awx",
+        "awx-postgresql-postgresql-0"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "task-pv-volume"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "awx": {
+        "data-awx-postgresql-postgresql-0": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "10Gi"
+            }
+          },
+          "storageClassName": "",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"c06007b0a935\"},\"name\":\"data-awx-postgresql-postgresql-0\",\"namespace\":\"awx\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"10Gi\"}},\"storageClassName\":\"\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:15:37Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "c06007b0a935"
+            },
+            "name": "data-awx-postgresql-postgresql-0",
+            "namespace": "awx",
+            "resourceVersion": "232",
+            "uid": "c1db46ce-ef4b-4b87-b181-7717e65d0447"
+          },
+          "uid": "c1db46ce-ef4b-4b87-b181-7717e65d0447",
+          "requestsGi": "10Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "task-pv-volume": {
+        "accessModes": [
+          "ReadWriteMany"
+        ],
+        "capacity": {
+          "storage": "10Gi"
+        },
+        "hostPath": {
+          "path": "/pgawx",
+          "type": ""
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "manual",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{\"type\":\"local\"},\"name\":\"task-pv-volume\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"capacity\":{\"storage\":\"10Gi\"},\"hostPath\":{\"path\":\"/pgawx\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"manual\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:15:34Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "labels": {
+            "type": "local"
+          },
+          "name": "task-pv-volume",
+          "resourceVersion": "224",
+          "uid": "d202b9d3-f049-4e7f-a50d-62f1ccbd94dc"
+        },
+        "labels": {
+          "type": "local"
+        },
+        "capacityGi": "10Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "awx": {
+        "kubernetes.io/metadata.name": "awx"
+      },
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:37.403497+00:00",
+    "candidate_hash": "18092e94dcdd4e94c6427b86e8e28660a05d60934cb601fab0b0a2e92bdfadc1",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

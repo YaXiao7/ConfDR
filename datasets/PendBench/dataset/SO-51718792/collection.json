@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/2 nodes are available: 1 Insufficient nvidia.com/gpu-memory, 1 node(s) had untolerated taint {node-role.kubernetes.io/master: }. preemption: 0/2 nodes are available: 1 No preemption victims found for incoming pod, 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-3ace4af45f5a",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:24:42.921866+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "6d2e392ebdc0dbcaf7abf3467b999a8044d53325a5bc0de810bbfac92aa850cc"
+}

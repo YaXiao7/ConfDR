@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Deployment/found/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:31:32Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"grafana-configuration\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "found-656998f5c8-qqwcb",
+      "uid": "248833e7-d0df-40d8-afde-301e0cfecbd4",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Deployment/found/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"grafana-configuration\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:31:32.910686Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/grafana-configuration": {
+      "phase": "NotObserved",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:31:33.199040+00:00",
+  "candidate_hash": "8a352d2be3cccc67a235fc97b7f7b73eef4bcbb764a350ca02fc64fc8cb6c6d5",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:33.199040+00:00",
+    "candidate_hash": "8a352d2be3cccc67a235fc97b7f7b73eef4bcbb764a350ca02fc64fc8cb6c6d5",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

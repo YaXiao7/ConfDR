@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/node-exporter/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:23:15Z",
+          "message": "0/2 nodes are available: 2 node(s) didn't have free ports for the requested pod ports. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "node-exporter",
+      "uid": "57d53b40-fe47-4b9a-b9fd-59bdc9064d55",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/node-exporter/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: 2 node(s) didn't have free ports for the requested pod ports. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:23:15.797952Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:23:16.063814+00:00",
+  "candidate_hash": "ebe0052833d8c7a7c746c00c0b1499927a17cffd2f6e081fcb40a3d96da14ae4",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:23:16.063814+00:00",
+    "candidate_hash": "ebe0052833d8c7a7c746c00c0b1499927a17cffd2f6e081fcb40a3d96da14ae4",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

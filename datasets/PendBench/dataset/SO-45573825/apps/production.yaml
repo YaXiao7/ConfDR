@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+      - image: wordpress:latest
+        name: wordpress
+        imagePullPolicy: Always
+        env:
+        - name: WORDPRESS_HOST
+          value: localhost
+        - name: WORDPRESS_DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: cloudsql-db-credentials
+              key: username
+        volumeMounts:
+        - name: wordpress-persistent-storage
+          mountPath: /var/www/html
+      - image: nginx:latest
+        name: nginx
+        ports:
+        - containerPort: 80
+          name: nginx
+      - image: gcr.io/cloudsql-docker/gce-proxy:1.09
+        name: cloudsql-proxy
+        command:
+        - /cloud_sql_proxy
+        - --dir=/cloudsql
+        - -instances=inspiring-tower-99712:europe-west1:wordpressdb=tcp:3306
+        - -credential_file=/secrets/cloudsql/credentials.json
+        volumeMounts:
+        - name: cloudsql-instance-credentials
+          mountPath: /secrets/cloudsql
+          readOnly: true
+        - name: ssl-certs
+          mountPath: /etc/ssl/certs
+        - name: cloudsql
+          mountPath: /cloudsql
+      volumes:
+      - name: wordpress-persistent-storage
+        gcePersistentDisk:
+          pdName: wordpress-disk
+          fsType: ext4
+      - name: cloudsql-instance-credentials
+        secret:
+          secretName: cloudsql-instance-credentials
+      - name: ssl-certs
+        hostPath:
+          path: /etc/ssl/certs
+      - name: cloudsql
+        emptyDir: {}

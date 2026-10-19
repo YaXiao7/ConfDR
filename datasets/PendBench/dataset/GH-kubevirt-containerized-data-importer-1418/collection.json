@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/1 nodes are available: persistentvolumeclaim \"fedora-datavolume-original\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-1be6e98f1881",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:21:23.387445+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "ee6756e2489caaf9b4f4ac3e0c5bb2ebed06bd24d050f4fea7d816eeff67b3de"
+}

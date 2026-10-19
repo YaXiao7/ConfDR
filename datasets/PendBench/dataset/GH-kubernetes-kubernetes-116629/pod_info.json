@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/StatefulSet/match/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:20:19Z",
+          "message": "0/1 nodes are available: 1 node(s) had volume node affinity conflict. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "match-0",
+      "uid": "33b5a67a-935c-4fd6-bfc7-08ee2170712a",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/match/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 node(s) had volume node affinity conflict. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:20:19.321729Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Bound",
+      "volumeName": "data-volume"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:20:19.583631+00:00",
+  "candidate_hash": "6b5a029b7e5384b7fc6219538893fbb2e581c9142fb014a7f46b1dbbf067990c",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:20:19.583631+00:00",
+    "candidate_hash": "6b5a029b7e5384b7fc6219538893fbb2e581c9142fb014a7f46b1dbbf067990c",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

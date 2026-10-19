@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "kubeblocks-cloud-ns/Job/kb-post-provision-job-mango-86d8fd56bd-redis/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:16:59Z",
+          "message": "0/6 nodes are available: 3 node(s) had untolerated taint {kb-controller: true}, 3 node(s) had untolerated taint {kb-data: true}. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kubeblocks-cloud-ns",
+      "actual_name": "kb-post-provision-job-mango-86d8fd56bd-redis-fvb8b",
+      "uid": "2bee6f9d-80c3-4eea-8ec0-14b8664715f4",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kubeblocks-cloud-ns/Job/kb-post-provision-job-mango-86d8fd56bd-redis/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/6 nodes are available: 3 node(s) had untolerated taint {kb-controller: true}, 3 node(s) had untolerated taint {kb-data: true}. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:16:59.872065Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:17:00.144550+00:00",
+  "candidate_hash": "5125b3ec8fd1974e731121157f63264c6b207904249bfdf7b2c5d7da79e2d176",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:17:00.144550+00:00",
+    "candidate_hash": "5125b3ec8fd1974e731121157f63264c6b207904249bfdf7b2c5d7da79e2d176",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

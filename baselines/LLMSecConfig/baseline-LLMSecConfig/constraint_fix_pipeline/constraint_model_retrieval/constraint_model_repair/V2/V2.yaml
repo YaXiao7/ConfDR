@@ -1,0 +1,96 @@
+## Before fix: this error spans multiple resources. The Pod uses a PersistentVolumeClaim,
+## which in turn depends on a StorageClass and a PersistentVolume.
+## However, the `storageClassName` field in the PersistentVolume is set to an empty string,
+## which does not match the name of the StorageClass resource.
+
+#     spec:
+#       containers:
+#       - name: app1-container
+#         image: registry.k8s.io/pause:2.0
+#         volumeMounts:
+#         - name: data-volume
+#           mountPath: /data
+#       volumes:
+#       - name: data-volume
+#         persistentVolumeClaim:
+#           claimName: app1-pvc
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: app1-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 1Gi
+#   storageClassName: standard
+# ---
+# apiVersion: storage.k8s.io/v1
+# kind: StorageClass
+# metadata:
+#   name: standard
+# provisioner: kubernetes.io/no-provisioner
+# volumeBindingMode: WaitForFirstConsumer
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: app1-pv
+# spec:
+#   capacity:
+#     storage: 1Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   hostPath:
+#     path: /tmp/app1-pv
+#   persistentVolumeReclaimPolicy: Retain
+#   storageClassName: ""
+
+## After fix: set the PersistentVolume `storageClassName` field to match
+## the name of the corresponding StorageClass resource.
+spec:
+  containers:
+  - name: app1-container
+    image: registry.k8s.io/pause:2.0
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    persistentVolumeClaim:
+      claimName: app1-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app1-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app1-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /tmp/app1-pv
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: "standard"

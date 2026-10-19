@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maptilesbackend
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maptilesbackend
+  template:
+    metadata:
+      labels:
+        app: maptilesbackend
+    spec:
+      containers:
+      - name: maptilesbackend
+        image: klokantech/openmaptiles-server
+        volumeMounts:
+        - name: mapdata
+          mountPath: /data
+      volumes:
+      - name: mapdata
+        persistentVolumeClaim:
+          claimName: mapdata

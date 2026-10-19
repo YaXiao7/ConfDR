@@ -1,0 +1,38 @@
+# CONFDR_LLM_* environment variables override the model configuration below.
+llm:
+  backend: online
+  model: ""
+  base_url: ""
+  verifier_model: ""
+  timeout_seconds: 120
+  max_completion_tokens: 32000
+  http_retries: 2
+formalization:
+  max_rounds: 3
+  timeout_ms: 3000
+runtime:
+  # CLI: --conflict-method {label_skipping,mus}; applies to initial detection and repair rechecks.
+  conflict_method: label_skipping
+  # Maximum repair attempts per case (integer from 1 to 10); each attempt reruns the detector without deployment.
+  # Invalid candidates and failed model calls also count; stop at the limit and provide recommended actions.
+  max_rounds: 5
+  timeout_ms: 5000
+  # Per detection search budget (seconds); 0 disables the total budget, not the per-check timeout.
+  search_timeout_s: 60
+  min_confidence: 0.8
+kwok:
+  # Used only for deployment evaluation after method outputs are finalized and for independent dataset collection.
+  kwokctl: kwokctl
+  kubectl: kubectl
+  cluster_prefix: confdr
+  create_args: ["--runtime", "binary",
+    "--etcd-binary=/home/ubuntu/.kwok/local-bin/etcd",
+    "--kube-apiserver-binary=/home/ubuntu/.kwok/local-bin/kube-apiserver",
+    "--kube-controller-manager-binary=/home/ubuntu/.kwok/local-bin/kube-controller-manager",
+    "--kube-scheduler-binary=/home/ubuntu/.kwok/local-bin/kube-scheduler",
+    "--kwok-controller-binary=/home/ubuntu/.kwok/local-bin/kwok-controller"]
+  create_timeout_seconds: 120
+  command_timeout_seconds: 30
+  validation_timeout_seconds: 45
+  poll_interval_seconds: 2
+  original_failure_settle_seconds: 10

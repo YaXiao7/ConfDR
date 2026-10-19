@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "kafka/StatefulSet/pzoo/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:24:49Z",
+          "message": "0/2 nodes are available: 2 node(s) didn't find available persistent volumes to bind. preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "kafka",
+      "actual_name": "pzoo-0",
+      "uid": "99415025-7eb4-4730-8993-8ea9fbc9b6a0",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "kafka/StatefulSet/pzoo/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: 2 node(s) didn't find available persistent volumes to bind. preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:24:49.179635Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "kafka/datadir-pzoo-0": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:24:49.449465+00:00",
+  "candidate_hash": "638a933dcd9cede59ff7deca856b33443542903d503d7ce2eaeaa53ee4c3ef39",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:49.449465+00:00",
+    "candidate_hash": "638a933dcd9cede59ff7deca856b33443542903d503d7ce2eaeaa53ee4c3ef39",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

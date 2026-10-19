@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/grafana/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:20Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:20Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:53:20Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "grafana",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:53:20Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:53:20Z",
+      "namespace": "default",
+      "actual_name": "grafana",
+      "uid": "eca65162-f6db-4762-8839-63d6c2ea9d31",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Pod/grafana/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/grafana to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:53:20.311821Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:53:20.628301+00:00",
+  "candidate_hash": "2c2577e0929959f862583360e777ea17aa2eb795452c08e67b07e2e5d56d170e",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:53:20.628301+00:00",
+    "candidate_hash": "2c2577e0929959f862583360e777ea17aa2eb795452c08e67b07e2e5d56d170e",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

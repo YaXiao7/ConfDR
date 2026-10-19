@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/notebook/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:32Z",
+          "message": "0/5 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/5 nodes are available: 5 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "notebook",
+      "uid": "179a6812-7cf2-4567-94a8-c227bd2f9ef2",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/notebook/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/5 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/5 nodes are available: 5 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:32.676495Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Pending",
+      "volumeName": "zone"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:19:32.962101+00:00",
+  "candidate_hash": "ce5c4c18d79ddc9eea69a84494f793045dd5cb648d5d0c87d7370c03a69783f0",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:32.962101+00:00",
+    "candidate_hash": "ce5c4c18d79ddc9eea69a84494f793045dd5cb648d5d0c87d7370c03a69783f0",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

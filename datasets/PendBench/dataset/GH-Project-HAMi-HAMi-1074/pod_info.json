@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "hami/Pod/gpu-pod/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:15:21Z",
+          "message": "0/1 nodes are available: 1 Insufficient nvidia.com/gpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "hami",
+      "actual_name": "gpu-pod",
+      "uid": "2d41b5fb-1133-4329-a0d1-20aa9053db18",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "hami/Pod/gpu-pod/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: 1 Insufficient nvidia.com/gpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:15:21.225231Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:15:21.488914+00:00",
+  "candidate_hash": "854a8286b22cd7daca07efa280809a70decc86ce2addb5542008c63066717304",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:21.488914+00:00",
+    "candidate_hash": "854a8286b22cd7daca07efa280809a70decc86ce2addb5542008c63066717304",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,4 @@
+repo   https://github.com/solecnugit/deployfix.git
+commit 145eaf9c1feb8cfb685fc5a88de9a30640f6dee2
+branch main
+patch  deployfix-local.patch (src/plugin/k8s/cli.rs, src/solver/z3.rs)

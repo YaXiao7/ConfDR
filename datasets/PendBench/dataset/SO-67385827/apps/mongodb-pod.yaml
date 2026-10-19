@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: datadir
+          mountPath: /bitnami/mongodb
+      volumes:
+      - name: datadir
+        persistentVolumeClaim:
+          claimName: mongodb

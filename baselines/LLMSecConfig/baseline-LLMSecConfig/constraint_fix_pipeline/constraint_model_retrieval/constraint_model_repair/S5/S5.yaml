@@ -1,0 +1,23 @@
+# Before fix: the Pod defines node affinity constraints, but no node in the cluster matches the specified conditions.
+# spec:
+#   affinity:
+#     nodeAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#         nodeSelectorTerms:
+#         - matchExpressions:
+#           - key: disk
+#             operator: In
+#             values: ["ssd"]    # mismatch
+
+# After fix: expand the node affinity label scope so that the Pod can be scheduled onto existing nodes in the cluster.
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - node2      # extended to include schedulable nodes in the cluster
+                - node3

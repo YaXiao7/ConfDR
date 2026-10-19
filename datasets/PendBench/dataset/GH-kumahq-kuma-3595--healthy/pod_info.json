@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/kuma-control-plane/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:22Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:22Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:52:22Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:52:22Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:52:22Z",
+      "namespace": "default",
+      "actual_name": "kuma-control-plane",
+      "uid": "6b68bccd-6b46-42e7-b218-69ad0d817872",
+      "nodeName": "node-2"
+    }
+  },
+  "pod_events": {
+    "default/Pod/kuma-control-plane/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/kuma-control-plane to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:52:22.349972Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:52:22.690207+00:00",
+  "candidate_hash": "e304b2ef2d34a5c060e2b24de5143b4cd5419c3fd149b0a1f8cd5b31f77f9c2d",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:52:22.690207+00:00",
+    "candidate_hash": "e304b2ef2d34a5c060e2b24de5143b4cd5419c3fd149b0a1f8cd5b31f77f9c2d",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

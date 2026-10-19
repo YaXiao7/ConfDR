@@ -1,0 +1,110 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: rpi-k8-workernode-2
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    beta.kubernetes.io/arch: arm
+    kubernetes.io/hostname: rpi-k8-workernode-2
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints: []
+status:
+  capacity:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  allocatable:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: rpi-mon-k8-worker
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    beta.kubernetes.io/arch: arm
+    kubernetes.io/hostname: rpi-mon-k8-worker
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints: []
+status:
+  capacity:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  allocatable:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: udubuntu
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    beta.kubernetes.io/arch: amd64
+    kubernetes.io/hostname: udubuntu
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints: []
+status:
+  capacity:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  allocatable:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running

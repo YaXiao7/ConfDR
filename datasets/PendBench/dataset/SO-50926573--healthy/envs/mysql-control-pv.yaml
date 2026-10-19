@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-control-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: control-static
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /mnt/controls/mysql

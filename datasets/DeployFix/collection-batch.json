@@ -1,0 +1,339 @@
+{
+  "source": "Dataset/D2",
+  "mode": "kwok",
+  "require_running": false,
+  "started_at": "2026-10-06T12:31:31.966819+00:00",
+  "status": "completed",
+  "cases": [
+    {
+      "case_id": "2-application-affinity",
+      "status": "collected",
+      "output": "dataset/2-application-affinity",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 17.068
+    },
+    {
+      "case_id": "2-application-affinity-and-antiaffinity",
+      "status": "collected",
+      "output": "dataset/2-application-affinity-and-antiaffinity",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 16.565
+    },
+    {
+      "case_id": "2-application-affinity-and-antiaffinity-2",
+      "status": "collected",
+      "output": "dataset/2-application-affinity-and-antiaffinity-2",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 16.038
+    },
+    {
+      "case_id": "2-application-affinity-and-antiaffinity-3",
+      "status": "collected",
+      "output": "dataset/2-application-affinity-and-antiaffinity-3",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.473
+    },
+    {
+      "case_id": "2-application-affinity-and-antiaffinity-4",
+      "status": "collected",
+      "output": "dataset/2-application-affinity-and-antiaffinity-4",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 17.94
+    },
+    {
+      "case_id": "2-application-antiaffinity",
+      "status": "collected",
+      "output": "dataset/2-application-antiaffinity",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.395
+    },
+    {
+      "case_id": "2-application-cond-1",
+      "status": "collected",
+      "output": "dataset/2-application-cond-1",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 7.685
+    },
+    {
+      "case_id": "2-application-cond-2",
+      "status": "collected",
+      "output": "dataset/2-application-cond-2",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.326
+    },
+    {
+      "case_id": "2-application-node-affinity-1",
+      "status": "collected",
+      "output": "dataset/2-application-node-affinity-1",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 10.027
+    },
+    {
+      "case_id": "2-application-node-affinity-2",
+      "status": "collected",
+      "output": "dataset/2-application-node-affinity-2",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.178
+    },
+    {
+      "case_id": "2-application-node-affinity-3",
+      "status": "collected",
+      "output": "dataset/2-application-node-affinity-3",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 9.673
+    },
+    {
+      "case_id": "2-application-node-affinity-4",
+      "status": "collected",
+      "output": "dataset/2-application-node-affinity-4",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.199
+    },
+    {
+      "case_id": "2-application-node-affinity-5",
+      "status": "collected",
+      "output": "dataset/2-application-node-affinity-5",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.08
+    },
+    {
+      "case_id": "2-application-node-affinity-6",
+      "status": "collected",
+      "output": "dataset/2-application-node-affinity-6",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.126
+    },
+    {
+      "case_id": "2-application-node-affinity-7",
+      "status": "collected",
+      "output": "dataset/2-application-node-affinity-7",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.918
+    },
+    {
+      "case_id": "2-application-self-affinity-and-antiaffinity",
+      "status": "collected",
+      "output": "dataset/2-application-self-affinity-and-antiaffinity",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 7.688
+    },
+    {
+      "case_id": "2-application-self-affinity-and-antiaffinity-1",
+      "status": "collected",
+      "output": "dataset/2-application-self-affinity-and-antiaffinity-1",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.052
+    },
+    {
+      "case_id": "2-application-self-affinity-and-antiaffinity-2",
+      "status": "collected",
+      "output": "dataset/2-application-self-affinity-and-antiaffinity-2",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 19.067
+    },
+    {
+      "case_id": "3-application-affinity",
+      "status": "collected",
+      "output": "dataset/3-application-affinity",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.035
+    },
+    {
+      "case_id": "3-application-affinity-and-antiaffinity",
+      "status": "collected",
+      "output": "dataset/3-application-affinity-and-antiaffinity",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 7.584
+    },
+    {
+      "case_id": "3-application-affinity-circular",
+      "status": "collected",
+      "output": "dataset/3-application-affinity-circular",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 15.955
+    },
+    {
+      "case_id": "3-application-anti-affinity",
+      "status": "collected",
+      "output": "dataset/3-application-anti-affinity",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.468
+    },
+    {
+      "case_id": "3-application-anti-affinity-circular",
+      "status": "collected",
+      "output": "dataset/3-application-anti-affinity-circular",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't satisfy existing pods anti-affinity rules, 2 node(s) didn't match pod anti-affinity rules. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+      "deployment_status": "failed",
+      "duration_seconds": 16.266
+    },
+    {
+      "case_id": "3-application-cond-1",
+      "status": "collected",
+      "output": "dataset/3-application-cond-1",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.093
+    },
+    {
+      "case_id": "3-application-cond-2",
+      "status": "collected",
+      "output": "dataset/3-application-cond-2",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.928
+    },
+    {
+      "case_id": "3-application-cond-3",
+      "status": "collected",
+      "output": "dataset/3-application-cond-3",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.293
+    },
+    {
+      "case_id": "3-application-cond-4",
+      "status": "collected",
+      "output": "dataset/3-application-cond-4",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.357
+    },
+    {
+      "case_id": "3-application-cond-5",
+      "status": "collected",
+      "output": "dataset/3-application-cond-5",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.05
+    },
+    {
+      "case_id": "3-application-cond-6",
+      "status": "collected",
+      "output": "dataset/3-application-cond-6",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.041
+    },
+    {
+      "case_id": "3-application-node-affinity-1",
+      "status": "collected",
+      "output": "dataset/3-application-node-affinity-1",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 3 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.816
+    },
+    {
+      "case_id": "3-application-node-affinity-2",
+      "status": "collected",
+      "output": "dataset/3-application-node-affinity-2",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.57
+    },
+    {
+      "case_id": "3-application-node-affinity-3",
+      "status": "collected",
+      "output": "dataset/3-application-node-affinity-3",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 16.382
+    },
+    {
+      "case_id": "3-application-node-affinity-4",
+      "status": "collected",
+      "output": "dataset/3-application-node-affinity-4",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.23
+    },
+    {
+      "case_id": "3-application-node-affinity-5",
+      "status": "collected",
+      "output": "dataset/3-application-node-affinity-5",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.247
+    },
+    {
+      "case_id": "3-application-node-affinity-6",
+      "status": "collected",
+      "output": "dataset/3-application-node-affinity-6",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.289
+    },
+    {
+      "case_id": "3-application-node-affinity-7",
+      "status": "collected",
+      "output": "dataset/3-application-node-affinity-7",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 8.279
+    },
+    {
+      "case_id": "mono-application",
+      "status": "collected",
+      "output": "dataset/mono-application",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 10.045
+    },
+    {
+      "case_id": "self-affinity-and-anti-affinity",
+      "status": "collected",
+      "output": "dataset/self-affinity-and-anti-affinity",
+      "reason": "event:FailedScheduling: 0/3 nodes are available: 1 node(s) didn't match pod anti-affinity rules, 2 node(s) didn't match pod affinity rules. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.",
+      "deployment_status": "failed",
+      "duration_seconds": 18.079
+    },
+    {
+      "case_id": "self-affintiy",
+      "status": "collected",
+      "output": "dataset/self-affintiy",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 9.451
+    },
+    {
+      "case_id": "self-anti-affinity",
+      "status": "collected",
+      "output": "dataset/self-anti-affinity",
+      "reason": "targets_healthy",
+      "deployment_status": "passed",
+      "duration_seconds": 7.595
+    }
+  ],
+  "counts": {
+    "total": 40,
+    "pending": 0,
+    "running": 0,
+    "collected": 40,
+    "error": 0,
+    "interrupted": 0,
+    "deployment_failed": 24
+  },
+  "finished_at": "2026-10-06T12:40:56.671917+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/6 nodes are available: 6 node(s) had untolerated taint {kb-controller: true}. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-02d358e719cf",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:17:10.840907+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "0a58fdd97e92a2d8962196fc52cc3ea5c45db5fc44c1e67918f06796576d70a1"
+}

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: ches
+  namespace: ches
+spec:
+  serviceName: ches
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ches
+  template:
+    metadata:
+      labels:
+        app: ches
+    spec:
+      containers:
+      - name: ches
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data-ches-0

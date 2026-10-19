@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/minio/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:31:38Z",
+          "message": "0/3 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "minio",
+      "uid": "9a87ce13-0286-470c-b51c-59d5687999c0",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/minio/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:31:38.487296Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Bound",
+      "volumeName": "for"
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:31:38.759950+00:00",
+  "candidate_hash": "9a05630465134261fa1fa362f73a122be38d1e3245864b05f082483003519fe0",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:38.759950+00:00",
+    "candidate_hash": "9a05630465134261fa1fa362f73a122be38d1e3245864b05f082483003519fe0",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

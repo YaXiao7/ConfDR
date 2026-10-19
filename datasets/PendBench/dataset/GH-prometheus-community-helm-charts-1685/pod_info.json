@@ -1,0 +1,223 @@
+{
+  "pod_status": {
+    "default/DaemonSet/match/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:22:08Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.4",
+      "podIPs": [
+        {
+          "ip": "10.0.0.4"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:22:08Z",
+      "namespace": "default",
+      "actual_name": "match-7p8mp",
+      "uid": "e4544a8c-7cc7-48ce-a8de-7e292504dc0b",
+      "nodeName": "node-4"
+    },
+    "default/DaemonSet/match/node-2": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:22:08Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.3",
+      "podIPs": [
+        {
+          "ip": "10.0.0.3"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:22:08Z",
+      "namespace": "default",
+      "actual_name": "match-8v4jv",
+      "uid": "28451de8-d48d-4982-bc5a-5f5f3c161545",
+      "nodeName": "node-2"
+    },
+    "default/DaemonSet/match/node-3": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:22:08Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:22:08Z",
+      "namespace": "default",
+      "actual_name": "match-j7d2z",
+      "uid": "f7c19840-125a-4632-9d47-31b4aaf06ddb",
+      "nodeName": "node-3"
+    },
+    "default/DaemonSet/match/node-4": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:22:08Z",
+          "message": "0/4 nodes are available: 1 Too many pods. preemption: 0/4 nodes are available: 1 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "match-xb5cr",
+      "uid": "88188ad5-e839-4293-ab78-4e0dde8c2856",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/DaemonSet/match/node-1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/match-7p8mp to node-4",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:08.407344Z"
+      }
+    ],
+    "default/DaemonSet/match/node-2": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/match-8v4jv to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:08.398233Z"
+      }
+    ],
+    "default/DaemonSet/match/node-3": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/match-j7d2z to node-3",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:08.398171Z"
+      }
+    ],
+    "default/DaemonSet/match/node-4": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/4 nodes are available: 1 Too many pods. preemption: 0/4 nodes are available: 1 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:22:08.367347Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:22:08.638131+00:00",
+  "candidate_hash": "c00bc0371774b3b25c2c15bcbcef8db1c4c2c652d8f3d7d1bb029cf35ab9424a",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:22:08.638131+00:00",
+    "candidate_hash": "c00bc0371774b3b25c2c15bcbcef8db1c4c2c652d8f3d7d1bb029cf35ab9424a",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

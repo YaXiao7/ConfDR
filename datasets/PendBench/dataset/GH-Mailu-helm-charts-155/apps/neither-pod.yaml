@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: neither
+  namespace: default
+  labels:
+    app: neither
+spec:
+  containers:
+  - name: neither
+    image: registry.k8s.io/pause:3.9
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchLabels:
+            app: required-peer
+        topologyKey: kubernetes.io/hostname

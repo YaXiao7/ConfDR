@@ -1,0 +1,64 @@
+{
+  "pod_status": {
+    "default/StatefulSet/match/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:20:11Z",
+          "message": "0/10 nodes are available: 1 Too many pods, 9 node(s) didn't match pod affinity rules. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "match-0",
+      "uid": "cd1de625-8332-4323-97b4-f32e3a3e9c2b",
+      "nodeName": null
+    },
+    "default/StatefulSet/match/1": {
+      "namespace": "default",
+      "phase": "NotObserved",
+      "actual_name": null
+    },
+    "default/StatefulSet/match/2": {
+      "namespace": "default",
+      "phase": "NotObserved",
+      "actual_name": null
+    },
+    "default/StatefulSet/match/3": {
+      "namespace": "default",
+      "phase": "NotObserved",
+      "actual_name": null
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/match/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/10 nodes are available: 1 Too many pods, 9 node(s) didn't match pod affinity rules. preemption: 0/10 nodes are available: 1 No preemption victims found for incoming pod, 9 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:20:11.146590Z"
+      }
+    ],
+    "default/StatefulSet/match/1": [],
+    "default/StatefulSet/match/2": [],
+    "default/StatefulSet/match/3": []
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:20:11.403845+00:00",
+  "candidate_hash": "9ccbd2e627881c0d367287ce0f74194fcb609bad2cb1ba70efaf4505ab81fc65",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:20:11.403845+00:00",
+    "candidate_hash": "9ccbd2e627881c0d367287ce0f74194fcb609bad2cb1ba70efaf4505ab81fc65",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: ip-10-0-15-71.us-west-2.compute.internal
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    eks.amazonaws.com/nodegroup: private_t3_xlarge-5436537
+    kubernetes.io/hostname: ip-10-0-15-71.us-west-2.compute.internal
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    beta.kubernetes.io/instance-type: t3.xlarge
+    eks.amazonaws.com/capacityType: ON_DEMAND
+    network_placement: private
+    topology.kubernetes.io/region: us-west-2
+    topology.kubernetes.io/zone: us-west-2a
+spec:
+  taints: []
+status:
+  capacity:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  allocatable:
+    cpu: '4'
+    memory: 8Gi
+    pods: '110'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running

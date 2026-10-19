@@ -1,0 +1,152 @@
+{
+  "pod_status": {
+    "monitoring/DaemonSet/exporter-prometheus-node-exporter/node-1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:06Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:06Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:06Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "prom/node-exporter:v0.18.1",
+          "imageID": "",
+          "lastState": {},
+          "name": "prometheus-node-exporter",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:27:06Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:27:06Z",
+      "namespace": "monitoring",
+      "actual_name": "exporter-prometheus-node-exporter-mmqxg",
+      "uid": "933fb37b-6aa6-4dc0-9f04-b88dae0162e9",
+      "nodeName": "node-3"
+    },
+    "monitoring/DaemonSet/exporter-prometheus-node-exporter/node-2": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:06Z",
+          "message": "0/3 nodes are available: 1 node(s) didn't have free ports for the requested pod ports. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "monitoring",
+      "actual_name": "exporter-prometheus-node-exporter-wc6sf",
+      "uid": "0716b67b-70b1-42c1-ba7d-5be099f6476b",
+      "nodeName": null
+    },
+    "monitoring/DaemonSet/exporter-prometheus-node-exporter/node-3": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:06Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:06Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:06Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "prom/node-exporter:v0.18.1",
+          "imageID": "",
+          "lastState": {},
+          "name": "prometheus-node-exporter",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:27:06Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:27:06Z",
+      "namespace": "monitoring",
+      "actual_name": "exporter-prometheus-node-exporter-xcknh",
+      "uid": "a9a481dc-28c2-4f88-b41b-c9317d98af2e",
+      "nodeName": "node-2"
+    }
+  },
+  "pod_events": {
+    "monitoring/DaemonSet/exporter-prometheus-node-exporter/node-1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned monitoring/exporter-prometheus-node-exporter-mmqxg to node-3",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:06.316742Z"
+      }
+    ],
+    "monitoring/DaemonSet/exporter-prometheus-node-exporter/node-2": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 1 node(s) didn't have free ports for the requested pod ports. preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:06.278869Z"
+      }
+    ],
+    "monitoring/DaemonSet/exporter-prometheus-node-exporter/node-3": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned monitoring/exporter-prometheus-node-exporter-xcknh to node-2",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:06.316788Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:27:06.544067+00:00",
+  "candidate_hash": "59967dc5a44e5c03a24a073dfe0421dfaecf6c42dc19f642ade9e156a9012045",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:06.544067+00:00",
+    "candidate_hash": "59967dc5a44e5c03a24a073dfe0421dfaecf6c42dc19f642ade9e156a9012045",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

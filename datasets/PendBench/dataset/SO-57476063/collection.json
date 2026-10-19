@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/1 nodes are available: persistentvolumeclaim \"datadir-kafka-0\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-7c9fe0dc0d2d",
+  "phase": "original",
+  "observed_at": "2026-10-02T03:26:01.059058+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "122e3c6dcf1dbcdd616e6515c15d118d756facce6d99f0d144ec6f03de288f5d"
+}

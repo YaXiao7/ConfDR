@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flipkicksdb
+  namespace: flipkicks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flipkicksdb
+  template:
+    metadata:
+      labels:
+        app: flipkicksdb
+    spec:
+      containers:
+      - name: mysql
+        image: registry.k8s.io/pause:3.9
+        volumeMounts:
+        - name: mysql-db
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-db
+        persistentVolumeClaim:
+          claimName: mysql-db

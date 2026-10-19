@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/StatefulSet/disappears/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:27:00Z",
+          "message": "0/4 nodes are available: 4 node(s) didn't find available persistent volumes to bind. preemption: 0/4 nodes are available: 4 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "disappears-0",
+      "uid": "23d22b5d-060a-452f-9a76-2da0a0bf6f4a",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/StatefulSet/disappears/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/4 nodes are available: 4 node(s) didn't find available persistent volumes to bind. preemption: 0/4 nodes are available: 4 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:27:00.108078Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/data-claim": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:27:00.367131+00:00",
+  "candidate_hash": "9d2fbabe72f2807de5a9703998e554f40f7ff3d31689c0dc965a4f76ab4648c1",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:00.367131+00:00",
+    "candidate_hash": "9d2fbabe72f2807de5a9703998e554f40f7ff3d31689c0dc965a4f76ab4648c1",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

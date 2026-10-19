@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "reason": "event:FailedScheduling: 0/1 nodes are available: persistentvolumeclaim \"flex-vnf-volume-claim-scratch\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-1ab1aac6ea43",
+  "phase": "original",
+  "observed_at": "2026-10-02T09:29:20.846704+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": false,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "56a614013e8d96e77ab3fcfd28944e64d09c0dad0fa844e9836f2c4b381bcf5e"
+}

@@ -1,0 +1,105 @@
+{
+  "pod_status": {
+    "default/Deployment/nginx-deployment/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:26Z",
+          "message": "0/2 nodes are available: 2 node(s) didn't have free ports for the requested pod ports. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "nginx-deployment-7959ccf74-4cwn6",
+      "uid": "3f72a809-0bbf-40f9-bc22-ae9e461fe9ac",
+      "nodeName": null
+    },
+    "default/Deployment/nginx-deployment/1": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:26Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:26Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:19:26Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "nginx:1.17.9-alpine",
+          "imageID": "",
+          "lastState": {},
+          "name": "nginx",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-02T03:19:26Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-10-02T03:19:26Z",
+      "namespace": "default",
+      "actual_name": "nginx-deployment-7959ccf74-zbxk4",
+      "uid": "92cdc095-e112-4507-b377-5e2c35110652",
+      "nodeName": "k8s-master01"
+    }
+  },
+  "pod_events": {
+    "default/Deployment/nginx-deployment/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: 2 node(s) didn't have free ports for the requested pod ports. preemption: 0/2 nodes are available: 2 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:26.705164Z"
+      }
+    ],
+    "default/Deployment/nginx-deployment/1": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/nginx-deployment-7959ccf74-zbxk4 to k8s-master01",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:19:26.705015Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:19:26.997937+00:00",
+  "candidate_hash": "6d4b3b7c90975034d8ce5bcedfa9807663e8d6038e1070e2800fb1c99faeb457",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:19:26.997937+00:00",
+    "candidate_hash": "6d4b3b7c90975034d8ce5bcedfa9807663e8d6038e1070e2800fb1c99faeb457",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

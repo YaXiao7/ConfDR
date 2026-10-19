@@ -1,0 +1,189 @@
+{
+  "WaitingDeployPods": {
+    "kubeblocks/Job/backup-kubeblocks-mysqltest-20230615135636/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "kubeblocks",
+      "labels": {
+        "app": "mysqltest-backup"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "backup-logfile-backup-data",
+          "persistentVolumeClaim": {
+            "claimName": "logfile-backup-data"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Job",
+        "name": "backup-kubeblocks-mysqltest-20230615135636"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "kubeblocks",
+        "logfile-backup-data"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Job",
+        "kubeblocks",
+        "backup-kubeblocks-mysqltest-20230615135636"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "StorageClass",
+        "",
+        "standard-rwo"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "kubeblocks": {
+        "logfile-backup-data": {
+          "accessModes": [
+            "ReadWriteMany"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "20Gi"
+            }
+          },
+          "storageClassName": "standard-rwo",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"a4d15cd9311a\"},\"name\":\"logfile-backup-data\",\"namespace\":\"kubeblocks\"},\"spec\":{\"accessModes\":[\"ReadWriteMany\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"20Gi\"}},\"storageClassName\":\"standard-rwo\"}}\n",
+              "volume.beta.kubernetes.io/storage-provisioner": "pd.csi.storage.gke.io",
+              "volume.kubernetes.io/selected-node": "node-1",
+              "volume.kubernetes.io/storage-provisioner": "pd.csi.storage.gke.io"
+            },
+            "creationTimestamp": "2026-10-02T03:15:56Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "a4d15cd9311a"
+            },
+            "name": "logfile-backup-data",
+            "namespace": "kubeblocks",
+            "resourceVersion": "238",
+            "uid": "981b5729-2f41-4d4c-ba9c-a43f7379a0dd"
+          },
+          "uid": "981b5729-2f41-4d4c-ba9c-a43f7379a0dd",
+          "requestsGi": "20Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {},
+    "StorageClasses": {
+      "standard-rwo": {
+        "provisioner": "pd.csi.storage.gke.io",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"storage.k8s.io/v1\",\"kind\":\"StorageClass\",\"metadata\":{\"annotations\":{\"storageclass.kubernetes.io/is-default-class\":\"true\"},\"name\":\"standard-rwo\"},\"provisioner\":\"pd.csi.storage.gke.io\",\"volumeBindingMode\":\"WaitForFirstConsumer\"}\n",
+            "storageclass.kubernetes.io/is-default-class": "true"
+          },
+          "creationTimestamp": "2026-10-02T03:15:54Z",
+          "name": "standard-rwo",
+          "resourceVersion": "203",
+          "uid": "2bd40f47-fb78-4d75-b9b7-0c35fd9d03fb"
+        },
+        "parameters": {},
+        "volumeBindingMode": "WaitForFirstConsumer",
+        "allowedTopologies": []
+      }
+    },
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      },
+      "kubeblocks": {
+        "kubernetes.io/metadata.name": "kubeblocks"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:16:41.772509+00:00",
+    "candidate_hash": "a48cb059e676bef35ab56d1a64e6d72bb8ba64fd97ce617d268f8ec34dbc4b84",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

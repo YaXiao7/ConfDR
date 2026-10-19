@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: install-apecloud-mysql-addon
+  namespace: kb-system
+spec:
+  template:
+    metadata:
+      labels:
+        app: install-apecloud-mysql-addon
+    spec:
+      containers:
+      - name: helm
+        image: infracreate-registry.cn-zhangjiakou.cr.aliyuncs.com/apecloud/kubeblocks-tools:0.8.3
+      tolerations:
+      - key: kb-controller
+        operator: Equal
+        value: 'true'
+        effect: NoSchedule
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app.kubernetes.io/instance: kubeblocks
+                app.kubernetes.io/component: kubeblocks
+            topologyKey: kubernetes.io/hostname
+      restartPolicy: Never
+  backoffLimit: 0

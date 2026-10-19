@@ -1,0 +1,11 @@
+# Before fix: the Pod is pinned to a fixed nodeName, but no matching or capable node exists in the cluster,
+# resulting in an unschedulable Pod
+# spec:
+#   nodeName: node1   # fixed scheduling target; node1 cannot host the Pod
+
+# After fix (option 1): return the scheduling decision to the scheduler for automatic node assignment
+spec:
+  nodeName: null
+# After fix (option 2): explicitly replace with a valid and schedulable node in the cluster
+spec:
+  nodeName: node2    # replaced with an existing and schedulable node name

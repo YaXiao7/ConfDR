@@ -1,0 +1,85 @@
+## Before fix: this error spans multiple resources. The Pod requests a PersistentVolumeClaim,
+## and the PVC depends on a StorageClass. However, there is no static PersistentVolume in the cluster,
+## and the StorageClass uses the provisioner "kubernetes.io/no-provisioner", which means
+## the cluster does not support dynamic volume provisioning.
+
+#     spec:
+#       containers:
+#       - name: app1-container
+#         image: registry.k8s.io/pause:2.0
+#         volumeMounts:
+#         - name: data-volume
+#           mountPath: /data
+#       volumes:
+#       - name: data-volume
+#         persistentVolumeClaim:
+#           claimName: app1-pvc
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: app1-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 1Gi
+#   storageClassName: local-storage
+# ---
+# apiVersion: storage.k8s.io/v1
+# kind: StorageClass
+# metadata:
+#   name: local-storage
+# provisioner: kubernetes.io/no-provisioner
+# volumeBindingMode: WaitForFirstConsumer
+
+## After fix: add a corresponding static PersistentVolume resource.
+## The StorageClass uses the "kubernetes.io/no-provisioner" provisioner and
+## sets the reclaim policy to "Retain", enabling PVC–PV binding via static provisioning.
+spec:
+  containers:
+  - name: app1-container
+    image: registry.k8s.io/pause:2.0
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    persistentVolumeClaim:
+      claimName: app1-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app1-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-storage
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Retain
+---
+# Add a static PersistentVolume resource
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app1-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /tmp/pv1
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage

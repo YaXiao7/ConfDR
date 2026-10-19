@@ -1,0 +1,234 @@
+{
+  "WaitingDeployPods": {
+    "mlo-dev/Deployment/web-deployment/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "mlo-dev",
+      "labels": {
+        "app": "web"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "webdir",
+          "persistentVolumeClaim": {
+            "claimName": "pvc-web"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Deployment",
+        "name": "web-deployment"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "mlo-dev",
+        "pvc-web"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Deployment",
+        "mlo-dev",
+        "web-deployment"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "pv-web"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "actual-node",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "mlo-dev": {
+        "pvc-web": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "mlo-web",
+          "volumeMode": "Filesystem",
+          "volumeName": "pv-web",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"deb5c3562b2c\",\"type\":\"local\"},\"name\":\"pvc-web\",\"namespace\":\"mlo-dev\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"mlo-web\",\"volumeMode\":\"Filesystem\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes",
+              "pv.kubernetes.io/bound-by-controller": "yes"
+            },
+            "creationTimestamp": "2026-10-02T03:28:33Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "deb5c3562b2c",
+              "type": "local"
+            },
+            "name": "pvc-web",
+            "namespace": "mlo-dev",
+            "resourceVersion": "242",
+            "uid": "6e8a3324-b1b7-4603-83f4-aaf523146740"
+          },
+          "uid": "6e8a3324-b1b7-4603-83f4-aaf523146740",
+          "requestsGi": "1Gi",
+          "STATUS": "Bound"
+        }
+      }
+    },
+    "PVs": {
+      "pv-web": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "pvc-web",
+          "namespace": "mlo-dev",
+          "resourceVersion": "232",
+          "uid": "6e8a3324-b1b7-4603-83f4-aaf523146740"
+        },
+        "local": {
+          "path": "/tmp/mlo-web"
+        },
+        "nodeAffinity": {
+          "required": {
+            "nodeSelectorTerms": [
+              {
+                "matchExpressions": [
+                  {
+                    "key": "kubernetes.io/hostname",
+                    "operator": "In",
+                    "values": [
+                      "mlo-node"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "mlo-web",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{\"type\":\"local\"},\"name\":\"pv-web\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"local\":{\"path\":\"/tmp/mlo-web\"},\"nodeAffinity\":{\"required\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"mlo-node\"]}]}]}},\"storageClassName\":\"mlo-web\",\"volumeMode\":\"Filesystem\"}}\n",
+            "pv.kubernetes.io/bound-by-controller": "yes"
+          },
+          "creationTimestamp": "2026-10-02T03:28:31Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "labels": {
+            "type": "local"
+          },
+          "name": "pv-web",
+          "resourceVersion": "235",
+          "uid": "ffe2aae4-a8d4-40cc-aabf-3b55424a7dac"
+        },
+        "labels": {
+          "type": "local"
+        },
+        "capacityGi": "1Gi",
+        "phase": "Bound"
+      }
+    },
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      },
+      "mlo-dev": {
+        "kubernetes.io/metadata.name": "mlo-dev"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:28:34.028873+00:00",
+    "candidate_hash": "0b9b6c3406a07cea044ae4b870cad038119e2c096d7f9c1c35cb8f2727641e93",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

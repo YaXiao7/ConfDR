@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tolerate
+  namespace: default
+  labels:
+    app: tolerate
+spec:
+  containers:
+  - name: tolerate
+    image: registry.k8s.io/pause:3.9

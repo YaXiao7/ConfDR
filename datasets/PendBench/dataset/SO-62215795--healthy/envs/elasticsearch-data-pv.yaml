@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elasticsearch-data-pv
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: gp2
+  claimRef:
+    namespace: default
+    name: elasticsearch-data-persistent-storage-elasticsearch-data-0
+  hostPath:
+    path: /mnt/elasticsearch-data

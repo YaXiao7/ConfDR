@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+    metrics.k8s.io/resource-metrics-path: /metrics/nodes/node-000001/metrics/resource
+    node.alpha.kubernetes.io/ttl: '0'
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: node-000002
+    kubernetes.io/os: linux
+    kubernetes.io/role: agent
+    kwok.x-k8s.io/kwokctl-scale: node
+    node-role.kubernetes.io/agent: ''
+    type: kwok
+  name: node-000002
+spec:
+  podCIDR: 10.0.1.1/24
+  podCIDRs:
+  - 10.0.1.1/24
+status:
+  capacity:
+    cpu: '32'
+    memory: 256Gi
+    pods: '110'
+  allocatable:
+    cpu: '32'
+    memory: 256Gi
+    pods: '110'

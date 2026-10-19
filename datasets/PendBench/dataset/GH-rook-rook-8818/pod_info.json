@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "rook-ceph/Pod/rook-ceph-mon-a-canary/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:23:03Z",
+          "message": "0/6 nodes are available: 6 node(s) didn't find available persistent volumes to bind. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "rook-ceph",
+      "actual_name": "rook-ceph-mon-a-canary",
+      "uid": "1dd16f82-4e6f-4193-ade3-4b271a867f99",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "rook-ceph/Pod/rook-ceph-mon-a-canary/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/6 nodes are available: 6 node(s) didn't find available persistent volumes to bind. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:23:03.896631Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "rook-ceph/rook-ceph-mon-a": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:23:04.160973+00:00",
+  "candidate_hash": "003a160d69b20d3506c3514adfdfc4de96b1c2115a0a1f778cacf1615ca27da3",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:23:04.160973+00:00",
+    "candidate_hash": "003a160d69b20d3506c3514adfdfc4de96b1c2115a0a1f778cacf1615ca27da3",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

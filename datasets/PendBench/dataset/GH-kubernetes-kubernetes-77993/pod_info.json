@@ -1,0 +1,55 @@
+{
+  "pod_status": {
+    "default/Pod/cdi-upload-flex-vnf-volume-claim/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T09:29:20Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"flex-vnf-volume-claim-scratch\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "cdi-upload-flex-vnf-volume-claim",
+      "uid": "b900a3b9-3acc-4a21-8608-bc6c66340150",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/cdi-upload-flex-vnf-volume-claim/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"flex-vnf-volume-claim-scratch\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T09:29:20.523792Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/flex-vnf-volume-claim": {
+      "phase": "Bound",
+      "volumeName": "flex-vnf-volume"
+    },
+    "default/flex-vnf-volume-claim-scratch": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T09:29:20.843607+00:00",
+  "candidate_hash": "56a614013e8d96e77ab3fcfd28944e64d09c0dad0fa844e9836f2c4b381bcf5e",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:29:20.843607+00:00",
+    "candidate_hash": "56a614013e8d96e77ab3fcfd28944e64d09c0dad0fa844e9836f2c4b381bcf5e",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

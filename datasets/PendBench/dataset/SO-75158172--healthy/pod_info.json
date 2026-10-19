@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Deployment/match/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:39Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:39Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:39Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "match",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:39Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.1",
+      "podIPs": [
+        {
+          "ip": "10.0.0.1"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:39Z",
+      "namespace": "default",
+      "actual_name": "match-5bf77b8b8d-2ddwd",
+      "uid": "2e808b37-df44-4aad-8921-dd3613d39549",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Deployment/match/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/match-5bf77b8b8d-2ddwd to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:39.579966Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:54:39.911213+00:00",
+  "candidate_hash": "f4fb55ba66c01170b65252f9ee8e01958bf26ad6c323a6ac5f9828f28f05b2c9",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:54:39.911213+00:00",
+    "candidate_hash": "f4fb55ba66c01170b65252f9ee8e01958bf26ad6c323a6ac5f9828f28f05b2c9",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

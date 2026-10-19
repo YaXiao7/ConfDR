@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/mysql/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:15:45Z",
+          "message": "0/3 nodes are available: 3 Insufficient cpu. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "Burstable",
+      "namespace": "default",
+      "actual_name": "mysql",
+      "uid": "bc71a489-b17a-4a0a-bbd9-594dc843b07b",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/mysql/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 Insufficient cpu. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:15:45.192557Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:15:45.452790+00:00",
+  "candidate_hash": "f9eedff0dddf321cacd8dafbb6a7c068625e51fcf959074047020c82d79e2ad2",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:15:45.452790+00:00",
+    "candidate_hash": "f9eedff0dddf321cacd8dafbb6a7c068625e51fcf959074047020c82d79e2ad2",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

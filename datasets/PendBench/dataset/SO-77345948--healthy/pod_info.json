@@ -1,0 +1,78 @@
+{
+  "pod_status": {
+    "default/Pod/replacement/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:56Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:56Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-25T06:54:56Z",
+          "status": "True",
+          "type": "ContainersReady"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "image": "registry.k8s.io/pause:3.9",
+          "imageID": "",
+          "lastState": {},
+          "name": "replacement",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-09-25T06:54:56Z"
+            }
+          }
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.0.0.2",
+      "podIPs": [
+        {
+          "ip": "10.0.0.2"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-09-25T06:54:56Z",
+      "namespace": "default",
+      "actual_name": "replacement",
+      "uid": "c9820ef4-e975-48bc-8d25-79ddde7d39df",
+      "nodeName": "node-1"
+    }
+  },
+  "pod_events": {
+    "default/Pod/replacement/0": [
+      {
+        "reason": "Scheduled",
+        "message": "Successfully assigned default/replacement to node-1",
+        "type": "Normal",
+        "count": 1,
+        "lastTimestamp": "2026-09-25T06:54:56.390809Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-09-25T06:54:56.702215+00:00",
+  "candidate_hash": "66416cce1b8ce72f8720afc5e8de2774ed49c8360945d5fc6c30588736508dd0",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-09-25T06:54:56.702215+00:00",
+    "candidate_hash": "66416cce1b8ce72f8720afc5e8de2774ed49c8360945d5fc6c30588736508dd0",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": false
+}

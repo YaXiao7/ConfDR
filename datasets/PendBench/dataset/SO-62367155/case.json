@@ -1,0 +1,871 @@
+{
+  "WaitingDeployPods": {
+    "default/Pod/sparkhead-0/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "default",
+      "labels": {
+        "app": "sparkhead-0"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "spark-data",
+          "persistentVolumeClaim": {
+            "claimName": "sparkhead-claim"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "sparkhead-0"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "sparkhead-0"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "CSINode",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "CSINode",
+        "",
+        "node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "CSINode",
+        "",
+        "node-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "existing-csi-claim-node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "existing-csi-claim-node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "existing-csi-claim-node-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "existing-csi-volume-node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "existing-csi-volume-node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "existing-csi-volume-node-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "existing-volume-user-node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "existing-volume-user-node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Pod",
+        "default",
+        "existing-volume-user-node-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-2"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-3"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "default",
+        "sparkhead-claim"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "sparkhead-csi-volume"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-2": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-2",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      },
+      "node-3": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 109,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-3",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {
+      "default/existing-volume-user-node-1": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {
+          "app": "existing-volume-user"
+        },
+        "host_ports": [],
+        "nodeName": "node-1",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "data",
+            "persistentVolumeClaim": {
+              "claimName": "existing-csi-claim-node-1"
+            }
+          },
+          {
+            "name": "kube-api-access-hjn28",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "1c6f1207-fb58-4615-a98f-fd9c150734a0"
+      },
+      "default/existing-volume-user-node-2": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {
+          "app": "existing-volume-user"
+        },
+        "host_ports": [],
+        "nodeName": "node-2",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "data",
+            "persistentVolumeClaim": {
+              "claimName": "existing-csi-claim-node-2"
+            }
+          },
+          {
+            "name": "kube-api-access-vhbfh",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "e866c287-4709-4c3b-864f-7df0e5382060"
+      },
+      "default/existing-volume-user-node-3": {
+        "cpu": 0,
+        "mem": "0",
+        "extended_requests": {},
+        "namespace": "default",
+        "labels": {
+          "app": "existing-volume-user"
+        },
+        "host_ports": [],
+        "nodeName": "node-3",
+        "nodeSelector": null,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "affinity": null,
+        "volumes": [
+          {
+            "name": "data",
+            "persistentVolumeClaim": {
+              "claimName": "existing-csi-claim-node-3"
+            }
+          },
+          {
+            "name": "kube-api-access-nddss",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "topologySpreadConstraints": null,
+        "unsupported_features": [],
+        "uid": "2f7fd493-106b-4767-a88f-566ec4f05a11"
+      }
+    },
+    "LimitRanges": [],
+    "PVCs": {
+      "default": {
+        "existing-csi-claim-node-1": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "standard",
+          "volumeMode": "Filesystem",
+          "volumeName": "existing-csi-volume-node-1",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"name\":\"existing-csi-claim-node-1\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\",\"volumeName\":\"existing-csi-volume-node-1\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes"
+            },
+            "creationTimestamp": "2026-10-02T03:27:27Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "name": "existing-csi-claim-node-1",
+            "namespace": "default",
+            "resourceVersion": "258",
+            "uid": "b21b9580-664a-4602-9dd0-66ebefc4fbe7"
+          },
+          "uid": "b21b9580-664a-4602-9dd0-66ebefc4fbe7",
+          "requestsGi": "1Gi",
+          "STATUS": "Bound"
+        },
+        "existing-csi-claim-node-2": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "standard",
+          "volumeMode": "Filesystem",
+          "volumeName": "existing-csi-volume-node-2",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"name\":\"existing-csi-claim-node-2\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\",\"volumeName\":\"existing-csi-volume-node-2\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes"
+            },
+            "creationTimestamp": "2026-10-02T03:27:27Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "name": "existing-csi-claim-node-2",
+            "namespace": "default",
+            "resourceVersion": "263",
+            "uid": "9fb401fd-eaf5-460f-94cd-36ee7a7ef98a"
+          },
+          "uid": "9fb401fd-eaf5-460f-94cd-36ee7a7ef98a",
+          "requestsGi": "1Gi",
+          "STATUS": "Bound"
+        },
+        "existing-csi-claim-node-3": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "standard",
+          "volumeMode": "Filesystem",
+          "volumeName": "existing-csi-volume-node-3",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"name\":\"existing-csi-claim-node-3\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\",\"volumeName\":\"existing-csi-volume-node-3\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes"
+            },
+            "creationTimestamp": "2026-10-02T03:27:27Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "name": "existing-csi-claim-node-3",
+            "namespace": "default",
+            "resourceVersion": "285",
+            "uid": "f8f95aa0-33f4-4f3f-80cd-6021efff029b"
+          },
+          "uid": "f8f95aa0-33f4-4f3f-80cd-6021efff029b",
+          "requestsGi": "1Gi",
+          "STATUS": "Bound"
+        },
+        "sparkhead-claim": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "1Gi"
+            }
+          },
+          "storageClassName": "standard",
+          "volumeMode": "Filesystem",
+          "volumeName": "sparkhead-csi-volume",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"name\":\"sparkhead-claim\",\"namespace\":\"default\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"standard\",\"volumeName\":\"sparkhead-csi-volume\"}}\n",
+              "pv.kubernetes.io/bind-completed": "yes"
+            },
+            "creationTimestamp": "2026-10-02T03:27:27Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "name": "sparkhead-claim",
+            "namespace": "default",
+            "resourceVersion": "287",
+            "uid": "104d92f6-1f5a-4b8c-856d-dc6e9a84f0ee"
+          },
+          "uid": "104d92f6-1f5a-4b8c-856d-dc6e9a84f0ee",
+          "requestsGi": "1Gi",
+          "STATUS": "Bound"
+        }
+      }
+    },
+    "PVs": {
+      "existing-csi-volume-node-1": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "existing-csi-claim-node-1",
+          "namespace": "default",
+          "resourceVersion": "213",
+          "uid": "b21b9580-664a-4602-9dd0-66ebefc4fbe7"
+        },
+        "csi": {
+          "driver": "pd.csi.storage.gke.io",
+          "volumeHandle": "existing-csi-volume-node-1"
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "standard",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"existing-csi-volume-node-1\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"claimRef\":{\"name\":\"existing-csi-claim-node-1\",\"namespace\":\"default\"},\"csi\":{\"driver\":\"pd.csi.storage.gke.io\",\"volumeHandle\":\"existing-csi-volume-node-1\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"standard\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:27:27Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "existing-csi-volume-node-1",
+          "resourceVersion": "254",
+          "uid": "cb10fc40-6abb-4d63-8b4a-f2602b204b0e"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Bound"
+      },
+      "existing-csi-volume-node-2": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "existing-csi-claim-node-2",
+          "namespace": "default",
+          "resourceVersion": "214",
+          "uid": "9fb401fd-eaf5-460f-94cd-36ee7a7ef98a"
+        },
+        "csi": {
+          "driver": "pd.csi.storage.gke.io",
+          "volumeHandle": "existing-csi-volume-node-2"
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "standard",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"existing-csi-volume-node-2\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"claimRef\":{\"name\":\"existing-csi-claim-node-2\",\"namespace\":\"default\"},\"csi\":{\"driver\":\"pd.csi.storage.gke.io\",\"volumeHandle\":\"existing-csi-volume-node-2\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"standard\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:27:27Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "existing-csi-volume-node-2",
+          "resourceVersion": "261",
+          "uid": "020a4984-6660-40a8-ac43-f34293f84ae2"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Bound"
+      },
+      "existing-csi-volume-node-3": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "existing-csi-claim-node-3",
+          "namespace": "default",
+          "resourceVersion": "215",
+          "uid": "f8f95aa0-33f4-4f3f-80cd-6021efff029b"
+        },
+        "csi": {
+          "driver": "pd.csi.storage.gke.io",
+          "volumeHandle": "existing-csi-volume-node-3"
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "standard",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"existing-csi-volume-node-3\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"claimRef\":{\"name\":\"existing-csi-claim-node-3\",\"namespace\":\"default\"},\"csi\":{\"driver\":\"pd.csi.storage.gke.io\",\"volumeHandle\":\"existing-csi-volume-node-3\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"standard\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:27:27Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "existing-csi-volume-node-3",
+          "resourceVersion": "265",
+          "uid": "96a97d48-568b-443b-ae0c-cd1efe5ec2d3"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Bound"
+      },
+      "sparkhead-csi-volume": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "1Gi"
+        },
+        "claimRef": {
+          "apiVersion": "v1",
+          "kind": "PersistentVolumeClaim",
+          "name": "sparkhead-claim",
+          "namespace": "default",
+          "resourceVersion": "219",
+          "uid": "104d92f6-1f5a-4b8c-856d-dc6e9a84f0ee"
+        },
+        "csi": {
+          "driver": "pd.csi.storage.gke.io",
+          "volumeHandle": "sparkhead-csi-volume"
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "standard",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"name\":\"sparkhead-csi-volume\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"1Gi\"},\"claimRef\":{\"name\":\"sparkhead-claim\",\"namespace\":\"default\"},\"csi\":{\"driver\":\"pd.csi.storage.gke.io\",\"volumeHandle\":\"sparkhead-csi-volume\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"standard\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:27:27Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "sparkhead-csi-volume",
+          "resourceVersion": "267",
+          "uid": "e45f9ca6-0c22-4d5b-a03a-b5e4995b1720"
+        },
+        "labels": {},
+        "capacityGi": "1Gi",
+        "phase": "Bound"
+      }
+    },
+    "StorageClasses": {},
+    "CSINodes": {
+      "node-1": {
+        "apiVersion": "storage.k8s.io/v1",
+        "kind": "CSINode",
+        "metadata": {
+          "name": "node-1"
+        },
+        "spec": {
+          "drivers": [
+            {
+              "allocatable": {
+                "count": 1
+              },
+              "name": "pd.csi.storage.gke.io",
+              "nodeID": "node-1",
+              "topologyKeys": null
+            }
+          ]
+        }
+      },
+      "node-2": {
+        "apiVersion": "storage.k8s.io/v1",
+        "kind": "CSINode",
+        "metadata": {
+          "name": "node-2"
+        },
+        "spec": {
+          "drivers": [
+            {
+              "allocatable": {
+                "count": 1
+              },
+              "name": "pd.csi.storage.gke.io",
+              "nodeID": "node-2",
+              "topologyKeys": null
+            }
+          ]
+        }
+      },
+      "node-3": {
+        "apiVersion": "storage.k8s.io/v1",
+        "kind": "CSINode",
+        "metadata": {
+          "name": "node-3"
+        },
+        "spec": {
+          "drivers": [
+            {
+              "allocatable": {
+                "count": 1
+              },
+              "name": "pd.csi.storage.gke.io",
+              "nodeID": "node-3",
+              "topologyKeys": null
+            }
+          ]
+        }
+      }
+    },
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:27:44.646715+00:00",
+    "candidate_hash": "0b58ab5543963fb6d0257586b44b0fe8d4dd39f11493929f469d8d77cc683678",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

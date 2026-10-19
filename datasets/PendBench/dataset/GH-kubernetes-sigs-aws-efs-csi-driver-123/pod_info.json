@@ -1,0 +1,51 @@
+{
+  "pod_status": {
+    "default/Pod/dev-app1/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T09:29:28Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"dev-csi-data-volume-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "dev-app1",
+      "uid": "857029e7-6245-432d-8ac7-d202bffa158e",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/dev-app1/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"dev-csi-data-volume-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T09:29:28.658488Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "default/dev-csi-data-volume-claim": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T09:29:28.989933+00:00",
+  "candidate_hash": "833d12d514f5de9bd6983ffc5168cf5e1d683fabf7ab435bd00eff09944ff6a4",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T09:29:28.989933+00:00",
+    "candidate_hash": "833d12d514f5de9bd6983ffc5168cf5e1d683fabf7ab435bd00eff09944ff6a4",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

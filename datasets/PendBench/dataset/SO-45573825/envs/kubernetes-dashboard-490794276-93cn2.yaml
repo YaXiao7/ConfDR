@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubernetes-dashboard-490794276-93cn2
+  namespace: kube-system
+spec:
+  nodeName: gke-wordpress-default-pool-91c14317-jdlj
+  containers:
+  - name: system-container
+    image: registry.k8s.io/pause:3.9
+    resources:
+      requests:
+        cpu: 100m
+        memory: 50Mi
+      limits:
+        cpu: 100m
+        memory: 50Mi

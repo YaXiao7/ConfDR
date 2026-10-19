@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: flex-vnf-volume-claim-scratch
+  namespace: default
+  labels:
+    app: containerized-data-importer
+    cdi-controller: cdi-upload-flex-vnf-volume-claim
+    cdi.kubevirt.io/storage.import.importPvcName: flex-vnf-volume-claim
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi

@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: gb200-node-1
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    kubernetes.io/hostname: gb200-node-1
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints: []
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+    nvidia.com/gpu: '4'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+    nvidia.com/gpu: '4'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: gb200-node-2
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    kubernetes.io/hostname: gb200-node-2
+    kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+spec:
+  taints: []
+status:
+  capacity:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+    nvidia.com/gpu: '4'
+  allocatable:
+    cpu: '8'
+    memory: 32Gi
+    pods: '110'
+    nvidia.com/gpu: '4'
+  conditions:
+  - type: Ready
+    status: 'True'
+    reason: KubeletReady
+    message: kubelet is posting ready status
+  nodeInfo:
+    architecture: amd64
+    operatingSystem: linux
+    kubeletVersion: v1.30.0
+    kubeProxyVersion: v1.30.0
+    containerRuntimeVersion: containerd://1.7
+    kernelVersion: '6.1'
+    osImage: Linux
+  phase: Running

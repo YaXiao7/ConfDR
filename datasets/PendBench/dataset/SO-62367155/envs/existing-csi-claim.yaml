@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: existing-csi-claim-node-1
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+  volumeName: existing-csi-volume-node-1
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: existing-csi-claim-node-2
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+  volumeName: existing-csi-volume-node-2
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: existing-csi-claim-node-3
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+  volumeName: existing-csi-volume-node-3

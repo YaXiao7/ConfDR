@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/virt-launcher/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:21:39Z",
+          "message": "0/3 nodes are available: 3 node(s) didn't match Pod's node affinity/selector. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "virt-launcher",
+      "uid": "37da4214-01d8-49c6-8203-70789b01d76c",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/virt-launcher/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/3 nodes are available: 3 node(s) didn't match Pod's node affinity/selector. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:21:39.909674Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:21:40.175464+00:00",
+  "candidate_hash": "8e4b9a3cf398b4009379e11aa3a0b19e594651f18194875e6af183a5dac4d61f",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:21:40.175464+00:00",
+    "candidate_hash": "8e4b9a3cf398b4009379e11aa3a0b19e594651f18194875e6af183a5dac4d61f",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/role/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:26:31Z",
+          "message": "0/2 nodes are available: 2 node(s) had untolerated taint {dedicated-app: my-dedi-app-a}. preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "role",
+      "uid": "cd6cd69e-937a-4065-bec8-82b493b9e410",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/role/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: 2 node(s) had untolerated taint {dedicated-app: my-dedi-app-a}. preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:26:31.081656Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:26:31.344836+00:00",
+  "candidate_hash": "8c4330990fc12ff23f1fb37bfc0f8c57570bc75c3495c354bfaed04f14f87c27",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:26:31.344836+00:00",
+    "candidate_hash": "8c4330990fc12ff23f1fb37bfc0f8c57570bc75c3495c354bfaed04f14f87c27",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

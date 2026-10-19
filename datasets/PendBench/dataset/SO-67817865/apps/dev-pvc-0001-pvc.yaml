@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dev-pvc-0001
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+    limits: {}
+  storageClassName: local-storage
+  selector:
+    matchLabels:
+      name: dev-pv-0001

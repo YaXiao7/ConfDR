@@ -1,0 +1,1352 @@
+{
+  "description": "D1-collect-26-10-v2 snapshots; five storage cases replaced by their fidelity re-collections; truth synced from Dataset/D1-26-10",
+  "rebuilt_cases": [
+    "GH-kubernetes-kubernetes-77993",
+    "GH-kubernetes-sigs-aws-efs-csi-driver-123",
+    "GH-openshift-origin-12676",
+    "SO-63809000",
+    "SO-67457018"
+  ],
+  "truth_synced": [
+    "SO-63809000"
+  ],
+  "cases": [
+    {
+      "case": "GH-BasedHardware-omi-7280",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "d2bcc5d55efe1062393aeea1651b08959ec48ad9e1a2ef9b287f2c0eed82025e",
+      "truth_sha256": "88bb6d0c8a6d7326765478ec521bbc6e36256752d44f8c375d2816e7700e6c92"
+    },
+    {
+      "case": "GH-COPRS-rs-issues-669",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "106d44ffa9cbaedf3db023a7aefe48ccf7f2f76bf5826adb28cb54447858e326",
+      "truth_sha256": "88bb6d0c8a6d7326765478ec521bbc6e36256752d44f8c375d2816e7700e6c92"
+    },
+    {
+      "case": "GH-COPRS-rs-issues-669--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "e5584b89926486eb526cce06923ea97703d80d4a8b4026db6d470b6847822e5e",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-Kuadrant-kuadrant-controller-168",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "d78558671f063fb8ac4c6090f8bf2872b82e75f2d7f0f8dfdc97f70fdb1e8b3b",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-Kuadrant-kuadrant-controller-168--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "47b9c75ab0de1c91b6d1a9604e34388fce05eb1aa563960989bbfb0fc76fccdb",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-Mailu-helm-charts-155",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "a163876660b254486008c0a86f5bafb39d11ff7d469f33e5d640d37b565859ad",
+      "truth_sha256": "0ed4a00951ed67ba0e0c405a6f5a84fac25c81d00d8c75e1ec9e08cbc38d202b"
+    },
+    {
+      "case": "GH-NVIDIA-ai-cloud-validation-187",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "96d1bb8ebadddf0bfb3faf046d88f6d1e252f394957bcf5de248dafd0b4f030f",
+      "truth_sha256": "e5fb6ebed5db1e23495ab4685679a8d03e84a7d4663983cb611d4fed719125c7"
+    },
+    {
+      "case": "GH-Panfactum-stack-146",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "d08a55f5d9aa6b2f79549c19122e1514fffc26ffcfd311bedce1bff00ffb5844",
+      "truth_sha256": "88bb6d0c8a6d7326765478ec521bbc6e36256752d44f8c375d2816e7700e6c92"
+    },
+    {
+      "case": "GH-Panfactum-stack-334",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b0d4a6b3d80304cd0c555abfa3b77d7613006bdb524361a8d20a879225dfdd24",
+      "truth_sha256": "ca1b2da828d813cd0ce180a2fb25f1b667c0ecbeee214bd1263c50f4fd00ea6c"
+    },
+    {
+      "case": "GH-Project-HAMi-HAMi-1074",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "8cfa2f0ae0501abb914033335994501190dd0ee8695aa47fc93ca0dc5737df36",
+      "truth_sha256": "e5fb6ebed5db1e23495ab4685679a8d03e84a7d4663983cb611d4fed719125c7"
+    },
+    {
+      "case": "GH-Project-HAMi-HAMi-1528",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "aca61215d3ccce80938a7b1b36a1bade8314d72f6a6a8da43c3c984fd4456055",
+      "truth_sha256": "e5fb6ebed5db1e23495ab4685679a8d03e84a7d4663983cb611d4fed719125c7"
+    },
+    {
+      "case": "GH-Team-msp-architect-2026-msp-team04-wiki-535",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "38eb479461dea559007e226728f7383b87eda4ed96d2d7c32e922d90a0e66aff",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-ansible-awx-3894",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "7c97a7242203ad530e2252942377d2591d57e89ea47a1e860f5e00f07e6a792b",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-1615",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "7d2d59779f902a8b005f19695f55379251abf026ed44bdf95a5ce5b5b9c395a5",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-3261",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f149a8dcb5efb0d45716368706b1e7d136d7666cfda96f4eeee5d3e2ecf752fe",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-3809",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "26009428ae61a0217eae23c43f84faca8fdfb27f5ad7424429e85b8974fff420",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-3878",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "5765478d17b5a3a58c7268873623db8b0f826752dfcbab80103ea87a6fc5b2f8",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-7426",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "fae8b7edccb8034b090ce46c9f7aea330eb3edddf78a0c8a5b3e984aceb4a729",
+      "truth_sha256": "d363dfaa30b112d77f011ddfc1cb6b21c3702ad24df9c7f8ebc52f38b5bbc58f"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-7959",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "bd19f79c080d481058aeab21b825676e194b47e47d582ece0fac0e027fdd9cb7",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-7963",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "72f9e7204f810128db9401cb41f60137510f78617b5e9c482fe648351f78d1ba",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-7967",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "3af8437034aed19639854c36db1c2c3f2202cbce715519b06dd9c94556f06ca4",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-apecloud-kubeblocks-9948",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f727f0bbd713f6b3e2a629bd1c124348b1fad591a85e0512ed4ab810c745ad64",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-backube-volsync-1329",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "07ec6aca282a25e5ef56b22e9c34cdcb62072d3c2afb212d8630bd6efe6672c3",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "GH-backube-volsync-420",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "23d3914f22acace967d9197c53047106703d97c33db7dcaf87977c1650216a6a",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-backube-volsync-420--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "8c969235d817373ac763f58dcef1f0bde5e203306cc8ccb9427744bed5226539",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-cetic-helm-fadi-15",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "5af9a0f2c59010714f76e98195d7d0f2be8ed53c2c89f808058e884a5464deb9",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-cilium-cilium-18829",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "355d93fc397d04cbe749ebc2bae4b4b5a78198272270e925313c911598045029",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-cilium-cilium-27009",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "fb32e2659acabd3ee7737690bd465de26b604bb6731ca8aeb7b1dcacb25bc6ab",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-cockroachdb-cockroach-operator-238",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "91952b6a3bf97a14b6e0f139b2b47662b117022ffd3d0e0c18781474d3b326b6",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "GH-dapr-dapr-7263",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "ae2506dd76592ec43e9e10a7062cada61f4850634c1c46210982784f90db6ba0",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-devfile-devworkspace-operator-977",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "2729e06f71f95988bd2340af40d750be98108eac3604bb29866599b0643d9ed5",
+      "truth_sha256": "88bb6d0c8a6d7326765478ec521bbc6e36256752d44f8c375d2816e7700e6c92"
+    },
+    {
+      "case": "GH-elastic-endpoint-40",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b7d8c910f7717a51faa86243b9d25017e5193e9e69f71ff516d34e3a2dc6693d",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "GH-elastic-endpoint-40--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "dc677e21105309453187aa8b98c77012f69f4d249fb08cc1cf01d27064c430be",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-fluv-kube-259",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f7ec5d2b5911ead833b23de554bc0bf279991ab486ad71efdf99a4e44a8c0328",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-gitpod-io-gitpod-14529",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e684c083e53bd8c9ae115d5335dc249e468f2166667a6fe67997779ce83590fb",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "GH-gitpod-io-gitpod-14529--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "b9f3657d94dcce6df99b8d10b3f88b6a83514e32f048204521a1cabe1c4b5a23",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-googleforgames-open-match-1478",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "8a0708ebf09570367b9eb73705d54baa4f7f967a18368eed87eda34291030d7b",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-hashgraph-solo-weaver-381",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "dcf1f844a6963e9fb716e5a4c0b31611b7442b8f64a45e356f9823b18e04b1c0",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "GH-hashicorp-consul-k8s-1802",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "9c1b73c8f450d101f8fd107b75c712b694bc73959dfef98f8fc230494ddf2181",
+      "truth_sha256": "0f98ac54cd12f50fdf9b63701955b28496bdd8caf924a23d726544b8f9b7298c"
+    },
+    {
+      "case": "GH-hashicorp-consul-k8s-1802--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "d9d87b520b13c04223d8e2c8a350ab8b2bb7c5aedce9e3445b9f8fd92d90c766",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-hashicorp-vault-helm-914",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "4bd0b94ca26151ceee91f3854f768b0b6d0cf85968d4f5f58fbe27060d2a1280",
+      "truth_sha256": "d363dfaa30b112d77f011ddfc1cb6b21c3702ad24df9c7f8ebc52f38b5bbc58f"
+    },
+    {
+      "case": "GH-intel-CPU-Manager-for-Kubernetes-171",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "1f9eb6c0b588c3eaa1028cda788323c2f128d0eb05494c49a698e7fe57ba634d",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-k0sproject-k0s-7607",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "feae0cf3f0e6626769ea556f589e4220bbb12b50a828c38c3e33fef8cb1dda63",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-klothoplatform-klotho-553",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "4a683dffd9216eee094937a64b6c86ec930aeff011982c53ef34b709c7f84410",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-kube-logging-logging-operator-814",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "3503f621e848d5b71025ffaca83d43559b1a24dd3e22bcf5c03a3843d7e8348e",
+      "truth_sha256": "d363dfaa30b112d77f011ddfc1cb6b21c3702ad24df9c7f8ebc52f38b5bbc58f"
+    },
+    {
+      "case": "GH-kubecost-kubecost-656",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f2f38dbf29fc72fb5681df73bb3d14491cc0c9ca8f3141a39b5d509c98c59530",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "GH-kubeedge-kubeedge-1584",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "8ca1d1078862764122ca15420f6daba15bffdf3650784cb9a0d541e6a59134e9",
+      "truth_sha256": "0f98ac54cd12f50fdf9b63701955b28496bdd8caf924a23d726544b8f9b7298c"
+    },
+    {
+      "case": "GH-kubeflow-kubeflow-4770",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "4bae70160d89b1e77b83fefccb5e908eff41107172ddddcf985689a12f9a0c02",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "GH-kubeflow-pipelines-3251",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "159bc83f2aec28eb8c3b32c2a370baeed0405570ad05af1e1073de65cfe43037",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-kubernetes-autoscaler-4782",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "3fc88af45b965182c32c8b27d0c8cbafa46b123192b9c2bbbcbddd092467e847",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-kubernetes-autoscaler-9287",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "8f28683447a6d4b2431a3b41afab016bd94d277bcceb7e7cf2fc1891bf6774d9",
+      "truth_sha256": "e525729e8d559208ee013addd6a51cd6a466a9fe92be6dc4d6042cacd7b7f651"
+    },
+    {
+      "case": "GH-kubernetes-ingress-nginx-8605",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e43e0efaa51abd32fddfd9f3e3360131e70992733a0e0ce78dad3d3e6bb0516d",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-kubernetes-kops-15852",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "ffcc3639a037db73711d450bbf2e16c6f6f39ab72fc14177a9f9cf7a689ee80b",
+      "truth_sha256": "e87d26540511f2bf5eeb20fde047ad2b1b4bb8c0cb1b4fad61f7712f7941e323"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-107888",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "0fc51e093c857de803099e5c849d448da9169de16855a927228a94b42d73e4cd",
+      "truth_sha256": "6f94b7df47ad07cfdc3d402f0c241e28d00053288ea8f922c7fcdbe50f445836"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-116629",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b6afd6b0bc56eb93cfbf6b1fb72e09c753f1dde9250869eba74b9fe4c573ca36",
+      "truth_sha256": "b34f0b82c0d920bca19b36cba322d1a865aa3147ee86a27b2e72af01bd43df0c"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-116629--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "781e8e71dcae8da5bd164f59351a770b65c2f08cc835835ad32fe19c5ce75946",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-120453",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "949011881e720eafb2dbec6fefe6cb509e9ae3dd618990a84797ff9e0f9a1720",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-128832",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "a8e1655546d5c1c347a3d3f867deeef241b812c296a5b2a842ea75d7bcb1c010",
+      "truth_sha256": "b34f0b82c0d920bca19b36cba322d1a865aa3147ee86a27b2e72af01bd43df0c"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-55623",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "4f572c110233de2f0205c9733d7d2474165dc6aa207eb6fc59174edc68c9bc44",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-55623--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "a01e375b296cc99247bca298e99ecd9731d13bc5454b4b3be5b83c0ba7f0a0b7",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-77993",
+      "snapshot_source": "outputs/D1-26-10-fidelity-v1-GH-kubernetes-kubernetes-77993",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "ff8a260f312fdb48ff4477ac126e3395e675c8e6c290e19c3ffca66f069b84ed",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "GH-kubernetes-kubernetes-85625",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e18cbe69910f93689d0861c0d0872b43479cf2b3fe1e7b5a7d5c4c0debfb7836",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-kubernetes-sigs-aws-efs-csi-driver-123",
+      "snapshot_source": "outputs/D1-26-10-fidelity-v1-GH-kubernetes-sigs-aws-efs-csi-driver-123",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f17a62fb6be621862bde64dc679b4f5e4fe53f314d4730c8c393d6f06f52900d",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "GH-kubernetes-sigs-cluster-api-7074",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "812d737499a28fc187bb6e327de2bba2a44e61d8a545667309b29bbd24bf8906",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-kubevirt-containerized-data-importer-1418",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "84c0015f5b25dfd4c40d8754ae6b297a5f9b88f522aa0f32b79d277ebdddd800",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-kubevirt-containerized-data-importer-3631",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "004e499374e8da7636eb18c60bba1910c754d95d5be52ec42a4a6ac1844113b2",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "GH-kubevirt-containerized-data-importer-3631--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "7d7817bbb601d37086951349a17384887f5998c40eb820ab9b5748fb423dddb3",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-kubevirt-kubevirt-2184",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "02ced9d78742388016a841caa434a901b1887691fcb80ac297ada9ed765edd3a",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "GH-kubevirt-kubevirt-7780",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "99d3413382d99cc63d9328b934fcad108af54a03cf8e1866385c0467d0d923b7",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-kubevirt-kubevirt-7780--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "52c73ae4869cd70fd8c2d5c70a9a8c2b0d14e4f651a7ea4949c2eaed00315020",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-kumahq-kuma-3595",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "8e786878e579e4d139d637edbe8d3a08ba061af949877a531f5ef645455e67f6",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-kumahq-kuma-3595--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "db6740cf1209f43f4507e65c03a2a583e7c6227152f01edc1df2d7810dba20eb",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-kyverno-kyverno-7843",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "9bb9e8ba15e52d7db22a0373351e7a1bbc3375b951ce5ccb47d5b2d2b801ee31",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "GH-nebari-dev-nebari-735",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "0f91cc6deb19282043687ec1d3406186c7bbd7e6c33205f5b4f727d236e688fb",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "GH-openshift-origin-12676",
+      "snapshot_source": "outputs/D1-26-10-fidelity-v1-GH-openshift-origin-12676",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "44433521719499d1741b59b3470023738b2f6dc3d5cf2044649c53ac9de2f30b",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-prometheus-community-helm-charts-1685",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "0f80fe34f71c12467085e7246d6b9b01f4fe6c8b5f53bd39442ed89221463b4a",
+      "truth_sha256": "66c71a6241b1c853dd25c2e824a1b0e8a263a6f2bbe47b9353374d4eda2d3440"
+    },
+    {
+      "case": "GH-prometheus-community-helm-charts-2983",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "fea777d54900d35dfc59600fbfdf0e42e2876b35a89e6006cfef59344a373717",
+      "truth_sha256": "0f98ac54cd12f50fdf9b63701955b28496bdd8caf924a23d726544b8f9b7298c"
+    },
+    {
+      "case": "GH-prometheus-community-helm-charts-2983--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "6be009fd2f10ea538dc429ea085a46dfc0bb9e9d30cf7827e974df566dbd4a1d",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-prometheus-community-helm-charts-4946",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "a5a5a30ea5fd022da6a7c98145788469a88ef9ccdaf1ced4ead70df30ae55989",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-radius-project-radius-9207",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "dbe044020e32d498410c6ab0864aa2fe500d4750e8e380546dc64dcf9faf1d58",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "GH-radius-project-radius-9207--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "2641c73188736e2e665e50a1b72ced0f14e74319e79c4f668795f48d26e7d96e",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-rancher-rancher-51111",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "8bd2441532ba5061a06e48e544a6daf82cd02c27710a09424872872bc77defc7",
+      "truth_sha256": "d363dfaa30b112d77f011ddfc1cb6b21c3702ad24df9c7f8ebc52f38b5bbc58f"
+    },
+    {
+      "case": "GH-rook-rook-10413",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "6d44a36308247df471a21284e1d1017f81252861bcb0d2bd0dd5e8878a610957",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "GH-rook-rook-10947",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "80c4a8bdfe89a3a6fd1349885ef176a4fa4595452ec4f266e533124e39aee3d0",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "GH-rook-rook-3278",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "481f21082501bbe31e89cde4a35b2eb46bcbbc5ad5c183f40a9a59fa1332096d",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "GH-rook-rook-7894",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "eba01a87850e110527adbf13fc52eb690667f99144e7b97ce9ecaf12275abee0",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "GH-rook-rook-8818",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "d1dd1a61a887a12ad58bf94f176891e08c98e21e92b045ef337f842ed0e0b03d",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "GH-saveourtool-save-cloud-1986",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "016b79617f4219cbffd4cdf26316b6d16c3559209d4f2c832bacce830f091acd",
+      "truth_sha256": "0f98ac54cd12f50fdf9b63701955b28496bdd8caf924a23d726544b8f9b7298c"
+    },
+    {
+      "case": "GH-scylladb-scylla-monitoring-1494",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "1a1ea45709cb9c415e5159d08e648c1e4e2d05027e7de6290186edf8bb0ac77b",
+      "truth_sha256": "0f98ac54cd12f50fdf9b63701955b28496bdd8caf924a23d726544b8f9b7298c"
+    },
+    {
+      "case": "GH-scylladb-scylla-monitoring-1494--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "ecf06df5da910c721753d426a3605411adb10a8072f03ea5e76b8ec82c802e57",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "GH-tektoncd-pipeline-2769",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "6d9bc1c4f182f724efa1fe9dda8da62fc682d5997ea00bc751693eacd1352c82",
+      "truth_sha256": "0ed4a00951ed67ba0e0c405a6f5a84fac25c81d00d8c75e1ec9e08cbc38d202b"
+    },
+    {
+      "case": "GH-threefoldtech-js-sdk-2573",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "105cd0e53423cfd5095983d4ddd70247f1fed2f5f1c8fd422630a3766b67b307",
+      "truth_sha256": "a177d34ff0251fe3d13e54a0ff4f0c1783dbdb22aa4d6e25600f77d179427e93"
+    },
+    {
+      "case": "GH-tkestack-tke-53",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "c56d995550884365330127f458cf2c08dfba22faa7abbca29b2f098ddff99f3b",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "GH-y-scope-clp-2099",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b701e80c7e8da7417da1e9f4e2af5372df0437dbff2f144ab45d7225fdffa9c7",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "SO-43459209",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "319adb4561ee23824c6e300687884f160cf88f68fe7e29d001a9c42683101e5f",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "SO-45573825",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f1fd78145c9833eb3d593585de303c3fc69337f4227a43129f3a91118a432754",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "SO-45696213",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f63c649aae83a62396f34d6472ea5411ed2ae952d263b03032bcff1222a22e66",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-46424423",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "4f3969a9e84afd651ed62adec1505fe394f53330b00535e52ff45e93734de021",
+      "truth_sha256": "88bb6d0c8a6d7326765478ec521bbc6e36256752d44f8c375d2816e7700e6c92"
+    },
+    {
+      "case": "SO-46424423--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "83305ca11515962c56ec6c3ae322e4f4f64a88b740071a5c60e80561c1b46aa5",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-49694230",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "0926847746b087c0bd884a68fad600cf2bb13d69a26b61057d5f778b49b24993",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-49694230--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "e1ff77d673d0500a0b1e0ef4bfa095c88dc5045540401a287668149f11312314",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-49764198",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b64030e0ad001766e7f9d79061818a63d2e8e7d8d45f88d359041a6c33cb57f0",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-49997137",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "d94af973ba6fdfb0acc0246bbcd0d6afe0c1aa8fb6ab0e444e799e9f8feca5af",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-50926573",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e27544cc0951e636f3372843cf5fcf1f122905529684cf66ea16ed4b25c2cf3d",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-50926573--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "3eb8b0b10d0c5ba932a91e45bdba1a8d9e99eb15d5fea9070dc12b4216d210f0",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-51456849",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "cce902ac90a586ebfa3217f51ace40fb10fdcff1c4ff7b4c599c86a9cb1b8ada",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-51718792",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "52811178d90a3e5262b4c8fcd7149a8e66dcbf7227e831fe0e9138cb459cc2a5",
+      "truth_sha256": "e5fb6ebed5db1e23495ab4685679a8d03e84a7d4663983cb611d4fed719125c7"
+    },
+    {
+      "case": "SO-52183750",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "ef456871242508eef85830b97d01dfa83c9c2d7c17e47d81a564b7c54177f578",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "SO-52199456",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f24dd71da691bafccd5c6c67694dba156c77c3a040a5e4085795fda1986628b1",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-52207577",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "cdeeb2920e44e5fe2de5db849ccc5daceb034c0aade5b234896663bf3cc16f7b",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-52429472",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "7225c8a10e2beef3df68001751cf42a21e263826679c2b98ed280ca5c98a1961",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-52763377",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "1f8573db5afebb50f590693e7bae8d63deee3af965a10d75a6a980e951f40c87",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "SO-53111741",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "1ccb8df01a91372c04839e3469fadbe4c1de1543b13f9c45bc1a2f91c1fed54c",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-54314246",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "12e1332f61a0742aa2f5126157eef8070d34b9cc095f3118d10a54b921805600",
+      "truth_sha256": "0ed4a00951ed67ba0e0c405a6f5a84fac25c81d00d8c75e1ec9e08cbc38d202b"
+    },
+    {
+      "case": "SO-54933576",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "6e4100160ef06aa08ee9ec99dbcca8a0d821acf31c1b78ebebbaa0b288ee9bc9",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-55857684",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "516989082501b32737950fc114a26cb2406b3bea7e98b19d9c0e84164ac7b9ef",
+      "truth_sha256": "a01c698bf420ab3f64036d0eb13e5ddae2308101e1aba30e46e125cc2e4bd659"
+    },
+    {
+      "case": "SO-57119559",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "50c573f7608f1eaa2722d5f212d53fb3a2cf25cd22c67fac0a18248074b3d716",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "SO-57443216",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "465c59bfc5c74691fe52016eecc3bd9f6cf7ba966f9b95fb2360c100d09106bb",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-57443216--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "2df4fc9c9f0abf91484e6f79f1424e023041228a09dffe01d5964d8fbd00b938",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-57476063",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "c2b9ec50ad5d0cf4ab338d4a1e752713a8372551a146f4a35dc066a0d99a6454",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "SO-57652780",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "77954ad98893b8936e8ffee08597f7171e5ba206f3a1de18af1d0bdff51c80f6",
+      "truth_sha256": "88bb6d0c8a6d7326765478ec521bbc6e36256752d44f8c375d2816e7700e6c92"
+    },
+    {
+      "case": "SO-58671234",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "bb081b150d2ac81a2dee9ee1a4e241de321fbc107e08d502c267222ee6b8a21d",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-59071698",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "06d4c3edcdc43a5041ea01f1edd43cbcac1360297fb90cb6cae810291b7025eb",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-59355390",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "c2dda05a95e0b13a3efbc2801daad765e76374d63438737341c697ef9e22d5a7",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-59457167",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "2413af2ce411248fdc53c721202c9d340191d875e5ffbb8f1d5ec6e541cb334e",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-59457167--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "de16a8d7bdf3cb142f865ae55ba28bf94c39c15b688d42c382b628cc1fcc39a1",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-59484509",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "ebaa6385a1faf9770ea71e2e426d98f5069468d96334228c579c40f07680d8b3",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-59632335",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "c607dc7da9200cf3acfc2b24fb25d0b6ac7287586ffad1fc98d1bad827f1ead7",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-59744998",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "c810df52914b6b961364152897feffefe2e36ffab894d37a057d4621b8b13260",
+      "truth_sha256": "6425428a2b4ddbf0ee900e3f013423fa7ee5e33f321fbd72eba6e25202480701"
+    },
+    {
+      "case": "SO-59744998--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "7de8b042de152d57443d51f9aa9c9945b5653bc906d419de304322dbe379db8b",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-60166842",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "57f880548f01f8d0b5b5e29e0e3c2a35e7d024ebbe8e3ac2acb2e8a0fdace2d7",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-60166842--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "3127eda001ffa878c709fc63ed725c3fcd1b1519a81b910bd4e05b4da65a3e39",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-61742229",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "3833f070d6e6262c8820806838ea9b7f9795d50fe6288f4c474190e4fc81eff8",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-61745762",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "9084b7a163260014e27456e59fa289f1be67049dda6bd41476505d065b740df8",
+      "truth_sha256": "0f98ac54cd12f50fdf9b63701955b28496bdd8caf924a23d726544b8f9b7298c"
+    },
+    {
+      "case": "SO-61893322",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "8b123da34c4ea2f9a12c802657d81158ef38a01b24c0d4a3dd79a09c2d7cb546",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-62045052",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "70d8f7f801401ed04138cc9baa677fd581c142a9be0edaef1b3a6de08bf3786f",
+      "truth_sha256": "6425428a2b4ddbf0ee900e3f013423fa7ee5e33f321fbd72eba6e25202480701"
+    },
+    {
+      "case": "SO-62215795",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f6a80eb5082604e3235de094ba1bf04f44b5cb2be21f34b1c828dc4d803a6761",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-62215795--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "42e3f4c85f7c3f3c75724de48068af8f788979009752c497d3fd4ee458593ff0",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-62367155",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "dfb66a65d392815a779a7ce2e3204acd2b90b3761eef3b2fec05983e20277768",
+      "truth_sha256": "185961329e1af11503d978c0a3df32733e38897cb8763fda1c56f517f8e5df8e"
+    },
+    {
+      "case": "SO-62688915",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "d7e17f2ec2dc7ba8d06d34d65c722575e00f51ba4e741efc2ae210cb4c48213b",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-62688915--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "d1db4c5901e53ecfbee183dfe542db598665e18b92c110fe32f3598ab06c24e1",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-62810901",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "2fb6362197a65abbb09ba0acce67ff3e065e18445f9ea5c16595e3746f8f212b",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-62932874",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e570563127f08499be74b2a0579022b7f1a967ee7db864fbdf0e6cea9982dc23",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-63285220",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "15f0ab864446a23c973bf5732d675622b3f5027ce467f4472ce7626ea4cbc751",
+      "truth_sha256": "6055e41db1749d7877c4126a07896d14ddfc2de67df22596f09fe954cf520632"
+    },
+    {
+      "case": "SO-63303870",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "947c12c63100f138770058b718a668f47c6d2fef6b3b0ccdeea8b8924ae5cdd3",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-63672326",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "49e3d53d4c3eda25986c2758ced9661ba6225811c57e483ad9a44e467c46aaaa",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-63801116",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "67322953689ae8acf04387820906706cc25c111343884cd8b8c92e8ddb45c855",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "SO-63809000",
+      "snapshot_source": "outputs/D1-26-10-fidelity-v1-SO-63809000",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b82bc033bd0662d46dcfa95db5df614592e83e3856cce2e6040f39865b0e285f",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "SO-64194618",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "a1af95822f417876a28618978c53fdb504e9ad53e93f6efa1b136e4ce47c251d",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-64370141",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "514e01eff3d3e479a0dd5dbe1754c67002b183b95d04f9b65b071f9ed5d82ca1",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "SO-64724219",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "1e10950d568a325072c4a9a4c9a320c6469665549d82a96e2f0534f4875403d6",
+      "truth_sha256": "66c71a6241b1c853dd25c2e824a1b0e8a263a6f2bbe47b9353374d4eda2d3440"
+    },
+    {
+      "case": "SO-64724219--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "ae18bc96efaad7593184ac96c337d770206929537283278ef67980bbac7cce1f",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-64967214",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "9d8ac802ce98b354220430ee578b4e9d7519b8609966ec5974d6de6f78cfe67e",
+      "truth_sha256": "fb546b22aa3c0e940cce3fb9b95400bd8ca42791578fbe18f083defdfdd38c5c"
+    },
+    {
+      "case": "SO-64967214--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "d17762f05d84760b0a70db83681fea47fa622640c7934891560498f9c44d5bcc",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-64995076",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "22233236c44c992dcdff9052a10c535265d709ca6bf2369049e8b698725f5c50",
+      "truth_sha256": "fb546b22aa3c0e940cce3fb9b95400bd8ca42791578fbe18f083defdfdd38c5c"
+    },
+    {
+      "case": "SO-65974049",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "67ebec2d901a03039d83b00bca57d6f88b122389ae887abb33aece4d40c6347f",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "SO-65974049--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "51f6a2ac119c1fe6f7df5406a3f978197953be7b2f38f8d4facfdd32a285f4ee",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-66101026",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "260a408e80a5b18bcaa7def1024432f668e146f79bad9ec4596c0f35376b7050",
+      "truth_sha256": "66c71a6241b1c853dd25c2e824a1b0e8a263a6f2bbe47b9353374d4eda2d3440"
+    },
+    {
+      "case": "SO-66984621",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "a46e003ab453d3371b66403a6ab4f7c4b484651f834d2086f2a8bacbd71d0468",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-66984621--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "a6cab75a0cab7109dea97e12a73a622c98e5061fda554ae4f4da8f478f82afa4",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-66991225",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "fd61c37926b35e30b5d867deca57bf0a0e53e9c251372ccee2b5c41dcc0db213",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "SO-67385827",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "3ed9bd900bd20dd459618b567a39688b82fc6bf9b4e3cd94b815452aeddb75de",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-67457018",
+      "snapshot_source": "outputs/D1-26-10-fidelity-v1-SO-67457018",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "5bc62c515a5b4a0615ce27b20944deceea86f6452333488240971c67e4e46a45",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-67817865",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e2acaa5dd7a4b1a52819cb82c5349a4312d56cdcf150e5c312a159f1f7489b71",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-69009859",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "7840053c484bf42454ce751eac01664f0c50a31719f13e9e71a8aca5c9b0ed17",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-69704196",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "3f30240ba1cbbe9c4b474e12906b71e67fc0add35ae1fe45972d043a65699aa6",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "SO-70219893",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e0d7381d5bb6f70b5edd19452ce77e2f54cabbce889e284b208e6d8fb0318167",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-70610049",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "962eb029c85790a48e429ca775556cf4e30554179e43b9694a1688f56227af5f",
+      "truth_sha256": "66c71a6241b1c853dd25c2e824a1b0e8a263a6f2bbe47b9353374d4eda2d3440"
+    },
+    {
+      "case": "SO-70957342",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f62e6522698be41133e97db600b3af0cc68d617e4b103b611b35e8d47c2a9960",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "SO-71063815",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "cd586760140209c91be220b0d482b463b8cc13eebfad3a60e1708c0747c5454b",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-71100703",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "ed804bac4d136a178598617decbcca467185c206f0fcec3719f2e7b4f7cc1769",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-71351113",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "82553e5265b9a800312b703876f995ca223c286779670f68b06e1c680182ab3d",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-73086942",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "f2c1ae59940e4e0463dc7b392ecceb4287a040f8b4e028efd4aeff5be7d371d5",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "SO-73086942--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "bc39fc3ed1d2f8108c5fb529e0bb04eda02f587b4fa3926983db306bba35ff31",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-73222421",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "11336097c894bb6b4d44ef616c8ad8c52c225aab2ca114baf5c5913eb503a8e7",
+      "truth_sha256": "816107feaba75ca2d5533a8054c095c732b91a616b519e5f497179058c1bf827"
+    },
+    {
+      "case": "SO-74115721",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "32c21016655221a9c2c6f09b611d3e7c3ceefe0c087a23b2232922da340e6892",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-74741993",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "9d8ce68e5a3950bd29ef56b6934616200dd0d4a52a8f7c041c3320152bcafed8",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-74894229",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "ae9fcd2b3bf28e295fbd92c9e8117e48033ab88bb50f084ab6437e489a763251",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-75158172",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "22c1bc17a9ac2a4219e7a26b387c1088620ac92393a39f8ecc4f924023bbe804",
+      "truth_sha256": "0bb016e5110e8056ea648921e0954bdf3a2d684ba3ac3be29583881d6369e1d1"
+    },
+    {
+      "case": "SO-75158172--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "9f4dd5a76d8daff42bff3189822cf77a10a4d528b5be036d2bca9ec728163c8a",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-75258227",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b16e5e1d46d3da2ce7a496a441034fa383f654fd2d7beb8b4aca4f7d67599440",
+      "truth_sha256": "92543ce67720a166fde615742b50cf50238f8a2b884b8d42dc3c3fa4f139b745"
+    },
+    {
+      "case": "SO-75258227--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "f4a5921ac3d554c20fb8bd57483d9976e7dcdf638b21a4a6fc915406629e8334",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-75286982",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "04950eb326f55366865eeb11ba188094c33b9a32d979c90976160a4aff2904cc",
+      "truth_sha256": "dc8cbaf267fbcb5459c2547e15014e6aea6e86a0fe792c6eed77d02a509bd0cd"
+    },
+    {
+      "case": "SO-75286982--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "ce49660703af3f3e02104731fa5ae9ff13fef15c55b3b37889514aa3fe671ff8",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-75591440",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "dc07330845965f085920a1f492713f110eb3722ae15e40a3a14cd7a2f37646e8",
+      "truth_sha256": "ac072d2992a947cbf735f88d4b5ab6b4b0cfeb6b0fb08ee2293d4372b3957e47"
+    },
+    {
+      "case": "SO-75992870",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "b83bc7494241e66918b6d43ad8595915b05a8fe63861c62b4cf86fde5da4bac9",
+      "truth_sha256": "66c71a6241b1c853dd25c2e824a1b0e8a263a6f2bbe47b9353374d4eda2d3440"
+    },
+    {
+      "case": "SO-76325671",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "e393cde7f5e952761b37a061893247e4c7a7c143f20e3fb3aec66803d3b80caf",
+      "truth_sha256": "0d66db0a04b94ea3b6a551a4e5db5e4d72cabf00b88cea2d8082cb5387158112"
+    },
+    {
+      "case": "SO-77345948",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "32118dcce62114337692e4530ecd46a7ecc7bf15de67cca2aab64a9d5310d1ba",
+      "truth_sha256": "d363dfaa30b112d77f011ddfc1cb6b21c3702ad24df9c7f8ebc52f38b5bbc58f"
+    },
+    {
+      "case": "SO-77345948--healthy",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "outputs/D1-collect-26-10-v2/dataset (healthy control)",
+      "case_json_sha256": "ec055d5013b5ea3bf404ca1a3f6caed1283251e6fe4dfae5339abe9d43617aad",
+      "truth_sha256": "6392f3a9b32d0f6e5ff12e8c09be718fc7743ae366511c6b928bf7ed681f4565"
+    },
+    {
+      "case": "SO-78960547",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "9be69fe9e62036eb2d1312b67d634b47d6406962ff890a918645032d8d588d36",
+      "truth_sha256": "88bb6d0c8a6d7326765478ec521bbc6e36256752d44f8c375d2816e7700e6c92"
+    },
+    {
+      "case": "SO-78970520",
+      "snapshot_source": "outputs/D1-collect-26-10-v2/dataset",
+      "truth_source": "Dataset/D1-26-10",
+      "case_json_sha256": "09bde7058bc72abff364a7b68a9a757b5da7a6a58e332bbc1178cbd88ca5f80e",
+      "truth_sha256": "e5fb6ebed5db1e23495ab4685679a8d03e84a7d4663983cb611d4fed719125c7"
+    }
+  ]
+}

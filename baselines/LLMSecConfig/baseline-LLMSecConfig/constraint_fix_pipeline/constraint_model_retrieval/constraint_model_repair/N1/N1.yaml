@@ -1,0 +1,61 @@
+## Before fix: hostPort conflict between two Pod replicas, causing scheduling failure
+# spec:
+#   containers:
+#   - name: app1-container
+#     image: registry.k8s.io/pause:2.0
+#     ports:
+#     - containerPort: 80
+#       hostPort: 8080
+#     resources:
+#       requests:
+#         cpu: "1"
+#         memory: "250Mi"
+#       limits:
+#         cpu: "1"
+#         memory: "255Mi"
+# ---
+# spec:
+#   containers:
+#   - name: app2-container
+#     image: registry.k8s.io/pause:2.0
+#     ports:
+#     - containerPort: 81
+#       hostPort: 8080    # same hostPort as app1, will cause a conflict
+#     resources:
+#       requests:
+#         cpu: "1"
+#         memory: "250Mi"
+#       limits:
+#         cpu: "1"
+#         memory: "255Mi"
+
+## After fix: modify the hostPort of one Pod to a different port to avoid conflict
+spec:
+  containers:
+  - name: app1-container
+    image: registry.k8s.io/pause:2.0
+    ports:
+    - containerPort: 80
+      hostPort: 8080
+    resources:
+      requests:
+        cpu: "1"
+        memory: "250Mi"
+      limits:
+        cpu: "1"
+        memory: "255Mi"
+---
+spec:
+  containers:
+  - name: app2-container
+    image: registry.k8s.io/pause:2.0
+    ports:
+    - containerPort: 81
+      hostPort: 8081    # changed to a different port, no conflict now
+    resources:
+      requests:
+        cpu: "1"
+        memory: "250Mi"
+      limits:
+        cpu: "1"
+        memory: "255Mi"

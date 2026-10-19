@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: precheck
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: precheck
+    spec:
+      containers:
+      - name: precheck
+        image: registry.k8s.io/pause:3.9
+      restartPolicy: Never
+  backoffLimit: 0

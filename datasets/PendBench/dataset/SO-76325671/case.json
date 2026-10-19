@@ -1,0 +1,200 @@
+{
+  "WaitingDeployPods": {
+    "jenkins/Pod/jenkins/0": {
+      "cpu": 0,
+      "mem": "0",
+      "extended_requests": {},
+      "namespace": "jenkins",
+      "labels": {
+        "app": "jenkins"
+      },
+      "host_ports": [],
+      "nodeName": null,
+      "nodeSelector": null,
+      "tolerations": null,
+      "affinity": null,
+      "volumes": [
+        {
+          "name": "data",
+          "persistentVolumeClaim": {
+            "claimName": "jenkins"
+          }
+        }
+      ],
+      "topologySpreadConstraints": null,
+      "unsupported_features": [],
+      "workload": {
+        "kind": "Pod",
+        "name": "jenkins"
+      },
+      "resource_source": "observed_admitted_pod"
+    }
+  },
+  "_manifest_ownership": [
+    {
+      "identity": [
+        "PersistentVolumeClaim",
+        "jenkins",
+        "jenkins"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Pod",
+        "jenkins",
+        "jenkins"
+      ],
+      "scope": "application"
+    },
+    {
+      "identity": [
+        "Node",
+        "",
+        "node-1"
+      ],
+      "scope": "environment"
+    },
+    {
+      "identity": [
+        "PersistentVolume",
+        "",
+        "jenkins-pv"
+      ],
+      "scope": "environment"
+    }
+  ],
+  "ClusterState": {
+    "Nodes": {
+      "node-1": {
+        "cpu": 4000,
+        "mem": "8589934592",
+        "remain_pods": 110,
+        "ready": true,
+        "conditions": [
+          {
+            "lastHeartbeatTime": null,
+            "lastTransitionTime": null,
+            "message": "kubelet is posting ready status",
+            "reason": "KubeletReady",
+            "status": "True",
+            "type": "Ready"
+          }
+        ],
+        "unschedulable": false,
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "node-1",
+          "kubernetes.io/os": "linux"
+        },
+        "taints": [],
+        "used_ports": [],
+        "allocatable": {
+          "cpu": "4",
+          "memory": "8Gi",
+          "pods": "110"
+        },
+        "extended_free": {}
+      }
+    },
+    "ExistingPods": {},
+    "LimitRanges": [],
+    "PVCs": {
+      "jenkins": {
+        "jenkins": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "resources": {
+            "requests": {
+              "storage": "8Gi"
+            }
+          },
+          "storageClassName": "jenkins-pv",
+          "volumeMode": "Filesystem",
+          "metadata": {
+            "annotations": {
+              "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"confdr.io/validation-run\":\"73ca4eb4301b\"},\"name\":\"jenkins\",\"namespace\":\"jenkins\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"limits\":{},\"requests\":{\"storage\":\"8Gi\"}},\"storageClassName\":\"jenkins-pv\"}}\n"
+            },
+            "creationTimestamp": "2026-10-02T03:31:50Z",
+            "finalizers": [
+              "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+              "confdr.io/validation-run": "73ca4eb4301b"
+            },
+            "name": "jenkins",
+            "namespace": "jenkins",
+            "resourceVersion": "230",
+            "uid": "8b1e4ea1-9618-4e2c-aecf-07db319c01a2"
+          },
+          "uid": "8b1e4ea1-9618-4e2c-aecf-07db319c01a2",
+          "requestsGi": "8Gi",
+          "STATUS": "Pending"
+        }
+      }
+    },
+    "PVs": {
+      "jenkins-pv": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "capacity": {
+          "storage": "5Gi"
+        },
+        "hostPath": {
+          "path": "/data/jenkins-volume/",
+          "type": ""
+        },
+        "persistentVolumeReclaimPolicy": "Retain",
+        "storageClassName": "jenkins-pv",
+        "volumeMode": "Filesystem",
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolume\",\"metadata\":{\"annotations\":{},\"labels\":{},\"name\":\"jenkins-pv\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"capacity\":{\"storage\":\"5Gi\"},\"hostPath\":{\"path\":\"/data/jenkins-volume/\"},\"persistentVolumeReclaimPolicy\":\"Retain\",\"storageClassName\":\"jenkins-pv\"}}\n"
+          },
+          "creationTimestamp": "2026-10-02T03:31:48Z",
+          "finalizers": [
+            "kubernetes.io/pv-protection"
+          ],
+          "name": "jenkins-pv",
+          "resourceVersion": "210",
+          "uid": "eeda07b7-63b1-4623-8fd5-a43756f1639e"
+        },
+        "labels": {},
+        "capacityGi": "5Gi",
+        "phase": "Available"
+      }
+    },
+    "StorageClasses": {},
+    "CSINodes": {},
+    "NamespaceLabels": {
+      "default": {
+        "kubernetes.io/metadata.name": "default"
+      },
+      "jenkins": {
+        "kubernetes.io/metadata.name": "jenkins"
+      },
+      "kube-node-lease": {
+        "kubernetes.io/metadata.name": "kube-node-lease"
+      },
+      "kube-public": {
+        "kubernetes.io/metadata.name": "kube-public"
+      },
+      "kube-system": {
+        "kubernetes.io/metadata.name": "kube-system"
+      }
+    }
+  },
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:31:50.655115+00:00",
+    "candidate_hash": "7a7c066008f2960d09a13dcbdece1ae012ad42444a4c2a82e8ef2424b554818f",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "_unsupported_manifest_features": []
+}

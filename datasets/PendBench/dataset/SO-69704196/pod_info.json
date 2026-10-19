@@ -1,0 +1,55 @@
+{
+  "pod_status": {
+    "near-rt-ric/Pod/pending-workload/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:30:05Z",
+          "message": "0/1 nodes are available: persistentvolumeclaim \"my-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "near-rt-ric",
+      "actual_name": "pending-workload",
+      "uid": "7a38ea2e-61ac-401b-b4ec-f728d2bd4f28",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "near-rt-ric/Pod/pending-workload/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/1 nodes are available: persistentvolumeclaim \"my-claim\" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:30:05.346230Z"
+      }
+    ]
+  },
+  "pvc_status": {
+    "near-rt-ric/my-claim": {
+      "phase": "NotObserved",
+      "volumeName": null
+    },
+    "storage/my-claim": {
+      "phase": "Pending",
+      "volumeName": null
+    }
+  },
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:30:05.610775+00:00",
+  "candidate_hash": "a9fef2f6e19b98888afd09382d74ebb8ad598caee423806c372a2a244262238b",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:30:05.610775+00:00",
+    "candidate_hash": "a9fef2f6e19b98888afd09382d74ebb8ad598caee423806c372a2a244262238b",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}

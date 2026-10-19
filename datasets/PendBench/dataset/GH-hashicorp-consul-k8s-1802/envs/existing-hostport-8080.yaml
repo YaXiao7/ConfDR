@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: existing-hostport-8080
+  namespace: default
+  labels:
+    app: existing-hostport-8080
+spec:
+  containers:
+  - name: main
+    image: registry.k8s.io/pause:3.9
+    ports:
+    - containerPort: 8080
+      hostPort: 8080
+  nodeName: node-1

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "reason": "targets_healthy",
+  "environment": "kwok",
+  "scope": "simulated_control_plane",
+  "cluster_name": "confdr-4a96b2ddefbd",
+  "phase": "candidate",
+  "observed_at": "2026-09-25T06:52:46.906377+00:00",
+  "environment_claims_bound_before_workload": true,
+  "api_accepted": true,
+  "deployment_ready": true,
+  "repair_correctness": "not_determined",
+  "candidate_hash": "62923400687f93ee5f50f78cc7fbc859199a5eaee81531c5558bc0922098b5ca"
+}

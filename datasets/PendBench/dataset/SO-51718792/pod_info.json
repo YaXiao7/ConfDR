@@ -1,0 +1,46 @@
+{
+  "pod_status": {
+    "default/Pod/gpu-pod/0": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-10-02T03:24:42Z",
+          "message": "0/2 nodes are available: 1 Insufficient nvidia.com/gpu-memory, 1 node(s) had untolerated taint {node-role.kubernetes.io/master: }. preemption: 0/2 nodes are available: 1 No preemption victims found for incoming pod, 1 Preemption is not helpful for scheduling.",
+          "reason": "Unschedulable",
+          "status": "False",
+          "type": "PodScheduled"
+        }
+      ],
+      "phase": "Pending",
+      "qosClass": "BestEffort",
+      "namespace": "default",
+      "actual_name": "gpu-pod",
+      "uid": "20629f80-cb0d-4c56-9849-690a335f5c16",
+      "nodeName": null
+    }
+  },
+  "pod_events": {
+    "default/Pod/gpu-pod/0": [
+      {
+        "reason": "FailedScheduling",
+        "message": "0/2 nodes are available: 1 Insufficient nvidia.com/gpu-memory, 1 node(s) had untolerated taint {node-role.kubernetes.io/master: }. preemption: 0/2 nodes are available: 1 No preemption victims found for incoming pod, 1 Preemption is not helpful for scheduling.",
+        "type": "Warning",
+        "count": 1,
+        "lastTimestamp": "2026-10-02T03:24:42.624133Z"
+      }
+    ]
+  },
+  "pvc_status": {},
+  "container_logs": {},
+  "observed_at": "2026-10-02T03:24:42.920322+00:00",
+  "candidate_hash": "6d2e392ebdc0dbcaf7abf3467b999a8044d53325a5bc0de810bbfac92aa850cc",
+  "collection": {
+    "scope": "kwok_simulated_control_plane",
+    "observed_at": "2026-10-02T03:24:42.920322+00:00",
+    "candidate_hash": "6d2e392ebdc0dbcaf7abf3467b999a8044d53325a5bc0de810bbfac92aa850cc",
+    "errors": [],
+    "resource_accounting": "allocatable_minus_background_only; targets_counted_once",
+    "atomic_snapshot": false
+  },
+  "is_pending": true
+}
