@@ -20,8 +20,8 @@ The files follow the steps of the data collection and analysis:
 
 - `Q3-stackoverflow-candidates.xlsx`: the 407 candidate Stack Overflow questions ($\mathcal{Q}_3$), which have an accepted answer and at least 50 views.
 - `I3-github-candidates.xlsx`: the 1,869 candidate GitHub issues ($\mathcal{I}_3$), which are closed and labeled as a bug or as scheduling, with the search query that returned each issue.
-- `screening-prompts/`: the prompts used for the ChatGPT screening of Stack Overflow questions and GitHub issues.
-- `chatgpt-screening.xlsx`: the ChatGPT label (`INCLUDE`, `UNCERTAIN`, `EXCLUDE`) of each of the 407 Stack Overflow questions and 1,869 GitHub issues, with identifiers and links.
+- `chatgpt-prompt-stackoverflow.md`, `chatgpt-prompt-github.md`: the prompts used for the ChatGPT screening of each source.
+- `Q3-stackoverflow-chatgpt-screening.xlsx`, `I3-github-chatgpt-screening.xlsx`: the candidates with the label that ChatGPT assigned to each (`ChatGPTLabel`: `INCLUDE`, `UNCERTAIN`, or `EXCLUDE`).
 - `manual-screening.xlsx`: the 413 records labeled `INCLUDE` or `UNCERTAIN` by ChatGPT, which two researchers reviewed manually; `Retained` marks the 159 records kept as cases (79 Stack Overflow questions and 80 GitHub issues).
 - `open-coding.xlsx`: the open coding of the 159 cases. `Category` lists the PodPendingTaxonomy categories of each case. A case with two fault instances spans two rows.
 
