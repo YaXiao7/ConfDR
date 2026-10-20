@@ -20,7 +20,7 @@ The files follow the steps of the data collection and analysis:
 
 - `T0-stackoverflow-tags.xlsx`: `kubernetes` and the tags that co-occur with it on Stack Overflow, with $n_0(t)$, $n_1(t)$, significance $\alpha(t)$, and relevance $\beta(t)$; `Selected` marks the tags used to retrieve $\mathcal{Q}_2$.
 - `Q3-stackoverflow-candidates.xlsx`: the 407 candidate Stack Overflow questions ($\mathcal{Q}_3$), which have an accepted answer and at least 50 views.
-- `I3-github-candidates.xlsx`: the 1,869 candidate GitHub issues ($\mathcal{I}_3$), which are closed and labeled as a bug or as scheduling, with the search query that returned each issue.
+- `I3-github-candidates.xlsx`: the 1,869 candidate GitHub issues ($\mathcal{I}_3$), which are closed and have a label whose name contains `bug` or `scheduling` (for example, `bug`, `kind/bug`, or `sig/scheduling`), with the search query that returned each issue.
 - `chatgpt-prompt-stackoverflow.md`, `chatgpt-prompt-github.md`: the prompts used for the ChatGPT screening of each source.
 - `Q3-stackoverflow-chatgpt-screening.xlsx`, `I3-github-chatgpt-screening.xlsx`: the candidates with the label that ChatGPT assigned to each (`ChatGPTLabel`: `INCLUDE`, `UNCERTAIN`, or `EXCLUDE`).
 - `manual-screening.xlsx`: the 413 records labeled `INCLUDE` or `UNCERTAIN` by ChatGPT, which two researchers reviewed manually; `Retained` marks the 159 records kept as cases (79 Stack Overflow questions and 80 GitHub issues).
