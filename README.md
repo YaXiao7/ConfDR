@@ -6,7 +6,7 @@ This package accompanies the paper *ConfDR: Misconfiguration Detection and Repai
 
 | Folder | Content |
 |---|---|
-| `empirical-study/` | Candidate records, screening prompts, ChatGPT and manual screening results, and the open coding of the 159 cases (RQ1, RQ2) |
+| `empirical-study/` | Retrieved and candidate records, screening prompts, ChatGPT and manual screening results, the open coding of the 159 cases, and PodPendingTaxonomy (RQ1, RQ2) |
 | `datasets/PendBench/` | PendBench (D1): 159 Pending cases and 32 manually repaired cases |
 | `datasets/DeployFix/` | The DeployFix dataset (D2) in the same format: 24 Pending cases and 16 healthy cases |
 | `ConfDR/` | Implementation (`src/confdr`), taxonomy and settings (`config/`), rule bundles (`rules/`; the experiments use `rules-v1.2`), tests, and experiment drivers (`drivers/`) |
@@ -19,14 +19,17 @@ This package accompanies the paper *ConfDR: Misconfiguration Detection and Repai
 The files follow the steps of the data collection and analysis:
 
 - `T0-stackoverflow-tags.xlsx`: `kubernetes` and the tags that co-occur with it on Stack Overflow, with $n_0(t)$, $n_1(t)$, significance $\alpha(t)$, and relevance $\beta(t)$; `Selected` marks the tags used to retrieve $\mathcal{Q}_2$.
+- `Q2-stackoverflow-questions.xlsx`: the 79,540 Stack Overflow questions with at least one selected tag ($\mathcal{Q}_2$).
+- `Q2-stackoverflow-sample-1000.xlsx`: the 1,000 questions randomly sampled from $\mathcal{Q}_2$ for manual inspection, from which the initial search terms were derived.
 - `Q3-stackoverflow-candidates.xlsx`: the 407 candidate Stack Overflow questions ($\mathcal{Q}_3$), which have an accepted answer and at least 50 views.
 - `I3-github-candidates.xlsx`: the 1,869 candidate GitHub issues ($\mathcal{I}_3$), which are closed and have a label whose name contains `bug` or `scheduling` (for example, `bug`, `kind/bug`, or `sig/scheduling`), with the search query that returned each issue.
 - `chatgpt-prompt-stackoverflow.md`, `chatgpt-prompt-github.md`: the prompts used for the ChatGPT screening of each source.
 - `Q3-stackoverflow-chatgpt-screening.xlsx`, `I3-github-chatgpt-screening.xlsx`: the candidates with the label that ChatGPT assigned to each (`ChatGPTLabel`: `INCLUDE`, `UNCERTAIN`, or `EXCLUDE`).
 - `manual-screening.xlsx`: the 413 records labeled `INCLUDE` or `UNCERTAIN` by ChatGPT, which two researchers reviewed manually; `Retained` marks the 159 records kept as cases (79 Stack Overflow questions and 80 GitHub issues).
 - `open-coding.xlsx`: the open coding of the 159 cases. `Category` lists the PodPendingTaxonomy categories of each case. A case with two fault instances spans two rows.
+- `PodPendingTaxonomy.md`: PodPendingTaxonomy, with the definition of each category and the number of cases coded with it.
 
-No table redistributes post bodies; they are available at the links. Titles originally written in Chinese are translated and marked `[translated]`.
+No table redistributes post bodies; they are available at the links. Titles originally written in Chinese are translated and marked `[translated]`. In `Q2-stackoverflow-questions.xlsx`, encoding errors of the export were repaired in the titles, and 100 questions have no creation date in the export.
 
 ### Case format
 
