@@ -114,4 +114,4 @@ Each ConfDR run folder (`outputs/<run>/`) contains:
 | `deployment-summary.json` | Summary of the KWOK evaluation |
 | `dataset/<case>/` | Inputs and outputs of each case: `result.json` (detection and repair), `deployment.json` (KWOK evaluation), and `res.txt` (solver output) |
 
-A DeployFix repair counts as successful when its own recheck reports no conflict, not when the KWOK deployment passes.
+DeployFix repairs are scored like those of the other methods: a repair counts as successful when its KWOK deployment passes, not when the recheck of DeployFix reports no conflict.
